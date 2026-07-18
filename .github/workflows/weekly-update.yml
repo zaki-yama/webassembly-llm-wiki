@@ -10,7 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-      id-token: write # Workload Identity Federation: GitHub OIDCトークンの取得に必要
     steps:
       - uses: actions/checkout@v4
 
@@ -21,12 +20,9 @@ jobs:
         with:
           # Claude GitHub App未インストールのため、ワークフローのトークンで動かす
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          # 認証はWorkload Identity Federation(静的APIキー不要)
-          # これらは識別子であり秘密情報ではないため直書きでよい
-          anthropic_federation_rule_id: fdrl_01CNyBhQFrN8xzLGG9k7KCqr
-          anthropic_organization_id: d0fb46e6-9c44-4cfc-b510-6c888e8d695e
-          anthropic_service_account_id: svac_01QERgv32JaEGixXB523pMFZ
-          anthropic_workspace_id: wrkspc_01GoYnMygFueGyeRet3XVfkw
+          # Proプランのサブスクリプション枠で実行(claude setup-token で発行)
+          # APIクレジット課金(WIF)に切り替える場合は anthropic_federation_rule_id 等に置き換える
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           prompt: |
             .claude/skills/weekly-update/SKILL.md の手順に従って週次更新を実行してください。
             ただしCI環境のため以下に注意:

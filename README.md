@@ -50,12 +50,11 @@ state/watch-state.json  # 前回チェック時点の各リポジトリのSHA(�
 - **ローカル実行**: Claude Codeで `/weekly-update`。Artifact(Webページ版)の更新もここで行われる
 - **自動実行**: GitHub Actionsが毎週月曜09:00 JSTに実行(`workflow_dispatch` で手動トリガーも可)。CIではArtifact更新ができないため、Markdown生成+コミットまでを担当する。将来的にはwiki全体を静的サイト化してCIで完結させる構想がある([#1](https://github.com/zaki-yama/webassembly-llm-wiki/issues/1))
 
-### 認証(Workload Identity Federation)
+### 認証
 
-GitHub ActionsからのAPI認証は **Workload Identity Federation** を使用しており、リポジトリにAPIキーのSecretは保存していない。仕組み:
+GitHub Actionsからの認証は **Claude Proプランのサブスクリプション枠**(OAuthトークン)で行う。
 
-1. ワークフローがGitHubのOIDC発行者から短命JWT(約5分)を取得(`permissions: id-token: write`)
-2. claude-code-actionがそれをAnthropicの `POST /v1/oauth/token` で短命アクセストークンに交換
-3. Claude Console側のfederation rule(`Settings → Workload identity`)が「このリポジトリのmainブランチのワークフローのみ」を許可するよう検証する
+- ローカルで `claude setup-token` を実行し、`gh secret set CLAUDE_CODE_OAUTH_TOKEN` で登録する(トークン失効時も同じ手順で更新)
+- 週次実行の利用量は普段のClaude Code利用と同じプラン枠から消費される
 
-ワークフロー内の `fdrl_...` / `svac_...` / 組織UUIDは識別子であり秘密情報ではない。疎通確認は `anthropic-wif-test` ワークフローを手動実行する。
+代替として **Workload Identity Federation**(APIクレジット課金、Secret不要)も設定済み。Claude Console(`Settings → Workload identity`)にこのリポジトリのmainブランチのみを許可するfederation ruleがあり、ワークフローの `claude_code_oauth_token` をWIF inputs(`anthropic_federation_rule_id` 等、git履歴参照)+ `permissions: id-token: write` に置き換えれば切り替えられる。疎通確認は `anthropic-wif-test` ワークフローを手動実行する。
