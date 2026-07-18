@@ -27,7 +27,7 @@ wiki/
   newsletter/         # 週次ニュースレター
 state/watch-state.json  # 前回チェック時点の各リポジトリのSHA(週次差分の起点)
 .claude/skills/weekly-update/  # /weekly-update スキル(週次更新の手順書)
-.github/workflows/weekly-update.yml  # 週次cron(月曜09:00 JST)
+.github/workflows/weekly-update.yml  # 週次cron(日曜21:00 JST)
 ```
 
 ## ウォッチしている情報源
@@ -48,7 +48,7 @@ state/watch-state.json  # 前回チェック時点の各リポジトリのSHA(�
 3. `wiki/newsletter/YYYY-Wnn.md` を生成し、index / log / state を更新してコミット
 
 - **ローカル実行**: Claude Codeで `/weekly-update`。Artifact(Webページ版)の更新もここで行われる
-- **自動実行**: GitHub Actionsが毎週月曜09:00 JSTに実行(`workflow_dispatch` で手動トリガーも可)。CIではArtifact更新ができないため、Markdown生成+コミットまでを担当する。将来的にはwiki全体を静的サイト化してCIで完結させる構想がある([#1](https://github.com/zaki-yama/webassembly-llm-wiki/issues/1))
+- **自動実行**: GitHub Actionsが毎週日曜21:00 JSTに実行(`workflow_dispatch` で手動トリガーも可)。CIではArtifact更新ができないため、Markdown生成+コミットまでを担当する。将来的にはwiki全体を静的サイト化してCIで完結させる構想がある([#1](https://github.com/zaki-yama/webassembly-llm-wiki/issues/1))
 
 ### 認証
 
