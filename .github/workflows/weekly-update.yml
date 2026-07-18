@@ -19,6 +19,8 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
+          # Claude GitHub App未インストールのため、ワークフローのトークンで動かす
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           # 認証はWorkload Identity Federation(静的APIキー不要)
           # これらは識別子であり秘密情報ではないため直書きでよい
           anthropic_federation_rule_id: fdrl_01CNyBhQFrN8xzLGG9k7KCqr
