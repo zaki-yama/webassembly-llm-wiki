@@ -54,6 +54,14 @@ site/quartz.config.yaml # 公開サイト(Quartz)の設定
 - **自動実行**: GitHub Actionsが毎週日曜21:00 JSTに実行(`workflow_dispatch` で手動トリガーも可)
 - **サイト反映**: mainに `wiki/` の変更がpushされると `deploy-site` ワークフローがQuartzでビルドしてGitHub Pagesへ自動デプロイする([#1](https://github.com/zaki-yama/webassembly-llm-wiki/issues/1) で導入)
 
+### サイトのローカルプレビュー
+
+Quartz本体はこのリポジトリに含めず、ビルド時に取得する構成(CIも同じ)。ローカルで確認するには:
+
+```sh
+./site/preview.sh   # 初回はQuartzのclone+npm ciが走る。以降は http://localhost:8080 ですぐ見られる
+```
+
 ### 認証
 
 GitHub Actionsからの認証は **Claude Proプランのサブスクリプション枠**(OAuthトークン)で行う。
