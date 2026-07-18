@@ -50,8 +50,12 @@ state/watch-state.json  # 前回チェック時点の各リポジトリのSHA(�
 - **ローカル実行**: Claude Codeで `/weekly-update`。Artifact(Webページ版)の更新もここで行われる
 - **自動実行**: GitHub Actionsが毎週月曜09:00 JSTに実行(`workflow_dispatch` で手動トリガーも可)。CIではArtifact更新ができないため、Markdown生成+コミットまでを担当する。将来的にはwiki全体を静的サイト化してCIで完結させる構想がある([#1](https://github.com/zaki-yama/webassembly-llm-wiki/issues/1))
 
-### セットアップ(自動実行に必要)
+### 認証(Workload Identity Federation)
 
-```sh
-gh secret set ANTHROPIC_API_KEY
-```
+GitHub ActionsからのAPI認証は **Workload Identity Federation** を使用しており、リポジトリにAPIキーのSecretは保存していない。仕組み:
+
+1. ワークフローがGitHubのOIDC発行者から短命JWT(約5分)を取得(`permissions: id-token: write`)
+2. claude-code-actionがそれをAnthropicの `POST /v1/oauth/token` で短命アクセストークンに交換
+3. Claude Console側のfederation rule(`Settings → Workload identity`)が「このリポジトリのmainブランチのワークフローのみ」を許可するよう検証する
+
+ワークフロー内の `fdrl_...` / `svac_...` / 組織UUIDは識別子であり秘密情報ではない。疎通確認は `anthropic-wif-test` ワークフローを手動実行する。
