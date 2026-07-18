@@ -32,7 +32,6 @@ jobs:
               既存の内容を保持したまま新しい差分を追記・更新する(上書きで内容を消さない)
             - ファイルの変更(wikiページ反映・ニュースレター生成・watch-state.json / index.md / log.md の更新)まで完了させること
           claude_args: "--allowedTools Bash,Read,Write,Edit,Glob,Grep,WebFetch,WebSearch"
-          show_full_output: true # TODO: デバッグ用。安定したら削除
 
       - name: Commit and push
         run: |
