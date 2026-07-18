@@ -23,8 +23,15 @@ wiki/
   newsletter/         # 週次ニュースレター(YYYY-Wnn.md 形式、ISO週番号)
 state/
   watch-state.json    # 前回チェック時点の状態(下記参照)
+site/
+  quartz.config.yaml  # 公開サイト(Quartz)の設定。deploy-siteワークフローが使用
 plans/                # 実装計画(wikiの一部ではない)
 ```
+
+## 公開サイト
+
+wikiは https://zaki-yama.github.io/webassembly-llm-wiki/ にQuartzで公開されている。
+mainへの `wiki/` 変更のpushで `.github/workflows/deploy-site.yml` が自動デプロイする。
 
 ## ページ規約
 
@@ -53,12 +60,9 @@ plans/                # 実装計画(wikiの一部ではない)
     "WebAssembly/component-model": {"last_sha": "..."},
     "WebAssembly/WASI": {"last_sha": "..."},
     "WebAssembly/website": {"features_json_sha": "..."}
-  },
-  "artifact_url": null
+  }
 }
 ```
-
-`artifact_url` には週次ニュースレターのArtifact URLを保存し、毎週同じURLを更新する。
 
 ## ワークフロー
 
@@ -69,7 +73,8 @@ plans/                # 実装計画(wikiの一部ではない)
 
 ### weekly(週次更新)
 `/weekly-update` スキル(`.claude/skills/weekly-update/SKILL.md`)に従う。
-差分収集 → wikiページ反映 → `newsletter/YYYY-Wnn.md` 生成 → Artifact更新 → state更新 → コミット。
+差分収集 → wikiページ反映 → `newsletter/YYYY-Wnn.md` 生成 → state更新 → コミット。
+(サイトへの反映はpush後にdeploy-siteワークフローが自動で行う)
 
 ### query(質問応答)
 1. `index.md` から関連ページを探して読み、一次情報URLつきで回答する

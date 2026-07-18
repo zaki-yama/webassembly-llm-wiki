@@ -12,7 +12,7 @@ updated: 2026-07-18
 
 ## 概要
 
-custom sectionを通じてエンジンにコンパイルのヒント(どの関数を先にコンパイルすべきか、最適化レベル、インライン化候補など)を伝えるproposal。セマンティクスには影響せず、起動時間や実行性能の改善を狙う。[[branch-hinting|Branch Hinting]](Wasm 3.0でFIX済み)と同系統のアプローチ。
+custom sectionを通じてエンジンにコンパイルのヒント(どの関数を先にコンパイルすべきか、最適化レベル、インライン化候補など)を伝えるproposal。セマンティクスには影響せず、起動時間や実行性能の改善を狙う。Branch Hinting(Wasm 3.0でFIX済み、[[finished-proposals]] 参照)と同系統のアプローチ。
 
 ## 現状
 
