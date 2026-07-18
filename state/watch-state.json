@@ -1,11 +1,11 @@
 {
-  "last_checked": "2026-07-11",
+  "last_checked": "2026-07-18",
   "repos": {
     "WebAssembly/proposals": { "last_sha": "e007b5c9f2e510573869985cbc635c7f4fc0b566" },
-    "WebAssembly/meetings": { "last_sha": "8037686766e6b5c96d77786eb0c1a09da3b60254" },
-    "WebAssembly/WASI": { "last_sha": "1bfcb4ca9b0c28aa382cf8f19b1748139a1eab67" },
-    "WebAssembly/component-model": { "last_sha": "7c720726f183a8c809889dc46716bc6df0dd225d" },
+    "WebAssembly/meetings": { "last_sha": "100734d979f64b6ce7398bcde84dde407991a2dd" },
+    "WebAssembly/WASI": { "last_sha": "9d7bb038bc9bad107ce735b2ba2f79efe31603f5" },
+    "WebAssembly/component-model": { "last_sha": "c940736c4c6c1e9f0d6c67381b7ae0f6766bb120" },
     "WebAssembly/website": { "features_json_last_sha": "ee92158cf40863c959392dddd33660e0c25c50f2" }
   },
-  "artifact_url": null
+  "artifact_url": "https://claude.ai/code/artifact/95901403-1466-4653-b6a9-5a9d8b7fbaee"
 }

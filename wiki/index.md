@@ -50,8 +50,8 @@ updated: 2026-07-18
 
 ## ニュースレター
 
-(週次で `newsletter/YYYY-Wnn.md` が追加される)
+- [[2026-W29]] — 初回。WASI 0.3.xリリース計画、Multibyte Array Access Phase 2投票へ
 
 ## ミーティング要約
 
-(重要な回のみ `meetings/YYYY-MM-DD-cg.md` として追加される)
+- [[2026-06-25-wasi]] — WASI 0.3.0振り返り、0.3.xリリース計画、OCI artifact基準の提案

@@ -20,11 +20,17 @@ CGの **WASI Subgroup** で開発される。議事録は [meetings/wasi](https:
 
 ## 0.3.x の今後(リリーストレイン)
 
-[wasi.dev/roadmap](https://wasi.dev/roadmap) によると、0.3.0以降は後方互換な0.3.xを継続的にリリースする方針。予定されているテーマ:
+[wasi.dev/roadmap](https://wasi.dev/roadmap) によると、0.3.0以降は後方互換な0.3.xを継続的にリリースする方針。
 
-- キャンセレーション(言語イディオムとの自動統合)
-- `stream<u8>` 系の特殊化・ゼロコピー経路
-- スレッド対応
+2026-06-25のWASI Subgroup会議([[2026-06-25-wasi]])で暫定スケジュールが示された:
+
+| バージョン | 予定日 | 内容 |
+|---|---|---|
+| 0.3.1 | 2026-08-04 | maps、implements、fixed-length lists |
+| 0.3.2 | 2026-10-06 | error context、stream splice/forward |
+| 0.3.3 | 2026-12-01 | cooperative threads |
+
+このほかroadmapにはキャンセレーション、`stream<u8>` 系のゼロコピー経路などのテーマが挙がっている。
 
 ## 実装
 
