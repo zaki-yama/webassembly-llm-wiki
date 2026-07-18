@@ -6,6 +6,5 @@
     "WebAssembly/WASI": { "last_sha": "9d7bb038bc9bad107ce735b2ba2f79efe31603f5" },
     "WebAssembly/component-model": { "last_sha": "c940736c4c6c1e9f0d6c67381b7ae0f6766bb120" },
     "WebAssembly/website": { "features_json_last_sha": "ee92158cf40863c959392dddd33660e0c25c50f2" }
-  },
-  "artifact_url": "https://claude.ai/code/artifact/95901403-1466-4653-b6a9-5a9d8b7fbaee"
+  }
 }

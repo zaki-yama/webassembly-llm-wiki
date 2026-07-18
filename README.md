@@ -6,7 +6,8 @@ WebAssemblyの仕様策定状況(どのproposalが議論中で、どれがFIXし
 
 ## できること
 
-- **週次ニュースレター**: 毎週、proposalのフェーズ変化・CG/WG議事録・エンジン実装状況・WASI/Component Modelの動きを収集し、`wiki/newsletter/YYYY-Wnn.md` を生成。Webページ版はclaude.aiのArtifactとして公開
+- **公開サイト**: wiki全体を [zaki-yama.github.io/webassembly-llm-wiki](https://zaki-yama.github.io/webassembly-llm-wiki/) でQuartzにより公開(グラフビュー・バックリンク・全文検索つき。更新は [RSS](https://zaki-yama.github.io/webassembly-llm-wiki/index.xml) で購読可能)
+- **週次ニュースレター**: 毎週、proposalのフェーズ変化・CG/WG議事録・エンジン実装状況・WASI/Component Modelの動きを収集し、`wiki/newsletter/YYYY-Wnn.md` を生成
 - **Q&A**: このリポジトリでClaude Codeを開いて質問する(例:「Stack Switchingの現状は?」「今Phase 4にあるproposalは?」)。wikiを参照して一次情報URLつきで回答され、価値のある回答はwikiに還元される
 - **手動ingest**: 気になった記事を `raw/` に置いて「ingestして」と頼むと、wikiに統合される
 
@@ -26,8 +27,10 @@ wiki/
   meetings/           # 重要なCG/WG・subgroupミーティングの要約
   newsletter/         # 週次ニュースレター
 state/watch-state.json  # 前回チェック時点の各リポジトリのSHA(週次差分の起点)
+site/quartz.config.yaml # 公開サイト(Quartz)の設定
 .claude/skills/weekly-update/  # /weekly-update スキル(週次更新の手順書)
 .github/workflows/weekly-update.yml  # 週次cron(日曜21:00 JST)
+.github/workflows/deploy-site.yml    # wiki/変更時にQuartzでビルドしGitHub Pagesへデプロイ
 ```
 
 ## ウォッチしている情報源
@@ -47,8 +50,17 @@ state/watch-state.json  # 前回チェック時点の各リポジトリのSHA(�
 2. フェーズ変化・議事録の投票結果などを該当するwikiページへ反映
 3. `wiki/newsletter/YYYY-Wnn.md` を生成し、index / log / state を更新してコミット
 
-- **ローカル実行**: Claude Codeで `/weekly-update`。Artifact(Webページ版)の更新もここで行われる
-- **自動実行**: GitHub Actionsが毎週日曜21:00 JSTに実行(`workflow_dispatch` で手動トリガーも可)。CIではArtifact更新ができないため、Markdown生成+コミットまでを担当する。将来的にはwiki全体を静的サイト化してCIで完結させる構想がある([#1](https://github.com/zaki-yama/webassembly-llm-wiki/issues/1))
+- **ローカル実行**: Claude Codeで `/weekly-update`
+- **自動実行**: GitHub Actionsが毎週日曜21:00 JSTに実行(`workflow_dispatch` で手動トリガーも可)
+- **サイト反映**: mainに `wiki/` の変更がpushされると `deploy-site` ワークフローがQuartzでビルドしてGitHub Pagesへ自動デプロイする([#1](https://github.com/zaki-yama/webassembly-llm-wiki/issues/1) で導入)
+
+### サイトのローカルプレビュー
+
+Quartz本体はこのリポジトリに含めず、ビルド時に取得する構成(CIも同じ)。ローカルで確認するには:
+
+```sh
+./site/preview.sh   # 初回はQuartzのclone+npm ciが走る。以降は http://localhost:8080 ですぐ見られる
+```
 
 ### 認証
 

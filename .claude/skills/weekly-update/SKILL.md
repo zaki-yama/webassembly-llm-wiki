@@ -89,15 +89,13 @@ updated: YYYY-MM-DD
 - 関連するwikiページへ `[[リンク]]` する
 - 動きがなかったセクションは省略してよい
 
-## 5. Artifact公開
-
-- ニュースレターをArtifactとして公開する(favicon: 🧩、タイトル: "WebAssembly Weekly")
-- `watch-state.json` の `artifact_url` がnullでなければ、その `url` を指定して**同一URLを更新**する。初回公開時はURLを `artifact_url` に保存する
-- Artifactツールが使えない環境(CI)ではこの手順をスキップし、その旨をログに残す
-
-## 6. 後始末
+## 5. 後始末
 
 1. `state/watch-state.json` を更新: 各リポジトリの新しいHEAD SHA(compare結果の最新コミット)、`last_checked` を今日の日付に
 2. `wiki/index.md` のニュースレター節に新しい号を追加
 3. `wiki/log.md` に `## [YYYY-MM-DD] weekly | YYYY-Wnn` を追記
 4. コミット: `weekly: YYYY-Wnn`(CIの場合はプッシュも行う)
+
+Webページ版の公開作業は不要: mainに `wiki/` の変更がpushされると `deploy-site` ワークフローが
+Quartzでビルドして https://zaki-yama.github.io/webassembly-llm-wiki/ へ自動デプロイする
+(CI実行時はweekly-updateワークフローがpush後にdispatchする)。

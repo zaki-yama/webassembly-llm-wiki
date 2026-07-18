@@ -1,0 +1,87 @@
+name: deploy-site
+
+# wiki/ の内容をQuartzでビルドしてGitHub Pagesへデプロイする。
+# Quartz本体はこのリポジトリには含めず、ビルド時にjackyzha0/quartzを
+# 検証済みコミットでcheckoutし、site/quartz.config.yaml と wiki/ を流し込む。
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "wiki/**"
+      - "site/**"
+      - ".github/workflows/deploy-site.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+env:
+  # jackyzha0/quartz のピン(v5.0.0時点。上げるときはローカルでビルド検証してから)
+  QUARTZ_REF: 9cf87ff1c248a8ca551093214b0fec3b31415009
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Checkout Quartz
+        uses: actions/checkout@v4
+        with:
+          repository: jackyzha0/quartz
+          ref: ${{ env.QUARTZ_REF }}
+          path: quartz-src
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: quartz-src/package-lock.json
+
+      - name: Cache Quartz plugins
+        uses: actions/cache@v4
+        with:
+          path: quartz-src/.quartz/plugins
+          key: ${{ runner.os }}-quartz-plugins-${{ hashFiles('quartz-src/quartz.lock.json') }}
+
+      - name: Assemble site sources
+        run: |
+          cp site/quartz.config.yaml quartz-src/quartz.config.yaml
+          rm -rf quartz-src/content
+          mkdir quartz-src/content
+          cp -R wiki/. quartz-src/content/
+          find quartz-src/content -name .gitkeep -delete
+
+      - name: Install dependencies
+        working-directory: quartz-src
+        run: npm ci
+
+      - name: Install Quartz plugins
+        working-directory: quartz-src
+        run: npx quartz plugin install
+
+      - name: Build
+        working-directory: quartz-src
+        run: npx quartz build
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: quartz-src/public
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

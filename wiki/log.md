@@ -1,5 +1,9 @@
 # Log
 
+## [2026-07-19] lint | Quartzビルド時のリンク切れ修正
+
+- [[compilation-hints]] 内の `[[branch-hinting]]`(個別ページ未作成)へのリンクを [[finished-proposals]] 参照に修正。Quartzサイト導入時のリンク切れ検査で検出
+
 ## [2026-07-18] weekly | 2026-W29(再チェック)
 
 - CI経由で週次更新を再実行。`state/watch-state.json` の各 `last_sha` を起点に proposals / meetings / WASI / component-model / website(features.json)を再度diff確認したが、直近の実行(同日07-18)からの新規コミット・議事録・リリースはなし(全リポジトリ `ahead_by: 0`)
