@@ -2,7 +2,7 @@
 
 WebAssemblyの仕様策定状況(どのproposalが議論中で、どれがFIXしたか)を追跡する、LLM維持型のwiki。
 
-[llm-wiki.md](./llm-wiki.md) の「LLMが永続的なwikiを構築・維持する」パターンを、固定的な情報源を定点観測する **watch型** にアレンジしたもの。wikiのページはすべてClaude Codeが書き、人間は情報源の選定・方向付け・質問を担当する。
+[Andrej Karpathyの LLM Wiki](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f)([llm-wiki.md](./llm-wiki.md) に全文コピー)の「LLMが永続的なwikiを構築・維持する」パターンを、固定的な情報源を定点観測する **watch型** にアレンジしたもの。wikiのページはすべてClaude Codeが書き、人間は情報源の選定・方向付け・質問を担当する。
 
 ## できること
 
