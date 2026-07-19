@@ -30,20 +30,20 @@ updated: 2026-07-18
 
 ## Proposals — Phase 2(仕様文面あり)
 
-- [[relaxed-dead-code-validation]] — 到達不能コードの型検証緩和
-- [[wat-numeric-values]] — WATのdata segmentに数値リテラル
-- [[extended-name-section]] — name sectionの拡張(デバッグ)
-- [[rounding-variants]] — 浮動小数点の丸めモード指定
-- [[compilation-hints]] — エンジンへのコンパイルヒント
-- [[js-primitive-builtins]] — JSプリミティブの組み込み関数
-- [[relaxed-atomics]] — 弱いメモリオーダリングのアトミクス
+- [[relaxed-dead-code-validation]] ✔ — 到達不能コードの型検証緩和
+- [[wat-numeric-values]] ✔ — WATのdata segmentに数値リテラル
+- [[extended-name-section]] ✔ — name sectionの拡張(デバッグ)
+- [[rounding-variants]] ✔ — 浮動小数点の丸めモード指定
+- [[compilation-hints]] ✔ — エンジンへのコンパイルヒント
+- [[js-primitive-builtins]] ✔ — JSプリミティブの組み込み関数
+- [[relaxed-atomics]] ✔ — 弱いメモリオーダリングのアトミクス
 
 ## Proposals — Phase 1(提案段階・注目のみ)
 
-- [[shared-everything-threads]] — GCヒープまで共有するスレッド
-- [[stringref]] — 第一級の文字列参照型
-- [[type-imports]] — 型のimport/export
-- [[memory-control]] — メモリの細粒度制御
+- [[shared-everything-threads]] ✔ — GCヒープまで共有するスレッド
+- [[stringref]] ✔ — 第一級の文字列参照型
+- [[type-imports]] ✔ — 型のimport/export
+- [[memory-control]] ✔ — メモリの細粒度制御
 
 ## WASI / Component Model
 

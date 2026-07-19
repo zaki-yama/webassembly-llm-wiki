@@ -1,5 +1,11 @@
 # Log
 
+## [2026-07-19] deepen | Phase 2 + 注目Phase 1 proposals
+
+- Phase 2の7ページをdeepen: [[relaxed-dead-code-validation]]、[[wat-numeric-values]]、[[extended-name-section]]、[[rounding-variants]]、[[compilation-hints]]、[[js-primitive-builtins]]、[[relaxed-atomics]]
+- 注目Phase 1の4ページをdeepen: [[shared-everything-threads]]、[[stringref]]、[[type-imports]]、[[memory-control]]
+- これで個別ページを持つ全21 proposalが深掘り済み
+
 ## [2026-07-19] deepen | Phase 3 proposals
 
 - Phase 3の5ページを一次情報からdeepen: [[esm-integration]](README)、[[wide-arithmetic]]、[[compact-import-section]]、[[custom-page-sizes]]、[[custom-descriptors]](いずれもOverview.md)

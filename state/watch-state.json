@@ -45,6 +45,39 @@
     },
     "WebAssembly/custom-descriptors": {
       "last_sha": "a6a87dcadf9ec5e6465dd40c9aec97c3839807e3"
+    },
+    "WebAssembly/relaxed-dead-code-validation": {
+      "last_sha": "829ad94dad4c98d94bc2bb6207739d11973ff373"
+    },
+    "WebAssembly/wat-numeric-values": {
+      "last_sha": "6af2f33d2860390345e31580908cb4670730600e"
+    },
+    "WebAssembly/extended-name-section": {
+      "last_sha": "c35dc5b6de05ae11ea9e473629afb490a86368be"
+    },
+    "WebAssembly/rounding-mode-control": {
+      "last_sha": "b07cb1c1f2d45991b6c8429d814790abad899245"
+    },
+    "WebAssembly/compilation-hints": {
+      "last_sha": "89e67030f433ac3faa38b7347721c2e333395ed0"
+    },
+    "WebAssembly/js-primitive-builtins": {
+      "last_sha": "5e5973510b4ef20d980102a1ecd358e9e8064372"
+    },
+    "WebAssembly/relaxed-atomics": {
+      "last_sha": "577af5822847a2975a27e7a7905f73041adc2899"
+    },
+    "WebAssembly/shared-everything-threads": {
+      "last_sha": "065aa53822e17eea69bfc049df67a16cbd03d9ce"
+    },
+    "WebAssembly/stringref": {
+      "last_sha": "a64917cd5346f8704e614c4825ebf05737ac5e64"
+    },
+    "WebAssembly/proposal-type-imports": {
+      "last_sha": "13d907c9134c2549d99c8e0025832d577a5b275a"
+    },
+    "WebAssembly/memory-control": {
+      "last_sha": "62fac131de7e6406c9c05b493457025c2e42a15c"
     }
   }
 }
