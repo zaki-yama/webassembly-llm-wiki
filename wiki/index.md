@@ -13,15 +13,17 @@ updated: 2026-07-18
 
 ## Proposals — Phase 4(標準化中)
 
-- [[threads]] — 共有メモリとアトミック命令
-- [[js-promise-integration]] — WasmからJS Promiseを同期的に待つ(JSPI)
-- [[content-security-policy]] — CSPとWasm(`wasm-unsafe-eval`)
+`✔` は一次情報(Explainer等)をingest済みの深掘りページ。無印は一覧情報のみのスタブ。
+
+- [[threads]] ✔ — 共有メモリとアトミック命令
+- [[js-promise-integration]] ✔ — WasmからJS Promiseを同期的に待つ(JSPI)
+- [[content-security-policy]] ✔ — CSPとWasm(`wasm-unsafe-eval`)
 
 ## Proposals — Phase 3(実装中)
 
 - [[esm-integration]] — WasmをESモジュールとしてimport
 - [[wide-arithmetic]] — 128bit級の整数演算命令
-- [[stack-switching]] — 型付き継続によるコルーチン/非同期
+- [[stack-switching]] ✔ — 型付き継続によるコルーチン/非同期
 - [[compact-import-section]] — import sectionのバイナリ圧縮
 - [[custom-page-sizes]] — 64KiB以外のメモリページサイズ
 - [[custom-descriptors]] — Wasm GCオブジェクトへのJS prototype関連付け

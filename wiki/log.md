@@ -1,5 +1,12 @@
 # Log
 
+## [2026-07-19] deepen | stack-switching + Phase 4 proposals
+
+- 「情報が薄くリポジトリを見ないとわからない」というユーザーレビューを受け、深掘り(deepen)作業を開始(計画: plans/deepen-proposals-plan.md)
+- [[stack-switching]] をExplainerから書き直し(テンプレートの見本ページ)
+- Phase 4の3ページを一次情報からdeepen: [[threads]](Overview.md)、[[js-promise-integration]](Overview.md)、[[content-security-policy]](CSP.md)
+- 各ページにフェーズ遷移テーブル(proposals READMEのgit履歴+CG議事録の投票記録から再構成)を追加
+
 ## [2026-07-18] weekly | 2026-W29(再チェック)
 
 - CI経由で週次更新を再実行。`state/watch-state.json` の各 `last_sha` を起点に proposals / meetings / WASI / component-model / website(features.json)を再度diff確認したが、直近の実行(同日07-18)からの新規コミット・議事録・リリースはなし(全リポジトリ `ahead_by: 0`)

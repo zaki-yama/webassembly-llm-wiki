@@ -7,5 +7,11 @@
     "WebAssembly/component-model": { "last_sha": "c940736c4c6c1e9f0d6c67381b7ae0f6766bb120" },
     "WebAssembly/website": { "features_json_last_sha": "ee92158cf40863c959392dddd33660e0c25c50f2" }
   },
-  "artifact_url": "https://claude.ai/code/artifact/95901403-1466-4653-b6a9-5a9d8b7fbaee"
+  "artifact_url": "https://claude.ai/code/artifact/95901403-1466-4653-b6a9-5a9d8b7fbaee",
+  "proposal_repos": {
+    "WebAssembly/stack-switching": { "last_sha": "c7be390539e5fc10669c88cadc4fa4b32fba1d47" },
+    "WebAssembly/threads": { "last_sha": "979d0fcb994439423d63b2f0a8a7332d6285dd84" },
+    "WebAssembly/js-promise-integration": { "last_sha": "5b247b1026d2f438eefe51914a79f4218cbda9f9" },
+    "WebAssembly/content-security-policy": { "last_sha": "284adaf2fecaf76ac05d35132c09e60bb4145041" }
+  }
 }
