@@ -45,6 +45,12 @@ updated: 2026-07-18
 - [[type-imports]] ✔ — 型のimport/export
 - [[memory-control]] ✔ — メモリの細粒度制御
 
+## Families(横断ページ)
+
+- [[concurrency]] — 並行性の2軸(共有メモリ並列/制御フロー中断)を俯瞰
+- [[js-interop]] — JS境界の3層(モジュール/実行モデル/値)を俯瞰
+- [[gc-lang-support]] — Wasm GC言語を実用にする「GC第2章」を俯瞰
+
 ## WASI / Component Model
 
 - [[wasi-roadmap]] — WASI 0.1→0.2→0.3の流れと0.3.xリリーストレイン

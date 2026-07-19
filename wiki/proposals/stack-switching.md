@@ -3,6 +3,7 @@ title: Stack Switching
 type: proposal
 phase: 3
 repo: https://github.com/WebAssembly/stack-switching
+families: [concurrency]
 updated: 2026-07-19
 ---
 

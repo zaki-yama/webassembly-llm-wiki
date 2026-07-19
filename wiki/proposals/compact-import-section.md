@@ -3,7 +3,6 @@ title: Compact Import Section
 type: proposal
 phase: 3
 repo: https://github.com/WebAssembly/compact-import-section
-families: [binary-size]
 updated: 2026-07-19
 ---
 

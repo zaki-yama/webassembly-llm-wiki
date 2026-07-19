@@ -1,5 +1,10 @@
 # Log
 
+## [2026-07-19] deepen | familiesページ作成
+
+- 横断ページを3つ作成: [[concurrency]]、[[js-interop]]、[[gc-lang-support]](proposalページ側のfrontmatter `families:` と双方向で整合、機械検証済み)
+- binary-size familyはメンバー1件のため見送り
+
 ## [2026-07-19] deepen | Phase 2 + 注目Phase 1 proposals
 
 - Phase 2の7ページをdeepen: [[relaxed-dead-code-validation]]、[[wat-numeric-values]]、[[extended-name-section]]、[[rounding-variants]]、[[compilation-hints]]、[[js-primitive-builtins]]、[[relaxed-atomics]]
