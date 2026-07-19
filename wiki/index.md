@@ -13,35 +13,43 @@ updated: 2026-07-18
 
 ## Proposals — Phase 4(標準化中)
 
-- [[threads]] — 共有メモリとアトミック命令
-- [[js-promise-integration]] — WasmからJS Promiseを同期的に待つ(JSPI)
-- [[content-security-policy]] — CSPとWasm(`wasm-unsafe-eval`)
+`✔` は一次情報(Explainer等)をingest済みの深掘りページ。無印は一覧情報のみのスタブ。
+
+- [[threads]] ✔ — 共有メモリとアトミック命令
+- [[js-promise-integration]] ✔ — WasmからJS Promiseを同期的に待つ(JSPI)
+- [[content-security-policy]] ✔ — CSPとWasm(`wasm-unsafe-eval`)
 
 ## Proposals — Phase 3(実装中)
 
-- [[esm-integration]] — WasmをESモジュールとしてimport
-- [[wide-arithmetic]] — 128bit級の整数演算命令
-- [[stack-switching]] — 型付き継続によるコルーチン/非同期
-- [[compact-import-section]] — import sectionのバイナリ圧縮
-- [[custom-page-sizes]] — 64KiB以外のメモリページサイズ
-- [[custom-descriptors]] — Wasm GCオブジェクトへのJS prototype関連付け
+- [[esm-integration]] ✔ — WasmをESモジュールとしてimport
+- [[wide-arithmetic]] ✔ — 128bit級の整数演算命令
+- [[stack-switching]] ✔ — 型付き継続によるコルーチン/非同期
+- [[compact-import-section]] ✔ — import sectionのバイナリ圧縮
+- [[custom-page-sizes]] ✔ — 64KiB以外のメモリページサイズ
+- [[custom-descriptors]] ✔ — Wasm GCオブジェクトへのJS prototype関連付け
 
 ## Proposals — Phase 2(仕様文面あり)
 
-- [[relaxed-dead-code-validation]] — 到達不能コードの型検証緩和
-- [[wat-numeric-values]] — WATのdata segmentに数値リテラル
-- [[extended-name-section]] — name sectionの拡張(デバッグ)
-- [[rounding-variants]] — 浮動小数点の丸めモード指定
-- [[compilation-hints]] — エンジンへのコンパイルヒント
-- [[js-primitive-builtins]] — JSプリミティブの組み込み関数
-- [[relaxed-atomics]] — 弱いメモリオーダリングのアトミクス
+- [[relaxed-dead-code-validation]] ✔ — 到達不能コードの型検証緩和
+- [[wat-numeric-values]] ✔ — WATのdata segmentに数値リテラル
+- [[extended-name-section]] ✔ — name sectionの拡張(デバッグ)
+- [[rounding-variants]] ✔ — 浮動小数点の丸めモード指定
+- [[compilation-hints]] ✔ — エンジンへのコンパイルヒント
+- [[js-primitive-builtins]] ✔ — JSプリミティブの組み込み関数
+- [[relaxed-atomics]] ✔ — 弱いメモリオーダリングのアトミクス
 
 ## Proposals — Phase 1(提案段階・注目のみ)
 
-- [[shared-everything-threads]] — GCヒープまで共有するスレッド
-- [[stringref]] — 第一級の文字列参照型
-- [[type-imports]] — 型のimport/export
-- [[memory-control]] — メモリの細粒度制御
+- [[shared-everything-threads]] ✔ — GCヒープまで共有するスレッド
+- [[stringref]] ✔ — 第一級の文字列参照型
+- [[type-imports]] ✔ — 型のimport/export
+- [[memory-control]] ✔ — メモリの細粒度制御
+
+## Families(横断ページ)
+
+- [[concurrency]] — 並行性の2軸(共有メモリ並列/制御フロー中断)を俯瞰
+- [[js-interop]] — JS境界の3層(モジュール/実行モデル/値)を俯瞰
+- [[gc-lang-support]] — Wasm GC言語を実用にする「GC第2章」を俯瞰
 
 ## WASI / Component Model
 

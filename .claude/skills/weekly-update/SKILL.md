@@ -51,15 +51,26 @@ gh api repos/WebAssembly/WASI/releases --jq '[.[0:3][] | {tag_name, published_at
 
 - 新リリース、roadmap・Proposals.mdの変化、大きなマージPRを抽出
 
-### 2e. 公式ニュース・補助ソース
+### 2e. 個別proposalリポジトリ(Explainer等の変更)
+
+`watch-state.json` の `proposal_repos` にある各リポジトリを差分チェックする:
+
+```
+gh api "repos/WebAssembly/<name>/compare/<last_sha>...HEAD" --jq '{ahead_by, files: [.files[].filename]}'
+```
+
+- Explainer / Overview 等の**設計文書に変更があった場合のみ**中身を確認し、該当proposalページの「仕組み」「経緯と現状」を更新する(CI設定やテストだけの変更はSHA更新のみでよい)
+- 大きな設計変更はニュースレターのproposal動向にも載せる
+
+### 2f. 公式ニュース・補助ソース
 
 - https://webassembly.org/news/ の新着(WebFetchで確認)
 - 余裕があれば https://bytecodealliance.org/articles/ も確認(補助。なければ省略可)
 
 ## 3. wikiページへの反映
 
-- フェーズ変化があったproposalは該当ページの `phase:` と本文を更新し、「YYYY-MM-DDのCG投票でPhase Nに移行」と経緯を書く([[overview]] のスナップショット一覧も更新)
-- 新規proposalはページを作成し `wiki/index.md` に追加
+- フェーズ変化があったproposalは該当ページの `phase:` と本文を更新し、「YYYY-MM-DDのCG投票でPhase Nに移行」と経緯を書く(フェーズ遷移テーブルにも行を追加。[[overview]] のスナップショット一覧も更新)
+- **新規proposal(一覧への追加・フェーズ移行での昇格)を検出したら、`/deepen-proposal` の手順で一次情報(Explainer等)をingestしてテンプレート水準のページを作る**。時間の制約でスタブに留めた場合はindex.mdで無印(未深掘り)にし、log.mdにその旨を書く
 - WASI/Component Modelの動きは [[wasi-roadmap]] / [[component-model-overview]] に反映
 
 ## 4. ニュースレター生成
@@ -97,7 +108,7 @@ updated: YYYY-MM-DD
 
 ## 6. 後始末
 
-1. `state/watch-state.json` を更新: 各リポジトリの新しいHEAD SHA(compare結果の最新コミット)、`last_checked` を今日の日付に
+1. `state/watch-state.json` を更新: 各リポジトリの新しいHEAD SHA(compare結果の最新コミット)、`proposal_repos` の各SHA、`last_checked` を今日の日付に
 2. `wiki/index.md` のニュースレター節に新しい号を追加
 3. `wiki/log.md` に `## [YYYY-MM-DD] weekly | YYYY-Wnn` を追記
 4. コミット: `weekly: YYYY-Wnn`(CIの場合はプッシュも行う)
