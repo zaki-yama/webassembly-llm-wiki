@@ -62,7 +62,7 @@ proposalは [phases.md](https://github.com/WebAssembly/meetings/blob/main/proces
 - [[relaxed-atomics]] — Conrad Watt & Rezvan Mahdavi Hezaveh
 
 ### Phase 1(提案段階)
-個別ページあり: [[component-model]](→ [[component-model-overview]])、[[shared-everything-threads]]、[[stringref]]、[[type-imports]]、[[memory-control]]
+個別ページあり: Component Model(→ [[component-model-overview]])、[[shared-everything-threads]]、[[stringref]]、[[type-imports]]、[[memory-control]]
 
 その他のPhase 1: WebAssembly C and C++ API、Flexible Vectors、Profiles、Frozen Values、Half Precision、More Array Constructors、JIT Interface、Multibyte Array Access、Type Reflection for JS API、JS Text Encoding Builtins
 
