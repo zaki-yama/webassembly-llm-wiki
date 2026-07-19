@@ -1,5 +1,10 @@
 # Log
 
+## [2026-07-19] deepen | Phase 3 proposals
+
+- Phase 3の5ページを一次情報からdeepen: [[esm-integration]](README)、[[wide-arithmetic]]、[[compact-import-section]]、[[custom-page-sizes]]、[[custom-descriptors]](いずれもOverview.md)
+- これでPhase 3以上の全9ページが深掘り済み
+
 ## [2026-07-19] deepen | stack-switching + Phase 4 proposals
 
 - 「情報が薄くリポジトリを見ないとわからない」というユーザーレビューを受け、深掘り(deepen)作業を開始(計画: plans/deepen-proposals-plan.md)

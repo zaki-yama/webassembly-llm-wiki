@@ -21,12 +21,12 @@ updated: 2026-07-18
 
 ## Proposals — Phase 3(実装中)
 
-- [[esm-integration]] — WasmをESモジュールとしてimport
-- [[wide-arithmetic]] — 128bit級の整数演算命令
+- [[esm-integration]] ✔ — WasmをESモジュールとしてimport
+- [[wide-arithmetic]] ✔ — 128bit級の整数演算命令
 - [[stack-switching]] ✔ — 型付き継続によるコルーチン/非同期
-- [[compact-import-section]] — import sectionのバイナリ圧縮
-- [[custom-page-sizes]] — 64KiB以外のメモリページサイズ
-- [[custom-descriptors]] — Wasm GCオブジェクトへのJS prototype関連付け
+- [[compact-import-section]] ✔ — import sectionのバイナリ圧縮
+- [[custom-page-sizes]] ✔ — 64KiB以外のメモリページサイズ
+- [[custom-descriptors]] ✔ — Wasm GCオブジェクトへのJS prototype関連付け
 
 ## Proposals — Phase 2(仕様文面あり)
 
