@@ -3,7 +3,7 @@ title: Compilation Hints
 type: proposal
 phase: 2
 repo: https://github.com/WebAssembly/compilation-hints
-updated: 2026-07-19
+updated: 2026-07-26
 ---
 
 # Compilation Hints
@@ -41,6 +41,7 @@ Branch Hinting(Wasm 3.0でFIX)の枠組みを拡張し、`metadata.code.*` と�
 
 - V8での実験実装が先行。大規模Wasmアプリ(Photoshop等)の起動時間問題が実務的背景
 - 「ヒントの種類をどこまで標準化するか」(エンジン固有にしない範囲)が主要な設計論点
+- 2026-07-20、WasmtimeがBranch Hintingサポートをフラグ付きで更新([commit](https://github.com/WebAssembly/website/commit/80da839)、[v46.0.0](https://github.com/bytecodealliance/wasmtime/releases/tag/v46.0.0))。本提案の前身であるBranch Hintingのエンジン対応が広がりつつある
 
 ## 関連
 

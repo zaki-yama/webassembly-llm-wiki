@@ -1,8 +1,8 @@
 ---
 title: GC言語サポート(GC Language Support)
 type: family
-members: [custom-descriptors, js-primitive-builtins, stringref, shared-everything-threads]
-updated: 2026-07-19
+members: [custom-descriptors, js-primitive-builtins, stringref, shared-everything-threads, multibyte-array-access]
+updated: 2026-07-26
 ---
 
 # GC言語サポート(GC Language Support)
@@ -19,6 +19,7 @@ Wasm GC(Wasm 3.0でFIX)の上でJava・Kotlin・Dart・Scala等のマネージ�
 | [[js-primitive-builtins]] | 2 | JSプリミティブ変換のグルーコード除去 |
 | [[stringref]] | 1 | 文字列のゼロコピー(JS String Builtinsに先行された) |
 | [[shared-everything-threads]] | 1 | GCオブジェクトのスレッド間共有 |
+| [[multibyte-array-access]] | 2 | GC配列へのマルチバイト単位アクセス(要素単位アクセスの遅さ) |
 
 FIX済みの基盤: Garbage collection、Typed Function References、JS String Builtins(→ [[finished-proposals]])
 

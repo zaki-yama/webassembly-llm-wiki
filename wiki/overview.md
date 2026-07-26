@@ -1,7 +1,7 @@
 ---
 title: WebAssembly仕様策定の全体像
 type: concept
-updated: 2026-07-18
+updated: 2026-07-26
 ---
 
 # WebAssembly仕様策定の全体像
@@ -35,14 +35,16 @@ proposalは [phases.md](https://github.com/WebAssembly/meetings/blob/main/proces
 - **Wasm 2.0**: 2025-03-20 完了。SIMD、reference types、bulk memory など
 - **Wasm 3.0**: 2025-09-17 完了。GC、tail call、exception handling、Memory64、multi-memory など([公式アナウンス](https://webassembly.org/news/2025-09-17-wasm-3.0/))
 
-## 現在のproposalフェーズ一覧(2026-07-18時点のスナップショット)
+## 現在のproposalフェーズ一覧(2026-07-26時点のスナップショット)
 
 出典: [WebAssembly/proposals README](https://github.com/WebAssembly/proposals)
 
+### Phase 5(標準化完了・マージ待ち)
+- [[js-promise-integration]] — Francis McCabe(2026-06-24 WG投票でPhase 5)
+- [[content-security-policy]] — Francis McCabe(2026-06-24 WG投票でPhase 5)
+
 ### Phase 4(標準化中)
 - [[threads]] — Conrad Watt
-- [[js-promise-integration]] — Francis McCabe
-- [[content-security-policy]] — Francis McCabe
 
 ### Phase 3(実装中)
 - [[esm-integration]] — Asumu Takikawa, Ms2ger & Guy Bedford
@@ -60,11 +62,12 @@ proposalは [phases.md](https://github.com/WebAssembly/meetings/blob/main/proces
 - [[compilation-hints]] — Emanuel Ziegler
 - [[js-primitive-builtins]] — Sébastien Doeraene
 - [[relaxed-atomics]] — Conrad Watt & Rezvan Mahdavi Hezaveh
+- [[multibyte-array-access]] — Brendan Dahl(2026-07-14 CG投票でPhase 2)
 
 ### Phase 1(提案段階)
 個別ページあり: Component Model(→ [[component-model-overview]])、[[shared-everything-threads]]、[[stringref]]、[[type-imports]]、[[memory-control]]
 
-その他のPhase 1: WebAssembly C and C++ API、Flexible Vectors、Profiles、Frozen Values、Half Precision、More Array Constructors、JIT Interface、Multibyte Array Access、Type Reflection for JS API、JS Text Encoding Builtins
+その他のPhase 1: WebAssembly C and C++ API、Flexible Vectors、Profiles、Frozen Values、Half Precision、More Array Constructors、JIT Interface、Type Reflection for JS API、JS Text Encoding Builtins
 
 ## 関連領域
 

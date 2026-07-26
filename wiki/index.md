@@ -1,7 +1,7 @@
 ---
 title: Index
 type: concept
-updated: 2026-07-18
+updated: 2026-07-26
 ---
 
 # Index
@@ -11,13 +11,16 @@ updated: 2026-07-18
 - [[overview]] — Wasm標準化プロセスの全体像。フェーズ制度、組織、現在のproposal一覧スナップショット
 - [[finished-proposals]] — FIX済みproposal一覧(Wasm 1.0/2.0/3.0)
 
-## Proposals — Phase 4(標準化中)
+## Proposals — Phase 5(標準化完了・マージ待ち)
 
 `✔` は一次情報(Explainer等)をingest済みの深掘りページ。無印は一覧情報のみのスタブ。
 
-- [[threads]] ✔ — 共有メモリとアトミック命令
 - [[js-promise-integration]] ✔ — WasmからJS Promiseを同期的に待つ(JSPI)
 - [[content-security-policy]] ✔ — CSPとWasm(`wasm-unsafe-eval`)
+
+## Proposals — Phase 4(標準化中)
+
+- [[threads]] ✔ — 共有メモリとアトミック命令
 
 ## Proposals — Phase 3(実装中)
 
@@ -37,6 +40,7 @@ updated: 2026-07-18
 - [[compilation-hints]] ✔ — エンジンへのコンパイルヒント
 - [[js-primitive-builtins]] ✔ — JSプリミティブの組み込み関数
 - [[relaxed-atomics]] ✔ — 弱いメモリオーダリングのアトミクス
+- [[multibyte-array-access]] ✔ — GC配列へのマルチバイト単位アクセス
 
 ## Proposals — Phase 1(提案段階・注目のみ)
 
@@ -58,8 +62,10 @@ updated: 2026-07-18
 
 ## ニュースレター
 
+- [[2026-W30]] — JSPI・CSPがPhase 5へ、Multibyte Array AccessがPhase 2へ
 - [[2026-W29]] — 初回。WASI 0.3.xリリース計画、Multibyte Array Access Phase 2投票へ
 
 ## ミーティング要約
 
+- [[2026-06-24-wg]] — JSPI・CSPのPhase 5投票(全会一致)
 - [[2026-06-25-wasi]] — WASI 0.3.0振り返り、0.3.xリリース計画、OCI artifact基準の提案

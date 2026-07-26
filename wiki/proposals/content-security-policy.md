@@ -1,14 +1,14 @@
 ---
 title: Web Content Security Policy
 type: proposal
-phase: 4
+phase: 5
 repo: https://github.com/WebAssembly/content-security-policy
-updated: 2026-07-19
+updated: 2026-07-26
 ---
 
 # Web Content Security Policy
 
-**Phase 4(標準化)** / Champion: Francis McCabe
+**Phase 5(標準化完了)** / Champion: Francis McCabe
 
 ## 一言でいうと
 
@@ -48,11 +48,14 @@ Content-Security-Policy: script-src 'self'; wasm-unsafe-eval
 | 2021-02 | Francis McCabeがchampionに([#94](https://github.com/WebAssembly/proposals/pull/94)) | - |
 | (長期間) | `wasm-unsafe-eval` 自体は主要ブラウザに実装・出荷され広く利用可能に | - |
 | 2025-08-12 | CG会合でPhase 4投票、SF2/F24/N3/A0/SA0で可決([議事録](https://github.com/WebAssembly/meetings/blob/main/main/2025/CG-08-12.md)、[#216](https://github.com/WebAssembly/proposals/pull/216)) | 3→4 |
+| 2026-06-24 | WG会合でPhase 5投票、SF6/F0/N0/A0/SA0の全会一致で可決([議事録](https://github.com/WebAssembly/meetings/blob/main/main/2026/WG-2026-06-24.md)) | 4→5 |
+| 2026-07-22 | proposals READMEに反映([#236](https://github.com/WebAssembly/proposals/pull/236)) | - |
 
 ## 経緯と現状
 
 - `wasm-unsafe-eval` は仕様化に先行して各ブラウザ・CSP仕様側(W3C WebAppSec)で実装が進み、実務ではすでに標準的に使われている。proposalとしての残作業はweb-api仕様文面の整備が中心
 - 将来の拡張として「`script-src` のホワイトリストにWasmモジュールを含める」方向は、2025-08時点で「起こりそうにない」とchampionが明言している
+- Phase 5昇格(2026-06-24投票)によりスペックマージ待ちの段階に。Editor(Ryan Hunt)によるPRレビューが残作業
 
 ## 関連
 

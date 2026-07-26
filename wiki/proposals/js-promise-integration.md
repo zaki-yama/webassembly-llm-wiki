@@ -1,15 +1,15 @@
 ---
 title: JS Promise Integration (JSPI)
 type: proposal
-phase: 4
+phase: 5
 repo: https://github.com/WebAssembly/js-promise-integration
 families: [concurrency, js-interop]
-updated: 2026-07-19
+updated: 2026-07-26
 ---
 
 # JS Promise Integration (JSPI)
 
-**Phase 4(標準化)** / Champion: Francis McCabe
+**Phase 5(標準化完了)** / Champion: Francis McCabe
 
 ## 一言でいうと
 
@@ -60,6 +60,8 @@ await main();  // Wasm内のfetch_data呼び出しは"同期的"に見える
 | 2022-04-22 | Phase 2へ([#143](https://github.com/WebAssembly/proposals/pull/143)) | 1→2 |
 | 2022-10-26 | Phase 3へ | 2→3 |
 | 2025-04-08 | CG会合でPhase 4投票、SF24/F14/N3/A0/SA0で可決([議事録](https://github.com/WebAssembly/meetings/blob/main/main/2025/CG-04-08.md)、[#207](https://github.com/WebAssembly/proposals/pull/207)) | 3→4 |
+| 2026-06-24 | WG会合でPhase 5投票、SF6/F0/N0/A0/SA0の全会一致で可決。Chromeは出荷済み、Firefoxはbeta、との実装状況も確認された([議事録](https://github.com/WebAssembly/meetings/blob/main/main/2026/WG-2026-06-24.md)) | 4→5 |
+| 2026-07-22 | proposals READMEに反映([#236](https://github.com/WebAssembly/proposals/pull/236)) | - |
 
 Phase 4投票では、Stacks Subgroupでの事前poll(コアの [[stack-switching]] との関係整理)を経てブラウザベンダの合意が得られた経緯が議事録に残っている。
 
@@ -67,6 +69,7 @@ Phase 4投票では、Stacks Subgroupでの事前poll(コアの [[stack-switchin
 
 - EmscriptenはJSPIバックエンド(`-sJSPI`)を提供済みで、Asyncifyの置き換えが進む。実装状況: [features](https://webassembly.org/features/)
 - コア仕様の汎用スタック切り替え([[stack-switching]]、Phase 3)とは「JSPI=JS APIに閉じた先行サブセット、stack-switching=コア命令での汎用機構」という役割分担。JSPIが先にPhase 4へ進んだ
+- 2026-07-21、Node.jsがJSPIのサポートバージョン表記を更新(Node 26.0以降はフラグ不要、[commit](https://github.com/WebAssembly/website/commit/e0f3b0f))。Phase 5昇格(2026-06-24投票)によりスペックマージ待ちの段階
 
 ## 関連
 

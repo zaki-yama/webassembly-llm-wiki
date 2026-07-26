@@ -1,5 +1,17 @@
 # Log
 
+## [2026-07-26] weekly | 2026-W30
+
+- proposals: [[js-promise-integration]]・[[content-security-policy]]がPhase 4→5(2026-06-24のWG投票、proposals READMEへの反映は2026-07-22)。[[multibyte-array-access]]がPhase 1→2(2026-07-14 CG投票)
+- [[multibyte-array-access]]を一次情報(Overview.md)からdeepenして新規作成、[[gc-lang-support]] familyのメンバーに追加(双方向整合)。[[overview]]・[[index]]のフェーズ一覧も更新
+- 新規ミーティング要約 [[2026-06-24-wg]] を作成(JSPI・CSPのPhase 5投票の詳細)
+- WASI Subgroup 2026-07-09の議事録から、Component Modelの`implements`/`external-id`実験実装を[[wasi-roadmap]]に反映。`wasi-gfx`→`wasi-webgpu`改名、WASI Phase 2のOCI registry要件追加も記録
+- エンジン実装状況(features.json): Wasmtime 47でGC/exception handlingがデフォルト有効、Wasmtime 46でBranch Hinting更新(→[[compilation-hints]])、Node.jsのJSPI/exnref対応更新(→[[js-promise-integration]])、OwiがSIMD対応
+- component-model: テキスト形式のインデックス解析規則の整理、`realloc`のスレッド実行セマンティクス定義を[[component-model-overview]]に反映(意味論変更ではなく明確化が中心)
+- 2026-08-04〜05のCG対面会合(Princeton)の議題を確認、ニュースレターに次回の見どころとして記載(Component Model・Relaxed Atomics・Wide Arithmetic等の投票予定)
+- [webassembly.org/news](https://webassembly.org/news/) に新着なし(最新は2026-01-21)。WASIの新リリースなし(0.3.0が現行)
+- [[2026-W30]] を生成。手順5(Artifact公開)はCI環境のためスキップ
+
 
 ## [2026-07-19] deepen | familiesページ作成
 
