@@ -1,7 +1,7 @@
 ---
 title: Index
 type: concept
-updated: 2026-07-26
+updated: 2026-08-02
 ---
 
 # Index
@@ -62,6 +62,7 @@ updated: 2026-07-26
 
 ## ニュースレター
 
+- [[2026-W31]] — 静かな週。8/4〜5 CG対面会合を目前に控え結果待ち
 - [[2026-W30]] — JSPI・CSPがPhase 5へ、Multibyte Array AccessがPhase 2へ
 - [[2026-W29]] — 初回。WASI 0.3.xリリース計画、Multibyte Array Access Phase 2投票へ
 

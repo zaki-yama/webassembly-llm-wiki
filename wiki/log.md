@@ -1,5 +1,17 @@
 # Log
 
+## [2026-08-02] weekly | 2026-W31
+
+- proposals: フェーズ変化なし(READMEに差分なし)。静かな週
+- CG 2026-07-28のvideo call、Stack Subgroup 2026-08-10のvideo callがともに中止。2026-08-04〜05のCG対面会合(Princeton, Siemensホスト)に議論が集約
+- 対面会合の議題を確認: Compact Import Section(Phase 4投票)・Wide Arithmetic(Phase 4投票 or 議論)・Relaxed Atomics(Phase 3投票の可能性)・Half Precision(→FP16に改名しPhase 2ポール)など。結果は来週号で報告予定
+- component-model: 非推奨だった `canon backpressure.set` 組み込みをCanonical ABI/Explainer/Binaryから削除(`backpressure.inc`/`dec`へ一本化)。[[component-model-overview]]に反映
+- WASI: wasi-httpの`fields`リソースについて、転送時シリアライズでのフィールド名ケース保持要件を緩和(HPACK静的テーブル活用のため)。[[wasi-roadmap]]に反映
+- エンジン実装状況(features.json): 前回確認時点から新規コミットなし
+- custom-page-sizes(SpaceWasm追加)・custom-descriptors(exact/non-exact heap typeのspectec内部リファクタ)は軽微な変更のためSHA更新のみ
+- [webassembly.org/news](https://webassembly.org/news/) に新着なし(最新は2026-01-21)
+- [[2026-W31]] を生成。手順5(Artifact公開)はCI環境のためスキップ
+
 ## [2026-07-26] weekly | 2026-W30
 
 - proposals: [[js-promise-integration]]・[[content-security-policy]]がPhase 4→5(2026-06-24のWG投票、proposals READMEへの反映は2026-07-22)。[[multibyte-array-access]]がPhase 1→2(2026-07-14 CG投票)

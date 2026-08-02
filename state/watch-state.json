@@ -1,17 +1,17 @@
 {
-  "last_checked": "2026-07-26",
+  "last_checked": "2026-08-02",
   "repos": {
     "WebAssembly/proposals": {
       "last_sha": "0fdc795b660d84217ca0b10ee7adceac1bb5be4a"
     },
     "WebAssembly/meetings": {
-      "last_sha": "1780592e7cee1180863a79d3a7464fb96f6c4b7a"
+      "last_sha": "106831175d4ea59aa1fa33280adcbda846a348f7"
     },
     "WebAssembly/WASI": {
-      "last_sha": "640801790e197bac5f35cdc84ee592cf9a0eafd3"
+      "last_sha": "91b3f88cc0b54dd3a6c37ae5927f277de13f1791"
     },
     "WebAssembly/component-model": {
-      "last_sha": "7972c14a6c4825fbdc7b7f9f287ae003c9ec8345"
+      "last_sha": "73b7ad51d3b5d6f1ef53c923d8c585e28b242bcc"
     },
     "WebAssembly/website": {
       "features_json_last_sha": "e0f3b0f9896874abc52d74175da179a23c09bdcc"
@@ -23,7 +23,7 @@
       "last_sha": "c7be390539e5fc10669c88cadc4fa4b32fba1d47"
     },
     "WebAssembly/threads": {
-      "last_sha": "979d0fcb994439423d63b2f0a8a7332d6285dd84"
+      "last_sha": "cc535ada1aa21cfaa3cabf3ac73b89acef78a0a0"
     },
     "WebAssembly/js-promise-integration": {
       "last_sha": "5b247b1026d2f438eefe51914a79f4218cbda9f9"
@@ -38,13 +38,13 @@
       "last_sha": "429bda3b343e86c13e374bd8ff89c71e1cfbab31"
     },
     "WebAssembly/compact-import-section": {
-      "last_sha": "9a54f93710ae2dc0d431951390df2c94ee0aae42"
+      "last_sha": "49d4d955ce00b363357d704c2d223b1234f4f937"
     },
     "WebAssembly/custom-page-sizes": {
-      "last_sha": "583fe1eba96b6e1caf19d9451a5b97dcae33b098"
+      "last_sha": "0f479eba15b2226adb0b11c63e90d778206e7eeb"
     },
     "WebAssembly/custom-descriptors": {
-      "last_sha": "a6a87dcadf9ec5e6465dd40c9aec97c3839807e3"
+      "last_sha": "cded4e03bf6f92db162f7dfe5e3bbc011680de4a"
     },
     "WebAssembly/relaxed-dead-code-validation": {
       "last_sha": "829ad94dad4c98d94bc2bb6207739d11973ff373"
@@ -65,7 +65,7 @@
       "last_sha": "5e5973510b4ef20d980102a1ecd358e9e8064372"
     },
     "WebAssembly/relaxed-atomics": {
-      "last_sha": "577af5822847a2975a27e7a7905f73041adc2899"
+      "last_sha": "a3615c62509b070816307b7d997e0a9fdc29d2ee"
     },
     "WebAssembly/shared-everything-threads": {
       "last_sha": "065aa53822e17eea69bfc049df67a16cbd03d9ce"

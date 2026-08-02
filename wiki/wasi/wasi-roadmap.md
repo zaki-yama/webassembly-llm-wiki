@@ -2,7 +2,7 @@
 title: WASI ロードマップ
 type: wasi
 repo: https://github.com/WebAssembly/WASI
-updated: 2026-07-26
+updated: 2026-08-02
 ---
 
 # WASI ロードマップ
@@ -42,6 +42,7 @@ CGの **WASI Subgroup** で開発される。議事録は [meetings/wasi](https:
 
 - `wasi-gfx` proposalは `wasi-webgpu` に改名([#939](https://github.com/WebAssembly/WASI/commit/6408017)、WASI Subgroupの2026-07-09会議で`wasi:surface`から`wasi:webgpu`への名前空間分離が報告された)
 - WASI Phase 2のエントリ要件にOCIレジストリでのWIT公開が追加された(タグはwit中のパッケージバージョン文字列と一致必須。[#938](https://github.com/WebAssembly/WASI/commit/02b8d3b))
+- wasi-http: `fields` リソースのフィールド名は取得時には元のケース(大文字・小文字)を保持する必要があるが、**転送時にシリアライズする際は別のケースを使ってよい**と緩和された。HPACK静的テーブル(RFC 7541 Appendix A、フィールド名は小文字)を活用した効率的な符号化を妨げないための変更([#926](https://github.com/WebAssembly/WASI/commit/7264983))
 
 ## 関連
 

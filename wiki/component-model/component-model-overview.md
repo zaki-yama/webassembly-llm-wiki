@@ -3,7 +3,7 @@ title: Component Model
 type: component-model
 phase: 1
 repo: https://github.com/WebAssembly/component-model
-updated: 2026-07-26
+updated: 2026-08-02
 ---
 
 # Component Model
@@ -35,6 +35,7 @@ W3C CGでの標準化(いわゆる1.0)に向けた作業が進む。経緯は [T
 - テキスト形式のインデックス解析規則(index spaces節)がExplainer内で整理・明確化された(意味論変更なし。[#655](https://github.com/WebAssembly/component-model/commit/1d20b88))
 - `realloc`呼び出しは新規スレッド上で実行されると定義された([#680](https://github.com/WebAssembly/component-model/pull/680))
 - `implements`(名前付きimport)・`external-id`が実験的にspec/Wasmtimeへ実装(→ [[wasi-roadmap]])
+- 非推奨だった `canon backpressure.set` 組み込みがCanonical ABI/Explainer/Binaryから削除された。`backpressure.inc`/`backpressure.dec`への一本化が完了([#683](https://github.com/WebAssembly/component-model/commit/d6b48f2))
 
 ## 関連
 
