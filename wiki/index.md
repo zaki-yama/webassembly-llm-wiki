@@ -1,7 +1,7 @@
 ---
 title: Index
 type: concept
-updated: 2026-08-02
+updated: 2026-08-09
 ---
 
 # Index
@@ -39,8 +39,9 @@ updated: 2026-08-02
 - [[rounding-variants]] ✔ — 浮動小数点の丸めモード指定
 - [[compilation-hints]] ✔ — エンジンへのコンパイルヒント
 - [[js-primitive-builtins]] ✔ — JSプリミティブの組み込み関数
-- [[relaxed-atomics]] ✔ — 弱いメモリオーダリングのアトミクス
+- [[acquire-release-atomics]] ✔ — 弱いメモリオーダリングのアトミクス
 - [[multibyte-array-access]] ✔ — GC配列へのマルチバイト単位アクセス
+- [[fp16]] ✔ — 半精度浮動小数点SIMDレーン型
 
 ## Proposals — Phase 1(提案段階・注目のみ)
 
@@ -62,6 +63,7 @@ updated: 2026-08-02
 
 ## ニュースレター
 
+- [[2026-W32]] — FP16がPhase 2へ(改名・champion交代)、Relaxed Atomics→Acquire-Release Atomicsに改名、WASIのCM機能採否投票プロセス新設
 - [[2026-W31]] — 静かな週。8/4〜5 CG対面会合を目前に控え結果待ち
 - [[2026-W30]] — JSPI・CSPがPhase 5へ、Multibyte Array AccessがPhase 2へ
 - [[2026-W29]] — 初回。WASI 0.3.xリリース計画、Multibyte Array Access Phase 2投票へ
@@ -70,3 +72,4 @@ updated: 2026-08-02
 
 - [[2026-06-24-wg]] — JSPI・CSPのPhase 5投票(全会一致)
 - [[2026-06-25-wasi]] — WASI 0.3.0振り返り、0.3.xリリース計画、OCI artifact基準の提案
+- [[2026-08-04-cg]] — CG対面会合(Siemens)。FP16のPhase 2投票、その他フェーズ投票アジェンダ

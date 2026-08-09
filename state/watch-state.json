@@ -1,20 +1,20 @@
 {
-  "last_checked": "2026-08-02",
+  "last_checked": "2026-08-09",
   "repos": {
     "WebAssembly/proposals": {
-      "last_sha": "0fdc795b660d84217ca0b10ee7adceac1bb5be4a"
+      "last_sha": "c7d99fdb901f7695a88d27882fccc3a4031dc39c"
     },
     "WebAssembly/meetings": {
-      "last_sha": "106831175d4ea59aa1fa33280adcbda846a348f7"
+      "last_sha": "cc731a052ff4eda5115b3988965dbc40d78faef5"
     },
     "WebAssembly/WASI": {
-      "last_sha": "91b3f88cc0b54dd3a6c37ae5927f277de13f1791"
+      "last_sha": "a72eb0926f05c912a81bcd6dde6c1e0231878c30"
     },
     "WebAssembly/component-model": {
       "last_sha": "73b7ad51d3b5d6f1ef53c923d8c585e28b242bcc"
     },
     "WebAssembly/website": {
-      "features_json_last_sha": "e0f3b0f9896874abc52d74175da179a23c09bdcc"
+      "features_json_last_sha": "e10d87461277041bedce8871ff86f4cadde14103"
     }
   },
   "artifact_url": "https://claude.ai/code/artifact/95901403-1466-4653-b6a9-5a9d8b7fbaee",
@@ -64,8 +64,11 @@
     "WebAssembly/js-primitive-builtins": {
       "last_sha": "5e5973510b4ef20d980102a1ecd358e9e8064372"
     },
-    "WebAssembly/relaxed-atomics": {
-      "last_sha": "a3615c62509b070816307b7d997e0a9fdc29d2ee"
+    "WebAssembly/acquire-release-atomics": {
+      "last_sha": "2b1d87ef3af1256acdabb28cd43600d90069f219"
+    },
+    "WebAssembly/half-precision": {
+      "last_sha": "c29bdf39fc848b4f6f3eeb42e4be8c027f7f0d8a"
     },
     "WebAssembly/shared-everything-threads": {
       "last_sha": "065aa53822e17eea69bfc049df67a16cbd03d9ce"

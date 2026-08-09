@@ -76,12 +76,12 @@ Overviewのミューテックス実装(抜粋)。`cmpxchg` でロック取得を
 ## 経緯と現状
 
 - 各ブラウザでは仕様に先行して長年出荷済み(Spectre対応でSharedArrayBufferが一時無効化された経緯もあり、仕様化が実装に大きく遅れた珍しいproposal)。実装状況: [features](https://webassembly.org/features/)
-- メモリモデル(弱いオーダリングの形式定義)の難しさがPhase 4までの長い道のりの主因。現在のアトミクスはすべてseqcstで、より弱いオーダリングは [[relaxed-atomics]](Phase 2)に分離された
+- メモリモデル(弱いオーダリングの形式定義)の難しさがPhase 4までの長い道のりの主因。現在のアトミクスはすべてseqcstで、より弱いオーダリングは [[acquire-release-atomics]](Phase 2)に分離された
 - 共有できるのは線形メモリのみ。GCオブジェクトや関数まで共有する後継が [[shared-everything-threads]](Phase 1)
 
 ## 関連
 
-- [[relaxed-atomics]] — acquire/release等の弱いオーダリング(分離された続編)
+- [[acquire-release-atomics]] — acquire/release等の弱いオーダリング(分離された続編)
 - [[shared-everything-threads]] — 「すべてを共有する」後継提案
 - [[stack-switching]] — 並行性のもう一つの軸(単一スレッド内の制御フロー)
 

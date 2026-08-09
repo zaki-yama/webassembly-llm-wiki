@@ -1,5 +1,16 @@
 # Log
 
+## [2026-08-09] weekly | 2026-W32
+
+- **[[fp16]]**(旧Half Precision): 2026-08-04〜05のCG対面会合を経て2026-08-06、Phase 1→2に昇格・champion交代(Ilya Rezvov→Brendan Dahl)。新規deepenしてテンプレート水準のページを作成([WebAssembly/half-precision](https://github.com/WebAssembly/half-precision) Overview.mdより)。`state/watch-state.json` の `proposal_repos` に追加
+- **[[acquire-release-atomics]]**(旧relaxed-atomics): 2026-08-06に改名。リポジトリも `relaxed-atomics` → `acquire-release-atomics` に改称(GitHub上でリネーム済み、旧URLは404)。フェーズはPhase 2のまま。旧ページ `relaxed-atomics.md` を `acquire-release-atomics.md` にリネームし、`overview.md`/`families/concurrency.md`/`threads.md`/`shared-everything-threads.md`/`index.md` の内部リンクを一括更新。`watch-state.json` の `proposal_repos` キーも更新
+- Compact Import Section・Wide ArithmeticのPhase 4投票は対面会合アジェンダにあったが、proposals READMEにフェーズ変化の反映なし(結果不明。議事録本文も"TBD"のまま未記入)
+- 対面会合の内容を [[2026-08-04-cg]] として要約ページ化(投票結果が一部確認できたため)
+- WASI: `docs/Release.md` 新設でリリーストレインを「隔月・第2火曜」に正式化(0.3.1は2026-08-04→2026-08-11に後ろ倒し)。Component Model機能の採否投票プロセスを`CONTRIBUTING.md`に新設、初適用として`map<t>`・`implements`が2026-08-06 WASI Subgroup会議のアジェンダに。[[wasi-roadmap]]に反映
+- エンジン実装状況: Acquire-Release AtomicsをChrome(フラグ付き)・Binaryenが追加、WizardがWide Arithmeticを追加(フラグ付き)。ChicoryがEndiveに改名しBytecode Alliance傘下へ。[[wide-arithmetic]]・[[acquire-release-atomics]]に反映、Chicory/Endiveはニュースレターのみ
+- component-modelリポジトリは設計文書の変更なし(リリースプロセス文書のみ)
+- [[2026-W32]] を生成。手順5(Artifact公開)はCI環境のためスキップ
+
 ## [2026-08-02] weekly | 2026-W31
 
 - proposals: フェーズ変化なし(READMEに差分なし)。静かな週

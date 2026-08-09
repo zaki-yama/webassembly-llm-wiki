@@ -3,7 +3,7 @@ title: Wide Arithmetic
 type: proposal
 phase: 3
 repo: https://github.com/WebAssembly/wide-arithmetic
-updated: 2026-07-19
+updated: 2026-08-09
 ---
 
 # Wide Arithmetic
@@ -59,6 +59,7 @@ Rustの `u64::overflowing_add` 相当(Overviewより):
 
 - Wasmtimeで実装が進み、ベンチマーク(bignum系)で大きな改善が報告されている(OverviewのImplementation Status参照)
 - 当初名「128-bit arithmetic」から、将来の拡張(より広い幅、他の演算)を見据えて「Wide Arithmetic」に改名された
+- 2026-08-06、Wizardエンジンが`--ext:wide-arithmetic`フラグ付きでサポートを追加([website features.json commit](https://github.com/WebAssembly/website/commit/8bc67f0d835d60e8c37cdcba0587eea45891fba3))
 - 実装状況: [features](https://webassembly.org/features/)
 
 ## 関連

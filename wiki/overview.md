@@ -1,7 +1,7 @@
 ---
 title: WebAssembly仕様策定の全体像
 type: concept
-updated: 2026-07-26
+updated: 2026-08-09
 ---
 
 # WebAssembly仕様策定の全体像
@@ -35,7 +35,7 @@ proposalは [phases.md](https://github.com/WebAssembly/meetings/blob/main/proces
 - **Wasm 2.0**: 2025-03-20 完了。SIMD、reference types、bulk memory など
 - **Wasm 3.0**: 2025-09-17 完了。GC、tail call、exception handling、Memory64、multi-memory など([公式アナウンス](https://webassembly.org/news/2025-09-17-wasm-3.0/))
 
-## 現在のproposalフェーズ一覧(2026-07-26時点のスナップショット)
+## 現在のproposalフェーズ一覧(2026-08-09時点のスナップショット)
 
 出典: [WebAssembly/proposals README](https://github.com/WebAssembly/proposals)
 
@@ -61,13 +61,14 @@ proposalは [phases.md](https://github.com/WebAssembly/meetings/blob/main/proces
 - [[rounding-variants]] — Kloud Koder
 - [[compilation-hints]] — Emanuel Ziegler
 - [[js-primitive-builtins]] — Sébastien Doeraene
-- [[relaxed-atomics]] — Conrad Watt & Rezvan Mahdavi Hezaveh
+- [[acquire-release-atomics]] — Conrad Watt & Rezvan Mahdavi Hezaveh(2026-08-06に"Relaxed Atomics"から改名)
 - [[multibyte-array-access]] — Brendan Dahl(2026-07-14 CG投票でPhase 2)
+- [[fp16]] — Brendan Dahl(2026-08-04〜05 CG対面会合で"Half Precision"から改名・championも交代の上Phase 1→2)
 
 ### Phase 1(提案段階)
 個別ページあり: Component Model(→ [[component-model-overview]])、[[shared-everything-threads]]、[[stringref]]、[[type-imports]]、[[memory-control]]
 
-その他のPhase 1: WebAssembly C and C++ API、Flexible Vectors、Profiles、Frozen Values、Half Precision、More Array Constructors、JIT Interface、Type Reflection for JS API、JS Text Encoding Builtins
+その他のPhase 1: WebAssembly C and C++ API、Flexible Vectors、Profiles、Frozen Values、More Array Constructors、JIT Interface、Type Reflection for JS API、JS Text Encoding Builtins
 
 ## 関連領域
 

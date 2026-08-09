@@ -33,7 +33,7 @@ threads提案(Phase 4)は線形メモリ言語(C/C++/Rust)のWebスレッドに�
 |---|---|
 | `shared` アノテーション | テーブル・関数・グローバル・GCヒープ型に付ける静的注釈。**shared なものはsharedなものしか参照できない**ことを型システムで保証(shared-unshared境界の健全性) |
 | thread-local globals | 言語ランタイムがTLSを構築するための、スレッドごとに値を持つglobal |
-| 共有GCデータへのアトミックアクセス | seqcstおよびacqrel([[relaxed-atomics]] のオーダリングをGCに適用)のstruct/arrayアクセス命令 |
+| 共有GCデータへのアトミックアクセス | seqcstおよびacqrel([[acquire-release-atomics]] のオーダリングをGCに適用)のstruct/arrayアクセス命令 |
 | managed waiter queues | GCオブジェクトで使えるfutex的なwait/notify機構(線形メモリのwait/notifyのGC版) |
 | スレッド管理組み込み | スレッド生成等のライフサイクル管理をComponent Model組み込みとして提供(コア命令にしない) |
 
@@ -59,12 +59,12 @@ FAQでは「thread ID」「join」「exit」等の意図的な非対応(ホス�
 
 - Wasm GC言語(Java/Kotlin/Dart)の並列化ニーズと、WASI側のスレッド標準化ニーズ(wasi-threadsの後継)が合流した「傘」proposal
 - エンジンへの影響が非常に大きい(GCヒープの並行化、shape/hidden classの共有など)ため、議論は活発だが進行は慎重。Threads Subgroupの議事録([meetings/threads](https://github.com/WebAssembly/meetings/tree/main/threads))が一次情報
-- オーダリング面は [[relaxed-atomics]](Phase 2)に依存する形で分業
+- オーダリング面は [[acquire-release-atomics]](Phase 2)に依存する形で分業
 
 ## 関連
 
 - [[threads]] — 前提(線形メモリの共有)
-- [[relaxed-atomics]] — 本提案が使うメモリオーダリングの供給元
+- [[acquire-release-atomics]] — 本提案が使うメモリオーダリングの供給元
 - [[custom-descriptors]] — exact types等、GC型システムの拡張で交差する
 - [[stack-switching]] — 直交する並行性(FAQで関係を整理)
 
