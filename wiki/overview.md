@@ -1,7 +1,7 @@
 ---
 title: WebAssembly仕様策定の全体像
 type: concept
-updated: 2026-08-09
+updated: 2026-08-16
 ---
 
 # WebAssembly仕様策定の全体像
@@ -35,7 +35,7 @@ proposalは [phases.md](https://github.com/WebAssembly/meetings/blob/main/proces
 - **Wasm 2.0**: 2025-03-20 完了。SIMD、reference types、bulk memory など
 - **Wasm 3.0**: 2025-09-17 完了。GC、tail call、exception handling、Memory64、multi-memory など([公式アナウンス](https://webassembly.org/news/2025-09-17-wasm-3.0/))
 
-## 現在のproposalフェーズ一覧(2026-08-09時点のスナップショット)
+## 現在のproposalフェーズ一覧(2026-08-16時点のスナップショット)
 
 出典: [WebAssembly/proposals README](https://github.com/WebAssembly/proposals)
 
@@ -45,12 +45,12 @@ proposalは [phases.md](https://github.com/WebAssembly/meetings/blob/main/proces
 
 ### Phase 4(標準化中)
 - [[threads]] — Conrad Watt
+- [[compact-import-section]] — Ryan Hunt(2026-08-04 CG対面会合でPhase 3→4)
+- [[wide-arithmetic]] — Alex Crichton and Jamey Sharp(2026-08-05 CG対面会合でPhase 3→4)
 
 ### Phase 3(実装中)
 - [[esm-integration]] — Asumu Takikawa, Ms2ger & Guy Bedford
-- [[wide-arithmetic]] — Alex Crichton and Jamey Sharp
 - [[stack-switching]] — Francis McCabe & Sam Lindley
-- [[compact-import-section]] — Ryan Hunt
 - [[custom-page-sizes]] — Nick Fitzgerald
 - [[custom-descriptors]] — Thomas Lively
 

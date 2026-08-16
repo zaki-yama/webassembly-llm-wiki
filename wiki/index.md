@@ -1,7 +1,7 @@
 ---
 title: Index
 type: concept
-updated: 2026-08-09
+updated: 2026-08-16
 ---
 
 # Index
@@ -21,13 +21,13 @@ updated: 2026-08-09
 ## Proposals — Phase 4(標準化中)
 
 - [[threads]] ✔ — 共有メモリとアトミック命令
+- [[compact-import-section]] ✔ — import sectionのバイナリ圧縮
+- [[wide-arithmetic]] ✔ — 128bit級の整数演算命令
 
 ## Proposals — Phase 3(実装中)
 
 - [[esm-integration]] ✔ — WasmをESモジュールとしてimport
-- [[wide-arithmetic]] ✔ — 128bit級の整数演算命令
 - [[stack-switching]] ✔ — 型付き継続によるコルーチン/非同期
-- [[compact-import-section]] ✔ — import sectionのバイナリ圧縮
 - [[custom-page-sizes]] ✔ — 64KiB以外のメモリページサイズ
 - [[custom-descriptors]] ✔ — Wasm GCオブジェクトへのJS prototype関連付け
 
@@ -63,6 +63,7 @@ updated: 2026-08-09
 
 ## ニュースレター
 
+- [[2026-W33]] — Compact Import Section・Wide ArithmeticがPhase 4へ、WASIがCM map型/implementsアノテーションを採用しv0.3.1リリース
 - [[2026-W32]] — FP16がPhase 2へ(改名・champion交代)、Relaxed Atomics→Acquire-Release Atomicsに改名、WASIのCM機能採否投票プロセス新設
 - [[2026-W31]] — 静かな週。8/4〜5 CG対面会合を目前に控え結果待ち
 - [[2026-W30]] — JSPI・CSPがPhase 5へ、Multibyte Array AccessがPhase 2へ
@@ -72,4 +73,5 @@ updated: 2026-08-09
 
 - [[2026-06-24-wg]] — JSPI・CSPのPhase 5投票(全会一致)
 - [[2026-06-25-wasi]] — WASI 0.3.0振り返り、0.3.xリリース計画、OCI artifact基準の提案
-- [[2026-08-04-cg]] — CG対面会合(Siemens)。FP16のPhase 2投票、その他フェーズ投票アジェンダ
+- [[2026-08-04-cg]] — CG対面会合(Siemens)。FP16のPhase 2投票、Compact Import Section・Wide ArithmeticのPhase 4投票
+- [[2026-08-06-wasi]] — WASI Subgroup。Component Model map型・implementsアノテーションの採否投票(いずれも可決)

@@ -1,14 +1,14 @@
 ---
 title: Wide Arithmetic
 type: proposal
-phase: 3
+phase: 4
 repo: https://github.com/WebAssembly/wide-arithmetic
-updated: 2026-08-09
+updated: 2026-08-16
 ---
 
 # Wide Arithmetic
 
-**Phase 3(実装フェーズ)** / Champion: Alex Crichton and Jamey Sharp
+**Phase 4(標準化フェーズ、WG)** / Champion: Alex Crichton and Jamey Sharp
 
 ## 一言でいうと
 
@@ -52,14 +52,16 @@ Rustの `u64::overflowing_add` 相当(Overviewより):
 | 2024-08-13 | 「128-bit arithmetic」としてPhase 1で追加([#195](https://github.com/WebAssembly/proposals/pull/195)) | →1 |
 | 2024-10-08 | Phase 2へ([#198](https://github.com/WebAssembly/proposals/pull/198)) | 1→2 |
 | 2025-02-14 | Phase 3へ([#202](https://github.com/WebAssembly/proposals/pull/202)) | 2→3 |
+| 2026-08-05 | CG対面会合(Princeton)でPhase 4投票([議題](https://github.com/WebAssembly/meetings/blob/main/main/2026/CG-2026-08.md#wednesday-august-5)、[commit](https://github.com/WebAssembly/proposals/commit/bdd089a6c2e3188d6e053a90d9b15a65e1226e3c)) | 3→4 |
 
-提案から約半年でPhase 3に達した、近年では進行の速いproposal。
+提案から2年弱でPhase 4に達した。近年では進行の速いproposalの一つ。
 
 ## 経緯と現状
 
 - Wasmtimeで実装が進み、ベンチマーク(bignum系)で大きな改善が報告されている(OverviewのImplementation Status参照)
 - 当初名「128-bit arithmetic」から、将来の拡張(より広い幅、他の演算)を見据えて「Wide Arithmetic」に改名された
 - 2026-08-06、Wizardエンジンが`--ext:wide-arithmetic`フラグ付きでサポートを追加([website features.json commit](https://github.com/WebAssembly/website/commit/8bc67f0d835d60e8c37cdcba0587eea45891fba3))
+- 2026-08-11、Phase 4移行に合わせてChrome/Node.js/Deno(V8のfeature gate)、Firefox(about:configのpref)、Safari(JavaScriptCoreのoption)それぞれの実装フラグ定義がfeatures.jsonに文書化された([commit](https://github.com/WebAssembly/website/commit/23b7b90af087b3e081b0c433d70d29f6dbbf0984))
 - 実装状況: [features](https://webassembly.org/features/)
 
 ## 関連

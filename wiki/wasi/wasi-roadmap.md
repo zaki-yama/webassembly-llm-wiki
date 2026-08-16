@@ -2,7 +2,7 @@
 title: WASI ロードマップ
 type: wasi
 repo: https://github.com/WebAssembly/WASI
-updated: 2026-08-09
+updated: 2026-08-16
 ---
 
 # WASI ロードマップ
@@ -16,7 +16,7 @@ CGの **WASI Subgroup** で開発される。議事録は [meetings/wasi](https:
 |---|---|---|
 | WASI 0.1 (Preview 1) | 広く利用中(レガシー) | witx IDL。POSIX/CloudABI由来 |
 | WASI 0.2 (Preview 2) | 安定版 | [[component-model-overview\|Component Model]] + Wit IDLベースに全面再設計。モジュール化 |
-| WASI 0.3 (Preview 3) | **現行プレビュー。0.3.0 が 2026-06-11 リリース** | Component Modelネイティブの `async` / `stream<T>` / `future<T>` により非同期を言語横断で統合 |
+| WASI 0.3 (Preview 3) | **現行プレビュー。0.3.1 が 2026-08-11 リリース**([リリースノート](https://github.com/WebAssembly/WASI/releases/tag/v0.3.1)) | Component Modelネイティブの `async` / `stream<T>` / `future<T>` により非同期を言語横断で統合 |
 
 ## 0.3.x の今後(リリーストレイン)
 
@@ -27,7 +27,7 @@ CGの **WASI Subgroup** で開発される。議事録は [meetings/wasi](https:
 | バージョン | 予定日 | 内容 |
 |---|---|---|
 | 0.3.0 | 2026-06-11(one-off) | 初回プレビューリリース |
-| 0.3.1 | 2026-08-11 | maps(`map<t>`)、implements(名前付きimport)、fixed-length lists(`list<t, n>`)。いずれも下記「Component Model機能の採用プロセス」に基づく採否投票待ち |
+| 0.3.1 | **2026-08-11(リリース済み)** | maps(`map<t>`)・implements(名前付きimport)/`external-id`アノテーションをComponent Model機能として正式採用([リリース](https://github.com/WebAssembly/WASI/releases/tag/v0.3.1)、[commit](https://github.com/WebAssembly/WASI/commit/691de6f0f2e5924e187499e2f7826125976c1f1c)) |
 | 0.3.2 | 2026-10-13 | error context、stream splice/forward |
 | 0.3.3 | 2026-12-08 | cooperative threads |
 | 0.3.4〜0.3.9 | 2027-02-09、04-13、06-08、08-10、10-12、12-14(いずれも第2火曜) | 未定 |
@@ -42,7 +42,7 @@ CGの **WASI Subgroup** で開発される。議事録は [meetings/wasi](https:
 
 - CM機能が採用対象になるのは**安定**した場合のみ:設計が固まり破壊的変更が見込まれない、かつ複数ランタイム/ツールチェインでの実装とプレリリース版での実運用フィードバックを経ていること
 - 手順: (1) 安定化前は `0.3.0-rc-*` 等のプレリリース版、または未出荷のWASI proposalでのみ実験的に利用可。安定版リリーストレインはその機能なしで実装可能な状態を保つ (2) 対象のCM機能・依存するWASI API・実装実績をissueとして提出 (3) WASI Subgroup会議のアジェンダにフェーズ昇格投票と同様の形で採否投票を追加 (4) 可決後、次リリースの`@since` APIがそのCM機能に依存可能になり、リリースノートに明記される
-- 2026-08-06のWASI Subgroup会議で、このプロセスの初適用として **`map<t>`**([WASI#943](https://github.com/WebAssembly/WASI/issues/943))と **`implements`アノテーション**([WASI#942](https://github.com/WebAssembly/WASI/issues/942))の採否投票がアジェンダに上がった。本ページ執筆時点(2026-08-09)では議事録に投票結果の記載はまだない([WASI-08-06議事録](https://github.com/WebAssembly/meetings/blob/main/wasi/2026/WASI-08-06.md))
+- 2026-08-06のWASI Subgroup会議で、このプロセスの初適用として **`map<t>`**([WASI#943](https://github.com/WebAssembly/WASI/issues/943)、full consensus投票 SA:0 A:0 N:1 F:3 SF:3で可決)と **`implements`アノテーション/`external-id`**([WASI#942](https://github.com/WebAssembly/WASI/issues/942)、SA:0 A:0 N:1 F:2 SF:4で可決)の採否投票が行われ、いずれも可決した([WASI-08-06議事録](https://github.com/WebAssembly/meetings/blob/main/wasi/2026/WASI-08-06.md)、詳細は [[2026-08-06-wasi]])。0.3.1リリースから両機能に依存するWASI proposalが解禁された([commit](https://github.com/WebAssembly/WASI/commit/691de6f0f2e5924e187499e2f7826125976c1f1c))
 
 ## 実装
 
@@ -57,4 +57,5 @@ CGの **WASI Subgroup** で開発される。議事録は [meetings/wasi](https:
 ## 関連
 
 - [[component-model-overview]]
+- [[2026-08-06-wasi]]
 - WASI proposal一覧: [docs/Proposals.md](https://github.com/WebAssembly/WASI/blob/main/docs/Proposals.md)

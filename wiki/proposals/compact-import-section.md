@@ -1,14 +1,14 @@
 ---
 title: Compact Import Section
 type: proposal
-phase: 3
+phase: 4
 repo: https://github.com/WebAssembly/compact-import-section
-updated: 2026-07-19
+updated: 2026-08-16
 ---
 
 # Compact Import Section
 
-**Phase 3(実装フェーズ)** / Champion: Ryan Hunt(提案発表はBen Visness)
+**Phase 4(標準化フェーズ、WG)** / Champion: Ryan Hunt(提案発表はBen Visness)
 
 ## 一言でいうと
 
@@ -57,6 +57,7 @@ ASTごと変える案(importをモジュール名でグループ化)は、JS API
 | 2024-07-18 | proposals一覧に追加([#191](https://github.com/WebAssembly/proposals/pull/191)) | →1 |
 | 2025-11-18 | Phase 2へ([#226](https://github.com/WebAssembly/proposals/pull/226)) | 1→2 |
 | 2026-01-13 | CG会合でBen Visnessが実測データとともに発表しPhase 3投票([議事録](https://github.com/WebAssembly/meetings/blob/main/main/2026/CG-2026-01-13.md)、[#228](https://github.com/WebAssembly/proposals/pull/228))。会合では「型の圧縮も入れるか」のstraw pollで22対2で「両方」が支持された | 2→3 |
+| 2026-08-04 | CG対面会合(Princeton)でBinaryen実装の実測値とともにPhase 4投票([commit](https://github.com/WebAssembly/proposals/commit/f0db14a5555abf7b931667fd289755124a3bf37e)) | 3→4 |
 
 ## 経緯と現状
 

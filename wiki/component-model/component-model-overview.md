@@ -3,7 +3,7 @@ title: Component Model
 type: component-model
 phase: 1
 repo: https://github.com/WebAssembly/component-model
-updated: 2026-08-02
+updated: 2026-08-16
 ---
 
 # Component Model
@@ -28,16 +28,18 @@ Wasmモジュールを「コンポーネント」として合成し、言語を�
 
 W3C CGでの標準化(いわゆる1.0)に向けた作業が進む。経緯は [The Road to Component Model 1.0](https://bytecodealliance.org/articles/the-road-to-component-model-1-0) を参照。
 
-2026-08-04〜05の対面CG会合ではComponent Model単独で2時間の議題枠(Ryan Hunt/Luke Wagner)が予定されている(Web上でのComponents / Web外でのComponents / Next Steps、[議題](https://github.com/WebAssembly/meetings/blob/main/main/2026/CG-2026-08.md))。
+2026-08-04〜05の対面CG会合ではComponent Model単独で2時間の議題枠(Ryan Hunt/Luke Wagner)があった(Web上でのComponents / Web外でのComponents / Next Steps、[議題](https://github.com/WebAssembly/meetings/blob/main/main/2026/CG-2026-08.md))。議事録の「Meeting notes」節は2026-08-16時点でも未記入で、議論内容は確認できていない。
 
-## 仕様文書の細かな変更(2026-07時点)
+## 仕様文書の細かな変更(2026-08時点)
 
 - テキスト形式のインデックス解析規則(index spaces節)がExplainer内で整理・明確化された(意味論変更なし。[#655](https://github.com/WebAssembly/component-model/commit/1d20b88))
 - `realloc`呼び出しは新規スレッド上で実行されると定義された([#680](https://github.com/WebAssembly/component-model/pull/680))
-- `implements`(名前付きimport)・`external-id`が実験的にspec/Wasmtimeへ実装(→ [[wasi-roadmap]])
+- `implements`(名前付きimport)・`external-id`が実験的にspec/Wasmtimeへ実装され、2026-08-06のWASI Subgroup投票でWASI側の採用が可決([[2026-08-06-wasi]]、→ [[wasi-roadmap]])
 - 非推奨だった `canon backpressure.set` 組み込みがCanonical ABI/Explainer/Binaryから削除された。`backpressure.inc`/`backpressure.dec`への一本化が完了([#683](https://github.com/WebAssembly/component-model/commit/d6b48f2))
+- README/ExplainerがWASI 0.3.1リリースを踏まえて更新され、asyncのテストスイートも非決定的なyield挙動に依存しないよう調整された([commit](https://github.com/WebAssembly/component-model/commit/349e544e238dfa103a330df7d21ae129f6837014))
 
 ## 関連
 
 - [[wasi-roadmap]]
+- [[2026-08-06-wasi]]
 - ユーザー向けドキュメント: [component-model.bytecodealliance.org](https://component-model.bytecodealliance.org/)

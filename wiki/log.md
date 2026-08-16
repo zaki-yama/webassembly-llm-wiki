@@ -1,5 +1,17 @@
 # Log
 
+## [2026-08-16] weekly | 2026-W33
+
+- **[[compact-import-section]]**: 2026-08-04、CG対面会合でPhase 3→4投票が可決([commit](https://github.com/WebAssembly/proposals/commit/f0db14a5555abf7b931667fd289755124a3bf37e))。ページのfrontmatter `phase`・フェーズ遷移表・「経緯と現状」を更新
+- **[[wide-arithmetic]]**: 2026-08-05、CG対面会合でPhase 3→4投票が可決([commit](https://github.com/WebAssembly/proposals/commit/bdd089a6c2e3188d6e053a90d9b15a65e1226e3c))。ページを同様に更新。リポジトリはWebAssembly/specのforkで、`proposal_repos`のSHA差分329件はほぼ全て上流spec同期のノイズ(wide-arithmetic固有ファイルの変更なし)と確認した上でSHAのみ更新
+- 先週「結果未確認」としていたこの2件を [[2026-08-04-cg]] の「確認できたフェーズ変化」に移動。Acquire-Release AtomicsのPhase 3投票は今週も進展なし(READMEはPhase 2のまま)
+- **WASI**: 2026-08-06のWASI Subgroup会議でComponent Model map型・`implements`アノテーション/`external-id`の採否投票がいずれもfull consensusで可決。新規に [[2026-08-06-wasi]] を要約ページとして作成。これを取り込んだ**WASI v0.3.1**が2026-08-11にリリース([commit](https://github.com/WebAssembly/WASI/commit/691de6f0f2e5924e187499e2f7826125976c1f1c))。[[wasi-roadmap]]に反映
+- **Component Model**: README/ExplainerがWASI 0.3.1リリースを踏まえて更新、asyncテストの非決定性を減らす調整。[[component-model-overview]]に反映
+- エンジン実装状況: Wide ArithmeticのPhase 4移行に伴い、Chrome/Firefox/Safari/Node.js/Denoの実装フラグ定義がfeatures.jsonに追加([commit](https://github.com/WebAssembly/website/commit/23b7b90af087b3e081b0c433d70d29f6dbbf0984))。[[wide-arithmetic]]に反映
+- webassembly.org/news、bytecodealliance.org/articlesとも今週の新着なし
+- [[overview]]・[[index]] のフェーズ一覧スナップショットを更新
+- [[2026-W33]] を生成。手順5(Artifact公開)はCI環境のためスキップ
+
 ## [2026-08-09] weekly | 2026-W32
 
 - **[[fp16]]**(旧Half Precision): 2026-08-04〜05のCG対面会合を経て2026-08-06、Phase 1→2に昇格・champion交代(Ilya Rezvov→Brendan Dahl)。新規deepenしてテンプレート水準のページを作成([WebAssembly/half-precision](https://github.com/WebAssembly/half-precision) Overview.mdより)。`state/watch-state.json` の `proposal_repos` に追加
