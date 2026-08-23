@@ -1,20 +1,20 @@
 {
-  "last_checked": "2026-08-16",
+  "last_checked": "2026-08-23",
   "repos": {
     "WebAssembly/proposals": {
       "last_sha": "f0db14a5555abf7b931667fd289755124a3bf37e"
     },
     "WebAssembly/meetings": {
-      "last_sha": "f8526e067b0356a7cefedb2090fabaaceec14f47"
+      "last_sha": "ab60c7ce1baf5930837c31f2d3d5288a09f632c2"
     },
     "WebAssembly/WASI": {
-      "last_sha": "59e48bfe3fae9bf2480eb15abd8f55999eb3b395"
+      "last_sha": "3071db04c857b3a2c047d3d1ac694bc41f021796"
     },
     "WebAssembly/component-model": {
-      "last_sha": "4142913deca2cb162925c95cbffc904a93a3bdf6"
+      "last_sha": "1af0b35e1bfc03bd4ad9603be2f676316ff9f420"
     },
     "WebAssembly/website": {
-      "features_json_last_sha": "23b7b90af087b3e081b0c433d70d29f6dbbf0984"
+      "features_json_last_sha": "4e9ff7836bb7b7eb30376b39475782c67c1c5c46"
     }
   },
   "artifact_url": "https://claude.ai/code/artifact/95901403-1466-4653-b6a9-5a9d8b7fbaee",
@@ -44,7 +44,7 @@
       "last_sha": "0f479eba15b2226adb0b11c63e90d778206e7eeb"
     },
     "WebAssembly/custom-descriptors": {
-      "last_sha": "cded4e03bf6f92db162f7dfe5e3bbc011680de4a"
+      "last_sha": "3b727280e4845b92d47afb7ddf5e72265f16c127"
     },
     "WebAssembly/relaxed-dead-code-validation": {
       "last_sha": "829ad94dad4c98d94bc2bb6207739d11973ff373"
@@ -53,7 +53,7 @@
       "last_sha": "6af2f33d2860390345e31580908cb4670730600e"
     },
     "WebAssembly/extended-name-section": {
-      "last_sha": "c35dc5b6de05ae11ea9e473629afb490a86368be"
+      "last_sha": "db2166804852f889a62b2a4e9a490acf1147d40d"
     },
     "WebAssembly/rounding-mode-control": {
       "last_sha": "b07cb1c1f2d45991b6c8429d814790abad899245"
@@ -65,7 +65,7 @@
       "last_sha": "5e5973510b4ef20d980102a1ecd358e9e8064372"
     },
     "WebAssembly/acquire-release-atomics": {
-      "last_sha": "2b1d87ef3af1256acdabb28cd43600d90069f219"
+      "last_sha": "bb67a5f5d38031bfb587c5150599d079a8b422e4"
     },
     "WebAssembly/half-precision": {
       "last_sha": "c29bdf39fc848b4f6f3eeb42e4be8c027f7f0d8a"

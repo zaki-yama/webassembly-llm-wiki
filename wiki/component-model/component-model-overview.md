@@ -3,7 +3,7 @@ title: Component Model
 type: component-model
 phase: 1
 repo: https://github.com/WebAssembly/component-model
-updated: 2026-08-16
+updated: 2026-08-23
 ---
 
 # Component Model
@@ -37,6 +37,9 @@ W3C CGでの標準化(いわゆる1.0)に向けた作業が進む。経緯は [T
 - `implements`(名前付きimport)・`external-id`が実験的にspec/Wasmtimeへ実装され、2026-08-06のWASI Subgroup投票でWASI側の採用が可決([[2026-08-06-wasi]]、→ [[wasi-roadmap]])
 - 非推奨だった `canon backpressure.set` 組み込みがCanonical ABI/Explainer/Binaryから削除された。`backpressure.inc`/`backpressure.dec`への一本化が完了([#683](https://github.com/WebAssembly/component-model/commit/d6b48f2))
 - README/ExplainerがWASI 0.3.1リリースを踏まえて更新され、asyncのテストスイートも非決定的なyield挙動に依存しないよう調整された([commit](https://github.com/WebAssembly/component-model/commit/349e544e238dfa103a330df7d21ae129f6837014))
+- コンポーネント値型に**最大静的サイズの上限**が明文化された。i32/i64いずれのポインタ型でも `elem_size <= 2^28 - 1` をオーバーフロー安全な形で検証するよう要求し、固定長listのサイズ計算が破綻する不具合の芽を塞いだ([#688](https://github.com/WebAssembly/component-model/commit/ce4fb2b9435e1a45ff4403a769f7ef650e92e9cc)、[#682](https://github.com/WebAssembly/component-model/issues/682))
+- Canonical ABIの**キャンセレーション配送順序**に関する仕様バグを2件修正。`deliver_pending_cancellation` の呼び出し位置を `stop_waiting_internal` より前に移動し、保留中のキャンセルは可能な限り早く配送されるよう修正された([commit](https://github.com/WebAssembly/component-model/commit/6c67aa1)、[#707](https://github.com/WebAssembly/component-model/commit/1af0b35e1bfc03bd4ad9603be2f676316ff9f420))
+- WITの`strongly-unique`(resource名の一意性)規則が**推移的**になるよう明確化([#703](https://github.com/WebAssembly/component-model/commit/a0d6134013bd83563c7477be1b67fcdfa138880d))。あわせて、resourceのメソッドにfeature gateを付けられるよう文法上許可されていなかった不整合を修正([#700](https://github.com/WebAssembly/component-model/commit/1b265a6))
 
 ## 関連
 

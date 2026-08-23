@@ -3,7 +3,7 @@ title: Extended Name Section
 type: proposal
 phase: 2
 repo: https://github.com/WebAssembly/extended-name-section
-updated: 2026-07-19
+updated: 2026-08-23
 ---
 
 # Extended Name Section
@@ -20,7 +20,7 @@ updated: 2026-07-19
 
 ## 仕組み
 
-出典: [Overview.md](https://github.com/WebAssembly/extended-name-section/blob/c35dc5b6de05ae11ea9e473629afb490a86368be/proposals/extended-name-section/Overview.md)
+出典: [Overview.md](https://github.com/WebAssembly/extended-name-section/blob/d4af276/proposals/extended-name-section/Overview.md)
 
 name custom sectionに以下のサブセクションを追加する:
 
@@ -30,8 +30,8 @@ name custom sectionに以下のサブセクションを追加する:
 | table names | 5 | name map |
 | memory names | 6 | name map |
 | global names | 7 | name map |
-| elem names | 8 | name map |
-| data names | 9 | name map |
+| element segment names | 8 | name map |
+| data segment names | 9 | name map |
 
 custom sectionのため**セマンティクスへの影響はゼロ**。既存のname section(ID 0/1/2ほか)との共存も自明。
 
@@ -47,6 +47,7 @@ custom sectionのため**セマンティクスへの影響はゼロ**。既存�
 
 - ツール(wasm-tools、wabt、binaryen)やブラウザDevToolsでは既にデファクトとして実装が進んでいる部分もあり、仕様の追認に近い性格
 - custom section系のためエンジンの実行系には影響せず、フェーズ進行は主にツールエコシステムのテスト整備次第
+- 2026-08-13、Overview.mdの文面が整理された(意味論変更なし)。「elem names」「data names」の表記を「element segment names」「data segment names」に統一し、動機説明にテキスト形式の `@name` アノテーションが二進形式のname sectionと同期していない点を明記([commit](https://github.com/WebAssembly/extended-name-section/commit/d4af276))
 
 ## 関連
 
@@ -55,5 +56,5 @@ custom sectionのため**セマンティクスへの影響はゼロ**。既存�
 
 ## 一次情報
 
-- [Overview.md](https://github.com/WebAssembly/extended-name-section/blob/c35dc5b6de05ae11ea9e473629afb490a86368be/proposals/extended-name-section/Overview.md)(本ページの主な出典)
+- [Overview.md](https://github.com/WebAssembly/extended-name-section/blob/d4af276/proposals/extended-name-section/Overview.md)(本ページの主な出典)
 - [リポジトリ](https://github.com/WebAssembly/extended-name-section)

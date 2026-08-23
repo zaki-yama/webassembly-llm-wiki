@@ -2,7 +2,7 @@
 title: WASI ロードマップ
 type: wasi
 repo: https://github.com/WebAssembly/WASI
-updated: 2026-08-16
+updated: 2026-08-23
 ---
 
 # WASI ロードマップ
@@ -43,6 +43,8 @@ CGの **WASI Subgroup** で開発される。議事録は [meetings/wasi](https:
 - CM機能が採用対象になるのは**安定**した場合のみ:設計が固まり破壊的変更が見込まれない、かつ複数ランタイム/ツールチェインでの実装とプレリリース版での実運用フィードバックを経ていること
 - 手順: (1) 安定化前は `0.3.0-rc-*` 等のプレリリース版、または未出荷のWASI proposalでのみ実験的に利用可。安定版リリーストレインはその機能なしで実装可能な状態を保つ (2) 対象のCM機能・依存するWASI API・実装実績をissueとして提出 (3) WASI Subgroup会議のアジェンダにフェーズ昇格投票と同様の形で採否投票を追加 (4) 可決後、次リリースの`@since` APIがそのCM機能に依存可能になり、リリースノートに明記される
 - 2026-08-06のWASI Subgroup会議で、このプロセスの初適用として **`map<t>`**([WASI#943](https://github.com/WebAssembly/WASI/issues/943)、full consensus投票 SA:0 A:0 N:1 F:3 SF:3で可決)と **`implements`アノテーション/`external-id`**([WASI#942](https://github.com/WebAssembly/WASI/issues/942)、SA:0 A:0 N:1 F:2 SF:4で可決)の採否投票が行われ、いずれも可決した([WASI-08-06議事録](https://github.com/WebAssembly/meetings/blob/main/wasi/2026/WASI-08-06.md)、詳細は [[2026-08-06-wasi]])。0.3.1リリースから両機能に依存するWASI proposalが解禁された([commit](https://github.com/WebAssembly/WASI/commit/691de6f0f2e5924e187499e2f7826125976c1f1c))
+
+- 2026-08-18、`specifications/wasi-0.3.1/Overview.md` が追加され、2026-08-11リリース済みのWASI 0.3.1の正式な仕様文書がリポジトリに反映された([commit](https://github.com/WebAssembly/WASI/commit/3071db04c857b3a2c047d3d1ac694bc41f021796))。内容はリリース自体の後追い(新機能なし)
 
 ## 実装
 

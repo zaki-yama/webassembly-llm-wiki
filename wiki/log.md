@@ -1,5 +1,19 @@
 # Log
 
+## [2026-08-23] weekly | 2026-W34
+
+- proposals: フェーズ変化なし(READMEに差分なし)。静かな週
+- ミーティング: WG 2026-08-19・Threads Subgroup 2026-08-18・Stack Subgroup 2026-08-24はいずれも議題不足でキャンセル。WASI 2026-08-20は通常アジェンダで開催(0.3.1リリースのアナウンス)だが議事メモは未記入で大きな決定は確認できず
+- **[[extended-name-section]]**: Overview.mdの文面整理(意味論変更なし)。「elem names」→「element segment names」等の表記統一、`@name`アノテーションとname sectionの非同期に触れる動機説明を追加([commit](https://github.com/WebAssembly/extended-name-section/commit/d4af276))。リポジトリは257コミット差があったが、実質的な変更は本Overview.md 1件のみ(残りは上流spec同期のノイズ)
+- **[[custom-descriptors]]**: テストファイルのみの変更、設計文書に変化なし。SHAのみ更新
+- **[[acquire-release-atomics]]**: 参照インタプリタの実装作業が継続(interpreter/testファイルのみ、Overview.mdに変化なし)。Phase 3投票は今週も進展なし。watr v5.9.0がサポート追加([commit](https://github.com/WebAssembly/website/commit/ca557f09266bb722f6cd091f4d7d68048106efa0))
+- **[[fp16]]**: watr v5.8.0がサポート追加([commit](https://github.com/WebAssembly/website/commit/5d466d1b084924b75ee4e57d9e3e83051eb4fbf5))
+- **エンジン実装状況**: features.jsonに新規ランタイム`Wasm3`追加([commit](https://github.com/WebAssembly/website/commit/bd5e179e1b0eb27a546d3a59951134cc861dbfbb))。Wasmiの表示順整理(機能差分なし)は反映見送り
+- **[[component-model-overview]]**: コンポーネント値型の最大静的サイズ規定(`elem_size <= 2^28-1`、[#688](https://github.com/WebAssembly/component-model/commit/ce4fb2b9435e1a45ff4403a769f7ef650e92e9cc))、Canonical ABIのキャンセレーション配送順序バグ修正2件([#707](https://github.com/WebAssembly/component-model/commit/1af0b35e1bfc03bd4ad9603be2f676316ff9f420)ほか)、WIT `strongly-unique`規則の推移性明確化・resourceメソッドへのfeature gate許可([#703](https://github.com/WebAssembly/component-model/commit/a0d6134013bd83563c7477be1b67fcdfa138880d)、[#700](https://github.com/WebAssembly/component-model/commit/1b265a6))を反映
+- **WASI**: `specifications/wasi-0.3.1/Overview.md`追加。8/11リリース済み0.3.1の正式仕様文書がリポジトリに反映された(リリース自体の後追いで新機能なし。[commit](https://github.com/WebAssembly/WASI/commit/3071db04c857b3a2c047d3d1ac694bc41f021796))。[[wasi-roadmap]]に反映
+- webassembly.org/news、bytecodealliance.org/articlesとも今週の新着なし
+- [[2026-W34]] を生成。手順5(Artifact公開)はCI環境のためスキップ
+
 ## [2026-08-16] weekly | 2026-W33
 
 - **[[compact-import-section]]**: 2026-08-04、CG対面会合でPhase 3→4投票が可決([commit](https://github.com/WebAssembly/proposals/commit/f0db14a5555abf7b931667fd289755124a3bf37e))。ページのfrontmatter `phase`・フェーズ遷移表・「経緯と現状」を更新

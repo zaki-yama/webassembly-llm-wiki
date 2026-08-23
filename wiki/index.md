@@ -1,7 +1,7 @@
 ---
 title: Index
 type: concept
-updated: 2026-08-16
+updated: 2026-08-23
 ---
 
 # Index
@@ -63,6 +63,7 @@ updated: 2026-08-16
 
 ## ニュースレター
 
+- [[2026-W34]] — 静かな週。定例会合が軒並みキャンセル。Component Modelの細かな仕様修正、watrがFP16・Acquire-Release Atomicsをサポート
 - [[2026-W33]] — Compact Import Section・Wide ArithmeticがPhase 4へ、WASIがCM map型/implementsアノテーションを採用しv0.3.1リリース
 - [[2026-W32]] — FP16がPhase 2へ(改名・champion交代)、Relaxed Atomics→Acquire-Release Atomicsに改名、WASIのCM機能採否投票プロセス新設
 - [[2026-W31]] — 静かな週。8/4〜5 CG対面会合を目前に控え結果待ち

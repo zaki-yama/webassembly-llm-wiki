@@ -4,7 +4,7 @@ type: proposal
 phase: 2
 repo: https://github.com/WebAssembly/acquire-release-atomics
 families: [concurrency]
-updated: 2026-08-09
+updated: 2026-08-23
 ---
 
 # Acquire-Release Atomics
@@ -47,6 +47,7 @@ seqcstは推論しやすい代わりに、weak orderingのハードウェア(ARM
 - 形式メモリモデル(threadsのseqcstモデルの拡張)が仕様面の中心作業
 - 2026-08-04〜05のCG対面会合(Siemens主催)のアジェンダには「Relaxed Atomics Update and possible Phase 3 vote」が組まれていたが、実際に行われたのは名称変更のみで、Phase 3への移行はまだ確認できていない([CG-2026-08.md](https://github.com/WebAssembly/meetings/blob/main/main/2026/CG-2026-08.md))
 - 2026-08-06、`webassembly.org/features` の対象にも追加。Chromeは`--js-flags=--experimental-wasm-acquire-release`フラグの背後で対応、Binaryenはフラグなしで対応([website features.json commit](https://github.com/WebAssembly/website/commit/e10d87461277041bedce8871ff86f4cadde14103))
+- 2026-08-19、WATコンパイラ実装の一つ`watr`がv5.9.0でサポート追加。atomic load命令のオーダリング即値(末尾の`seqcst`/`acqrel`キーワード)をテキスト・バイナリ両形式でコンパイル可能([website features.json commit](https://github.com/WebAssembly/website/commit/ca557f09266bb722f6cd091f4d7d68048106efa0))。store/RMW/fence/`pause`は参照インタプリタがテキスト構文を定義次第、追って対応予定
 
 ## 関連
 
