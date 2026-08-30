@@ -3,7 +3,7 @@ title: Memory Control
 type: proposal
 phase: 1
 repo: https://github.com/WebAssembly/memory-control
-updated: 2026-07-19
+updated: 2026-08-30
 ---
 
 # Memory Control
@@ -48,11 +48,13 @@ Phase 1らしく、複数のサブ提案に分割して検討中(Phase 2まで�
 
 - JS API(ArrayBuffer)との相互作用が難所: read-onlyなArrayBufferの概念がJSにない(TC39側のlimited/readonly ArrayBuffer提案に依存)、複数ArrayBufferが同じバッキングストアを共有できない、など
 - `memory.discard` はもっとも合意が取りやすいサブ提案として先行しやすい位置にある
+- 2026-08-20のWASI Subgroup会議で、長年未対応だった「mmapのMVP」pre-proposal([WASI#304](https://github.com/WebAssembly/WASI/issues/304))の受け皿として本proposalの`virtual`モードが挙げられ、WASI側からissueを立てる方針になった([[2026-08-20-wasi]])
 
 ## 関連
 
 - [[custom-page-sizes]] — メモリ型拡張の隣接proposal(こちらはページサイズ)
 - [[finished-proposals]] — Memory64 / Multiple memories(線形メモリ系譜)
+- [[wasi-roadmap]] / [[2026-08-20-wasi]] — WASI側のmmap pre-proposalとの接点
 
 ## 一次情報
 

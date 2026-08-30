@@ -2,7 +2,7 @@
 title: WASI ロードマップ
 type: wasi
 repo: https://github.com/WebAssembly/WASI
-updated: 2026-08-23
+updated: 2026-08-30
 ---
 
 # WASI ロードマップ
@@ -45,6 +45,7 @@ CGの **WASI Subgroup** で開発される。議事録は [meetings/wasi](https:
 - 2026-08-06のWASI Subgroup会議で、このプロセスの初適用として **`map<t>`**([WASI#943](https://github.com/WebAssembly/WASI/issues/943)、full consensus投票 SA:0 A:0 N:1 F:3 SF:3で可決)と **`implements`アノテーション/`external-id`**([WASI#942](https://github.com/WebAssembly/WASI/issues/942)、SA:0 A:0 N:1 F:2 SF:4で可決)の採否投票が行われ、いずれも可決した([WASI-08-06議事録](https://github.com/WebAssembly/meetings/blob/main/wasi/2026/WASI-08-06.md)、詳細は [[2026-08-06-wasi]])。0.3.1リリースから両機能に依存するWASI proposalが解禁された([commit](https://github.com/WebAssembly/WASI/commit/691de6f0f2e5924e187499e2f7826125976c1f1c))
 
 - 2026-08-18、`specifications/wasi-0.3.1/Overview.md` が追加され、2026-08-11リリース済みのWASI 0.3.1の正式な仕様文書がリポジトリに反映された([commit](https://github.com/WebAssembly/WASI/commit/3071db04c857b3a2c047d3d1ac694bc41f021796))。内容はリリース自体の後追い(新機能なし)
+- 2026-08-20のWASI Subgroup会議で、リリースプロセスの運用細則がさらに具体化: **次回0.3.2は2026-10-13**。Component Model機能の採否投票は「リリース直前の会議までに終える」だけでなく、**投票にかける提案自体をその投票回の1週間前までにissue提出する**運用が明文化された(詳細は [[2026-08-20-wasi]])
 
 ## 実装
 
@@ -60,4 +61,6 @@ CGの **WASI Subgroup** で開発される。議事録は [meetings/wasi](https:
 
 - [[component-model-overview]]
 - [[2026-08-06-wasi]]
+- [[2026-08-20-wasi]]
+- [[memory-control]] — mmap MVPのpre-proposalに関連して2026-08-20会議で言及
 - WASI proposal一覧: [docs/Proposals.md](https://github.com/WebAssembly/WASI/blob/main/docs/Proposals.md)

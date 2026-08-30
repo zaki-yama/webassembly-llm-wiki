@@ -3,7 +3,7 @@ title: Compact Import Section
 type: proposal
 phase: 4
 repo: https://github.com/WebAssembly/compact-import-section
-updated: 2026-08-16
+updated: 2026-08-30
 ---
 
 # Compact Import Section
@@ -62,6 +62,7 @@ ASTごと変える案(importをモジュール名でグループ化)は、JS API
 ## 経緯と現状
 
 - JS String Builtinsの普及(Java/Kotlin/DartのGCバックエンドが文字列定数importを大量に吐く)が直接の動機。実測ではimport sectionが最大78KB縮んだ例が報告されている
+- Phase 4移行(2026-08-04)を受け、Chromeがフラグ付きで実装を追加([commit](https://github.com/WebAssembly/website/commit/3bfcd17169ffbd4ef2cb9e9eb6baa0021c416e6c))
 - 実装状況: [features](https://webassembly.org/features/)
 
 ## 関連

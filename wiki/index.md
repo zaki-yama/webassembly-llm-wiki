@@ -1,7 +1,7 @@
 ---
 title: Index
 type: concept
-updated: 2026-08-23
+updated: 2026-08-30
 ---
 
 # Index
@@ -63,6 +63,7 @@ updated: 2026-08-23
 
 ## ニュースレター
 
+- [[2026-W35]] — Component Modelのリエントランスモデル再設計(may_enterトラップ廃止)、WASI 8/20会議の議事メモが遅れて反映(次回0.3.2は10/13)
 - [[2026-W34]] — 静かな週。定例会合が軒並みキャンセル。Component Modelの細かな仕様修正、watrがFP16・Acquire-Release Atomicsをサポート
 - [[2026-W33]] — Compact Import Section・Wide ArithmeticがPhase 4へ、WASIがCM map型/implementsアノテーションを採用しv0.3.1リリース
 - [[2026-W32]] — FP16がPhase 2へ(改名・champion交代)、Relaxed Atomics→Acquire-Release Atomicsに改名、WASIのCM機能採否投票プロセス新設
@@ -76,3 +77,4 @@ updated: 2026-08-23
 - [[2026-06-25-wasi]] — WASI 0.3.0振り返り、0.3.xリリース計画、OCI artifact基準の提案
 - [[2026-08-04-cg]] — CG対面会合(Siemens)。FP16のPhase 2投票、Compact Import Section・Wide ArithmeticのPhase 4投票
 - [[2026-08-06-wasi]] — WASI Subgroup。Component Model map型・implementsアノテーションの採否投票(いずれも可決)
+- [[2026-08-20-wasi]] — WASI Subgroup。リリースプロセスの運用細則(次回0.3.2は10/13)、250件超のissueトライアージ

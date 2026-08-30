@@ -1,5 +1,18 @@
 # Log
 
+## [2026-08-30] weekly | 2026-W35
+
+- proposals: フェーズ変化なし(READMEに差分なし)
+- **[[component-model-overview]]**: 今週最大の変更。**リエントランスモデルの再設計**([#705](https://github.com/WebAssembly/component-model/commit/2f13265)): Canonical ABIから`ComponentInstance.may_enter`フラグ・`parent`フィールドによる親子追跡・`may_enter_from`/`enter_from`/`leave_to`トラップ機構を全廃。旧Component Invariant #2(donut wrapping時のみ再入をトラップで防ぐ)と#3(オプトインなしのコア実行を暗黙シリアライズ)を単一の#2「run-to-completion」則に統合し、`Store.nesting_depth`ベースの単純なアサーションに置き換えた。donut wrappingでの再入はホストからの再入と対等に扱われるようになり、トラップで防がれる特別な再入ケースがなくなった(Explainer/Concurrency/CanonicalABI/Linkingの広範な書き換えを確認して反映)。ほかに[#708](https://github.com/WebAssembly/component-model/commit/4acb0de)(future readable end dropのバグ修正)、[#704](https://github.com/WebAssembly/component-model/commit/0036fe1)(`strongly-unique`のハイフン非依存化)、[#714](https://github.com/WebAssembly/component-model/commit/50a1ab9)(WIT `use-names-list`の末尾カンマ許可)を反映
+- **[[custom-descriptors]]**: Overview.mdでサブタイピング規則を引き締め。supertype側にも`descriptor`節を必須化し、規則群を「complete square」則として図式的に整理、`ref.cast_desc_eq`の健全性根拠を明記([commit](https://github.com/WebAssembly/custom-descriptors/commit/7b64bc8))
+- **[[compact-import-section]]**: リポジトリは2コミット差だが設計文書(Overview.md)は無変更(spectec同期ノイズ+テストファイルのみ)。features.jsonにChromeのフラグ付き実装が追加されたため経緯と現状に反映([commit](https://github.com/WebAssembly/website/commit/3bfcd17169ffbd4ef2cb9e9eb6baa0021c416e6c))
+- **[[acquire-release-atomics]]**: テストファイル(`threaded.wast`)のみの変更。設計文書に変化なし、Phase 3投票も進展なし
+- ミーティング: CG 2026-08-25キャンセル。CG 2026-09-08・Stack Subgroup 2026-09-21は将来アジェンダ(後者は"Introduction to Reified Fibers"という新規話題を掲載、[[stack-switching]]に隣接)で議事メモなし
+- **WASI Subgroup 2026-08-20**の議事メモが今週リポジトリに追記され、新規に [[2026-08-20-wasi]] を作成。投票はないが、リリースプロセスの運用細則(次回0.3.2は2026-10-13、投票にかける提案は投票回の1週間前までにissue提出)と250件超のissueトライアージ方針(WASI loggingは`wasi:otel`へ吸収されクローズ方向、mmap MVPは[[memory-control]]側への差し戻し等)を[[wasi-roadmap]]・[[memory-control]]に反映
+- エンジン実装状況: Wasmer 7.3.0がmulti-memory対応、標準ランタイム表に新規エンジンzwasm追加。features.jsonの`typeReflection`(js-types側の別proposal、当wiki未追跡)のphase表記がPhase 3→1に訂正されたが、これは当wikiの追跡対象proposal一覧には含まれない
+- webassembly.org/news、bytecodealliance.org/articlesとも今週の新着なし
+- [[2026-W35]] を生成。手順5(Artifact公開)はCI環境のためスキップ
+
 ## [2026-08-23] weekly | 2026-W34
 
 - proposals: フェーズ変化なし(READMEに差分なし)。静かな週

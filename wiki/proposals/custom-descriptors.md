@@ -4,7 +4,7 @@ type: proposal
 phase: 3
 repo: https://github.com/WebAssembly/custom-descriptors
 families: [js-interop, gc-lang-support]
-updated: 2026-07-19
+updated: 2026-08-30
 ---
 
 # Custom Descriptors and JS Interop
@@ -58,6 +58,7 @@ Java/Kotlin/Dart等をWasm GCにコンパイルすると、各オブジェクト
 - Wasm GC(Wasm 3.0でFIX)採用言語の実運用フィードバックから生まれた「GC第2章」の中心的proposal。J2CL(Java)、Kotlin/Wasm、Dartのチームが強い関心を持つ
 - exact types は他proposal(例: [[shared-everything-threads]])からも参照される基盤機能
 - 副次機能(宣言的初期化・フィールド重複排除)は「実際に問題になるか検証してから確定する」と明記されており、Phase 3中に取捨される可能性がある
+- 2026-08-27、`descriptor`/`describes`のサブタイピング規則が引き締められた: 従来は「`(descriptor $x)`節を持つ型の宣言的супertypeは、`descriptor`節を持たなくてもよい」だったが、**supertype側も`(descriptor $y)`節を持つこと(`$y`は`$x`のsupertype)を必須**に変更。あわせて、descriptor型どうし・非descriptor型どうしでしかsubtypeになれないという制約を図式化した「complete square」則(subtype/supertypeの縦軸とdescribes/describedの横軸が揃うこと)として整理し、`ref.cast_desc_eq`系命令の健全性根拠として明記した([commit](https://github.com/WebAssembly/custom-descriptors/commit/7b64bc8d0939728a72fd871384b0322af0bca417))
 
 ## 関連
 
