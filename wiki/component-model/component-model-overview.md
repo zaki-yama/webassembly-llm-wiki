@@ -3,7 +3,7 @@ title: Component Model
 type: component-model
 phase: 1
 repo: https://github.com/WebAssembly/component-model
-updated: 2026-08-30
+updated: 2026-09-06
 ---
 
 # Component Model
@@ -30,7 +30,7 @@ W3C CGでの標準化(いわゆる1.0)に向けた作業が進む。経緯は [T
 
 2026-08-04〜05の対面CG会合ではComponent Model単独で2時間の議題枠(Ryan Hunt/Luke Wagner)があった(Web上でのComponents / Web外でのComponents / Next Steps、[議題](https://github.com/WebAssembly/meetings/blob/main/main/2026/CG-2026-08.md))。議事録の「Meeting notes」節は2026-08-16時点でも未記入で、議論内容は確認できていない。
 
-## 仕様文書の細かな変更(2026-08時点)
+## 仕様文書の細かな変更(2026-08〜09時点)
 
 - テキスト形式のインデックス解析規則(index spaces節)がExplainer内で整理・明確化された(意味論変更なし。[#655](https://github.com/WebAssembly/component-model/commit/1d20b88))
 - `realloc`呼び出しは新規スレッド上で実行されると定義された([#680](https://github.com/WebAssembly/component-model/pull/680))
@@ -44,6 +44,10 @@ W3C CGでの標準化(いわゆる1.0)に向けた作業が進む。経緯は [T
 - CABI: `future.drop-readable`を保留中の書き込みがある状態で呼べるようにするバグ修正(`SharedFutureImpl.drop`が誤って`WritableBuffer`を assert していた。[#708](https://github.com/WebAssembly/component-model/commit/4acb0de))
 - WITの`strongly-unique`判定が**ハイフン非依存**になるよう変更(`foo-bar`と`foobar`は同一名とみなされ共存不可。[#704](https://github.com/WebAssembly/component-model/commit/0036fe1))
 - WIT `use-names-list`で末尾カンマを許可([#714](https://github.com/WebAssembly/component-model/commit/50a1ab9))
+- **キャンセレーション配送モデルの簡素化**(2026-09、[#716](https://github.com/WebAssembly/component-model/commit/8892da0) "Remove 'cancellable' immediate from built-ins"): `waitable-set.wait`/`waitable-set.poll`および`thread.suspend`/`thread.yield`/`thread.suspend-then-resume`等の`thread.*`系組み込みから`cancellable`免除引数を全廃。`task-cancelled`イベントは今後**stackless `callback` ABIを使う`async`関数にのみ**配送され、stackful ABI向けの配送機構は将来課題(TODO)に据え置かれた。あわせて`subtask.cancel`は、呼び出し先タスクにノンブロッキングの協調的`thread.yield`を発行してキャンセル要求の配送を試みる形に変更され、既に解決通知済み・キャンセル要求済み・待機集合に登録済みの場合はトラップするよう厳格化された
+- 値型に**`map`と固定長list(`fixed-length list`)のエンコーディング**を新規定義(2026-09、[#712](https://github.com/WebAssembly/component-model/commit/a70dae6) "define map and fixed-length list value encoding"、🗺️/🔧絵文字タグ)。WAT値リテラル構文として `(map (entry "a" 1) (entry "b" 2))` 等の例が追加された
+- Canonical interface nameのバージョン正規化規則を調整(2026-09、[#711](https://github.com/WebAssembly/component-model/commit/cfc0266) "Adjust rules for canonical interface names"): build metadata(`+foo`)は常にsemversuffixとして分離、pre-release版(`0.0.1-alpha`等)はバージョン自体を分割しない扱いに変更(従来はpatch直後で分割していた)
+- `thread.suspend-then-resume`/`thread.suspend-then-promote`等の`-then-*`系組み込みで、対象スレッド`t`が呼び出し元スレッド自身の場合の挙動を明確化しトラップとして定義(2026-09、[#687](https://github.com/WebAssembly/component-model/commit/7c67611))
 
 ## 関連
 

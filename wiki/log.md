@@ -1,5 +1,17 @@
 # Log
 
+## [2026-09-06] weekly | 2026-W36
+
+- proposals: フェーズ変化なし(READMEに差分なし)
+- **[[component-model-overview]]**: 今週最大の変更。**キャンセレーション配送モデルの簡素化**([#716](https://github.com/WebAssembly/component-model/commit/8892da0) "Remove 'cancellable' immediate from built-ins"): `waitable-set.wait`/`poll`・`thread.*`系組み込みから`cancellable`免除引数を全廃し、`task-cancelled`イベントの配送先をstackless `callback` ABIの関数に一本化(stackful ABI向けは将来課題)。`subtask.cancel`はノンブロッキングの協調的`thread.yield`で配送を試みる形に変更され、既に解決/キャンセル要求済み・待機集合登録済みの場合はトラップするよう厳格化。ほかに値型`map`・固定長list(`fixed-length list`)のエンコーディング新規定義([#712](https://github.com/WebAssembly/component-model/commit/a70dae6))、canonical interface nameのsemverバージョン正規化規則調整([#711](https://github.com/WebAssembly/component-model/commit/cfc0266))、`thread.*-then-promote`系の自己スレッド指定時トラップの明確化([#687](https://github.com/WebAssembly/component-model/commit/7c67611))を反映
+- **[[extended-name-section]]**: Overview.mdにparameter names(id 12)・tag parameter names(id 13)サブセクションを追加、テキスト形式`@name`アノテーションの適用範囲(ラベル・テーブル・メモリ・グローバル・elem/data segment)を明記([commit](https://github.com/WebAssembly/extended-name-section/commit/ab1d65a))。Phase 2のまま
+- **[[custom-descriptors]]**: `descriptor`/`describes`のサブタイピング規則に、両者のfinality(final/open)が一致していなければならないという制約を追加([#112](https://github.com/WebAssembly/custom-descriptors/commit/e9f7a93)、issue #61クローズ)
+- **[[wasi-roadmap]]**: champion体制の入れ替えを反映。Piotr Sikoraがwasi-httpのchampionを自主辞任、David Justiceが複数proposal(kv-store・runtime-config・messaging・blob-store・distributed-lock-service・sql・http)のchampionから外れ、proxy-wasm/specがStage 0一覧から削除。WASI Subgroup 2026-09-03のアジェンダには後任champion(Lann Martin, Pat Hickey, John VanEnk)の投票が上がっていたが議事メモ未記入で結果未確認
+- ミーティング: CG 2026-09-22のアジェンダを確認。[[acquire-release-atomics]]のPhase 3投票、Relaxed Dead Code Validationの議論、[[custom-descriptors]]のmeta-descriptors議論が予定されており次回号で結果を追う
+- エンジン実装状況: features.jsonにWasm3 v0.9.1反映のほか、JSPI/CSP/Multibyte Array Accessの既報フェーズ移行をfeatures.json側に追認する同期コミットのみ(新規情報なし)
+- webassembly.org/news、bytecodealliance.org/articlesとも今週の新着なし
+- [[2026-W36]] を生成。手順5(Artifact公開)はCI環境のためスキップ
+
 ## [2026-08-30] weekly | 2026-W35
 
 - proposals: フェーズ変化なし(READMEに差分なし)

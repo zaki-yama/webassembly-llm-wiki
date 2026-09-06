@@ -1,7 +1,7 @@
 ---
 title: Index
 type: concept
-updated: 2026-08-30
+updated: 2026-09-06
 ---
 
 # Index
@@ -63,6 +63,7 @@ updated: 2026-08-30
 
 ## ニュースレター
 
+- [[2026-W36]] — Component Modelのキャンセレーション配送モデル簡素化(`cancellable`免除引数廃止)、`map`/固定長list型の追加、Extended Name Sectionにparameter names、次回CG(9/22)でAcquire-Release AtomicsのPhase3投票予定
 - [[2026-W35]] — Component Modelのリエントランスモデル再設計(may_enterトラップ廃止)、WASI 8/20会議の議事メモが遅れて反映(次回0.3.2は10/13)
 - [[2026-W34]] — 静かな週。定例会合が軒並みキャンセル。Component Modelの細かな仕様修正、watrがFP16・Acquire-Release Atomicsをサポート
 - [[2026-W33]] — Compact Import Section・Wide ArithmeticがPhase 4へ、WASIがCM map型/implementsアノテーションを採用しv0.3.1リリース
