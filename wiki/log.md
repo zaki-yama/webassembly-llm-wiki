@@ -1,5 +1,17 @@
 # Log
 
+## [2026-09-13] weekly | 2026-W37
+
+- proposals: フェーズ変化なし(READMEに差分なし)
+- ミーティング: **CG 2026-09-08は議題不足でキャンセル**([議事録](https://github.com/WebAssembly/meetings/blob/main/main/2026/CG-2026-09-08.md))。実質開催なし
+- **[[wasi-roadmap]]**: 2026-09-03のWASI Subgroup会議でwasi-http championの交代がfull consensusで可決(Pat Hickey・Lann Martin・John VanEnk)。ただし議事録本文は「Dan Chiarloneは留任」としていたのに対し、2026-09-08マージのPR([WASI#960](https://github.com/WebAssembly/WASI/pull/960))では新champion差し替えと同時にDan Chiarloneも一覧から外れており、議事録と実装の食い違いとして経緯を明記(現行championはPat Hickey・Lann Martin・John VanEnkの3名)
+- **[[component-model-overview]]**: WITに**getter/setter構文糖衣**(新gated feature 📡)を追加([#701](https://github.com/WebAssembly/component-model/pull/701)、2026-09-08マージ)。`get`/`set`キーワードで`[get]`/`[set]`アノテーション付き関数に脱糖、resource内では`static`とも併用可
+- エンジン実装状況: Safari TP 251がMemory64をサポート([features.json commit](https://github.com/WebAssembly/website/commit/cfc0bdb))
+- [[extended-name-section]]・[[compact-import-section]]は上流spec同期コミットのみ(Explainer/Overview/README等の設計文書に変更なし)。ウォッチ用SHAのみ更新
+- 他の個別proposalリポジトリ(threads・js-promise-integration・esm-integration・wide-arithmetic・stack-switching・acquire-release-atomics等)はいずれも差分なし
+- webassembly.org/newsに新着なし(最新は2026-01-21)
+- [[2026-W37]] を生成。手順5(Artifact公開)はCI環境のためスキップ
+
 ## [2026-09-06] weekly | 2026-W36
 
 - proposals: フェーズ変化なし(READMEに差分なし)

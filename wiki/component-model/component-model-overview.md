@@ -3,7 +3,7 @@ title: Component Model
 type: component-model
 phase: 1
 repo: https://github.com/WebAssembly/component-model
-updated: 2026-09-06
+updated: 2026-09-13
 ---
 
 # Component Model
@@ -48,6 +48,7 @@ W3C CGでの標準化(いわゆる1.0)に向けた作業が進む。経緯は [T
 - 値型に**`map`と固定長list(`fixed-length list`)のエンコーディング**を新規定義(2026-09、[#712](https://github.com/WebAssembly/component-model/commit/a70dae6) "define map and fixed-length list value encoding"、🗺️/🔧絵文字タグ)。WAT値リテラル構文として `(map (entry "a" 1) (entry "b" 2))` 等の例が追加された
 - Canonical interface nameのバージョン正規化規則を調整(2026-09、[#711](https://github.com/WebAssembly/component-model/commit/cfc0266) "Adjust rules for canonical interface names"): build metadata(`+foo`)は常にsemversuffixとして分離、pre-release版(`0.0.1-alpha`等)はバージョン自体を分割しない扱いに変更(従来はpatch直後で分割していた)
 - `thread.suspend-then-resume`/`thread.suspend-then-promote`等の`-then-*`系組み込みで、対象スレッド`t`が呼び出し元スレッド自身の場合の挙動を明確化しトラップとして定義(2026-09、[#687](https://github.com/WebAssembly/component-model/commit/7c67611))
+- WITに**getter/setter構文糖衣**(新gated feature 📡)を追加(2026-09-08、[#701](https://github.com/WebAssembly/component-model/pull/701) "Add getters and setters (#235)")。`func`キーワードの代わりに`get`/`set`を使うと`[get]`/`[set]`アノテーション付きの通常関数に脱糖される(例: `bar: get() -> u64;` / `bar: set(v: u64);` → `[get]bar: func() -> u64;` / `[set]bar: func(v: u64);`)。resource内でも`static`と組み合わせ可能。getterは無引数で戻り値必須、setterは引数1つで戻り値なし(または`result<_, error?>`)、setterには同名のgetterが必須。strongly-unique判定では`[set]`アノテーションは(`[constructor]`と同様に)区別を残す例外として扱われる
 
 ## 関連
 
