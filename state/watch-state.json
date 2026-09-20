@@ -1,17 +1,17 @@
 {
-  "last_checked": "2026-09-13",
+  "last_checked": "2026-09-20",
   "repos": {
     "WebAssembly/proposals": {
       "last_sha": "f0db14a5555abf7b931667fd289755124a3bf37e"
     },
     "WebAssembly/meetings": {
-      "last_sha": "c08c14641a09910d34cfcfee2daf87f4d965c055"
+      "last_sha": "db5b7880b02f30dc33cae4972868fdf8eba85d0c"
     },
     "WebAssembly/WASI": {
       "last_sha": "39c11a76958d015ace3f1bf68500057a28c7837f"
     },
     "WebAssembly/component-model": {
-      "last_sha": "338bcb6b39f446d9498c58ff736849a52248e766"
+      "last_sha": "1a743de691c5966a217efcf58fef9cd68dacc754"
     },
     "WebAssembly/website": {
       "features_json_last_sha": "cfc0bdb20e0b559507486db995794d581672a3e4"
@@ -32,7 +32,7 @@
       "last_sha": "284adaf2fecaf76ac05d35132c09e60bb4145041"
     },
     "WebAssembly/esm-integration": {
-      "last_sha": "798588074fc599ed05061e921aa64ce36d0495ac"
+      "last_sha": "d75f123b24116c44d85640cfad6129f6dc6fbd14"
     },
     "WebAssembly/wide-arithmetic": {
       "last_sha": "024d4ce1b28cee7fd006d9c5175e3b7ece52b429"
@@ -83,7 +83,7 @@
       "last_sha": "62fac131de7e6406c9c05b493457025c2e42a15c"
     },
     "WebAssembly/multibyte-array-access": {
-      "last_sha": "bdc1b8cfba59ed1705eafc619cae18146e20a39d"
+      "last_sha": "53ab692492ec5291c4abca15111836dd2841e27f"
     }
   }
 }

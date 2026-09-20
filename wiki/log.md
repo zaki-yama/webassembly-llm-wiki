@@ -1,5 +1,21 @@
 # Log
 
+## [2026-09-20] weekly | 2026-W38
+
+- proposals: フェーズ変化なし(READMEに差分なし)
+- ミーティング: **WG 2026-09-16・WASI Subgroup 2026-09-17ともに議題不足で2週連続キャンセル**([WG議事録](https://github.com/WebAssembly/meetings/blob/main/main/2026/WG-2026-09-16.md)、[WASI議事録](https://github.com/WebAssembly/meetings/blob/main/wasi/2026/WASI-09-17.md))
+- **[[component-model-overview]]**: async(stream/future)周りで4件の設計変更を反映
+  - `stream.forward`/`future.forward`組み込みを追加(新gated feature ➡️、[#717](https://github.com/WebAssembly/component-model/commit/1a743de)、2026-09-18)。zero-copyでのハンドル転送。Concurrency.mdの将来検討リストから同項目を削除
+  - getter/setterの型検証規則を修正([#722](https://github.com/WebAssembly/component-model/pull/722)、2026-09-16)。#701の見落とし解消、setterパラメータ型とgetterの「property type」の一致を要求
+  - Canonical ABIのstream/futureロジックをリファクタリングし、DROPPED/CANCELLEDイベント配送の不具合を修正([#719](https://github.com/WebAssembly/component-model/commit/a53b241)、2026-09-15)
+  - `subtask.cancel`のキャンセル配送モデルを再調整([#723](https://github.com/WebAssembly/component-model/commit/07afb81)、2026-09-16)
+- エンジン実装状況: 動きなし(features.jsonに前号以降の新規コミットなし)
+- WASI本体: 動きなし(0.3.1が最新リリースのまま、differ 0)
+- [[esm-integration]]は上流spec同期コミット(301件)のみ、[[multibyte-array-access]]のOverview.md微修正(flagsビット表記の訂正)はwiki記述と既に一致のため内容変更不要。ともにウォッチ用SHAのみ更新
+- 他の個別proposalリポジトリはいずれも差分なし
+- webassembly.org/newsに新着なし(最新は2026-01-21)
+- [[2026-W38]] を生成。手順5(Artifact公開)はCI環境のためスキップ
+
 ## [2026-09-13] weekly | 2026-W37
 
 - proposals: フェーズ変化なし(READMEに差分なし)

@@ -3,7 +3,7 @@ title: Component Model
 type: component-model
 phase: 1
 repo: https://github.com/WebAssembly/component-model
-updated: 2026-09-13
+updated: 2026-09-20
 ---
 
 # Component Model
@@ -49,6 +49,10 @@ W3C CGでの標準化(いわゆる1.0)に向けた作業が進む。経緯は [T
 - Canonical interface nameのバージョン正規化規則を調整(2026-09、[#711](https://github.com/WebAssembly/component-model/commit/cfc0266) "Adjust rules for canonical interface names"): build metadata(`+foo`)は常にsemversuffixとして分離、pre-release版(`0.0.1-alpha`等)はバージョン自体を分割しない扱いに変更(従来はpatch直後で分割していた)
 - `thread.suspend-then-resume`/`thread.suspend-then-promote`等の`-then-*`系組み込みで、対象スレッド`t`が呼び出し元スレッド自身の場合の挙動を明確化しトラップとして定義(2026-09、[#687](https://github.com/WebAssembly/component-model/commit/7c67611))
 - WITに**getter/setter構文糖衣**(新gated feature 📡)を追加(2026-09-08、[#701](https://github.com/WebAssembly/component-model/pull/701) "Add getters and setters (#235)")。`func`キーワードの代わりに`get`/`set`を使うと`[get]`/`[set]`アノテーション付きの通常関数に脱糖される(例: `bar: get() -> u64;` / `bar: set(v: u64);` → `[get]bar: func() -> u64;` / `[set]bar: func(v: u64);`)。resource内でも`static`と組み合わせ可能。getterは無引数で戻り値必須、setterは引数1つで戻り値なし(または`result<_, error?>`)、setterには同名のgetterが必須。strongly-unique判定では`[set]`アノテーションは(`[constructor]`と同様に)区別を残す例外として扱われる
+- Canonical ABIのstream/futureロジックをリファクタリング・簡素化し、読み書き中でなくてもDROPPED/CANCELLEDイベントが正しく配送されるよう修正(2026-09-15、[#719](https://github.com/WebAssembly/component-model/commit/a53b241))
+- getter/setterの型検証規則を修正(2026-09-16、[#722](https://github.com/WebAssembly/component-model/pull/722) "Require getter/setter result/param types to agree")。#701の見落としを解消: getterの戻り値型が`(result $V? (error $E)?)`の場合は内側の値型`$V`を持つ必要があり、この`$V`が「property type」として定義される。setterのパラメータ型はgetterのproperty typeと一致する必要があり、対応するgetterが同一スコープで先に定義されている必要がある(WIT記述上はgetter/setterの順序は任意)
+- `subtask.cancel`のキャンセル配送モデルを再調整(2026-09-16、[#723](https://github.com/WebAssembly/component-model/commit/07afb81) "CABI: tighten subtask.cancel behavior")。保留中のキャンセル要求を記録した後、サブタスクのコンポーネントインスタンス内でready状態のスレッドを再開してみる。readyなスレッドがない、または再開したスレッドがサブタスクを解決せずにブロック/終了した場合、ホストは「blocked」を宣言できる(非同期呼び出しは即座にblockedコードを返し、同期呼び出しは解決までブロックする)。`callback` ABIを使う暗黙スレッドは保留中キャンセル要求により追加でready化し、"task cancelled"イベントコードを受け取る
+- `stream.forward`/`future.forward`組み込みを追加(新gated feature ➡️、2026-09-18、[#717](https://github.com/WebAssembly/component-model/commit/1a743de) "Add {stream,future}.forward built-in")。読み取り可能端と書き込み可能端を呼び出し元のハンドルテーブルから除去し、中間コピーなしで一方から他方へ全データを転送する(方向・要素型の不一致、読み書き中、waitable set登録中、または最終的な`dropped`/`completed`結果を既に受け取っている場合はトラップ)。Concurrency.mdの「今後検討する機能」リストにあった「zero-copy forwarding/splicing」が実装完了として同リストから削除された
 
 ## 関連
 

@@ -1,7 +1,7 @@
 ---
 title: Index
 type: concept
-updated: 2026-09-13
+updated: 2026-09-20
 ---
 
 # Index
@@ -63,6 +63,7 @@ updated: 2026-09-13
 
 ## ニュースレター
 
+- [[2026-W38]] — CG(WG)・WASI Subgroupとも2週連続で議題不足キャンセル。Component Modelでstream.forward/future.forward組み込み追加(zero-copy転送)、getter/setter型検証の修正、subtask.cancelのキャンセル配送モデル再調整
 - [[2026-W37]] — CG本会合(9/8)は議題不足でキャンセル。WASI Subgroupでwasi-http championがPat Hickey・Lann Martin・John VanEnkに交代(議事録と実際の反映に食い違いあり)、Component ModelのWITにgetter/setter構文糖衣(📡)を追加
 - [[2026-W36]] — Component Modelのキャンセレーション配送モデル簡素化(`cancellable`免除引数廃止)、`map`/固定長list型の追加、Extended Name Sectionにparameter names、次回CG(9/22)でAcquire-Release AtomicsのPhase3投票予定
 - [[2026-W35]] — Component Modelのリエントランスモデル再設計(may_enterトラップ廃止)、WASI 8/20会議の議事メモが遅れて反映(次回0.3.2は10/13)
