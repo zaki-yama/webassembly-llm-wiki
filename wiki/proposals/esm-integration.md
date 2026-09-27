@@ -4,7 +4,7 @@ type: proposal
 phase: 3
 repo: https://github.com/WebAssembly/esm-integration
 families: [js-interop]
-updated: 2026-07-19
+updated: 2026-09-27
 ---
 
 # ESM Integration
@@ -65,6 +65,7 @@ const { foo: b } = new WebAssembly.Instance(myModule, { ...imports2 });
 - 長年停滞していたが、TC39側のSource Phase Imports提案の登場で「カスタムインスタンス化をどう表現するか」問題が解け、活性化した
 - サーバランタイムが先行: **Denoは実装済み**(v2.1でfirst-class Wasm support)、**Node.jsはフラグ付き**(`--experimental-wasm-modules`)。ブラウザ向けには [ES Module Shims](https://github.com/guybedford/es-module-shims) のpolyfillがある
 - 実装状況: [features](https://webassembly.org/features/)
+- 2026-09、js-api仕様文(`index.bs`)の`ExecuteModule`アルゴリズムに2件のバグ修正。(1) 文字列定数import(`wasm:js/string-constants`)がモジュール指定子として誤解決されないよう`[[ImportedStringModule]]`チェックを追加([#124](https://github.com/WebAssembly/esm-integration/commit/8bca94b)、2026-09-20)。(2) `ExecuteModule`がexport一覧の生成時に誤って別モジュールを再バインドしていた不具合を修正し、実行対象モジュールのcore instanceから`instance_export`経由でexportするよう訂正([#125](https://github.com/WebAssembly/esm-integration/commit/2ba12d1)、[issue #123](https://github.com/WebAssembly/esm-integration/issues/123)、2026-09-24)
 
 ## 関連
 

@@ -3,7 +3,7 @@ title: Component Model
 type: component-model
 phase: 1
 repo: https://github.com/WebAssembly/component-model
-updated: 2026-09-20
+updated: 2026-09-27
 ---
 
 # Component Model
@@ -53,6 +53,10 @@ W3C CGでの標準化(いわゆる1.0)に向けた作業が進む。経緯は [T
 - getter/setterの型検証規則を修正(2026-09-16、[#722](https://github.com/WebAssembly/component-model/pull/722) "Require getter/setter result/param types to agree")。#701の見落としを解消: getterの戻り値型が`(result $V? (error $E)?)`の場合は内側の値型`$V`を持つ必要があり、この`$V`が「property type」として定義される。setterのパラメータ型はgetterのproperty typeと一致する必要があり、対応するgetterが同一スコープで先に定義されている必要がある(WIT記述上はgetter/setterの順序は任意)
 - `subtask.cancel`のキャンセル配送モデルを再調整(2026-09-16、[#723](https://github.com/WebAssembly/component-model/commit/07afb81) "CABI: tighten subtask.cancel behavior")。保留中のキャンセル要求を記録した後、サブタスクのコンポーネントインスタンス内でready状態のスレッドを再開してみる。readyなスレッドがない、または再開したスレッドがサブタスクを解決せずにブロック/終了した場合、ホストは「blocked」を宣言できる(非同期呼び出しは即座にblockedコードを返し、同期呼び出しは解決までブロックする)。`callback` ABIを使う暗黙スレッドは保留中キャンセル要求により追加でready化し、"task cancelled"イベントコードを受け取る
 - `stream.forward`/`future.forward`組み込みを追加(新gated feature ➡️、2026-09-18、[#717](https://github.com/WebAssembly/component-model/commit/1a743de) "Add {stream,future}.forward built-in")。読み取り可能端と書き込み可能端を呼び出し元のハンドルテーブルから除去し、中間コピーなしで一方から他方へ全データを転送する(方向・要素型の不一致、読み書き中、waitable set登録中、または最終的な`dropped`/`completed`結果を既に受け取っている場合はトラップ)。Concurrency.mdの「今後検討する機能」リストにあった「zero-copy forwarding/splicing」が実装完了として同リストから削除された
+- `subtask.cancel`のキャンセル配送をさらに厳密化(2026-09-23、[#726](https://github.com/WebAssembly/component-model/commit/2f1e56f) "CABI: tighten subtask.cancel behavior again")。`Thread`に`cancellable`フラグを追加し、暗黙の`callback`スレッドがイベントループに戻って待機している間だけ`True`になるよう限定。従来の「readyなスレッドをランダムに選んで解決まで回し続ける」ループ実装を廃止し、`cancellable`かつ`ready`な暗黙スレッドがあればそれを一度だけ再開する決定的な配送に置き換えた(前号の[#723](https://github.com/WebAssembly/component-model/commit/07afb81)の配送モデルをさらに単純化)
+- WITの値定義(`(value <id>? <valtype> <val>)`)テキスト形式の曖昧さを修正(2026-09-23、[#729](https://github.com/WebAssembly/component-model/commit/0de24ba) "Fix value definition text format ambiguities"、[#718](https://github.com/WebAssembly/component-model/issues/718)を解消)。浮動小数点リテラルを`f64canon`から`fNcanon`(`f32`/`f64`共通、`-nan`/`nan:0x`を除外)に一般化し、文字列リテラルの区切りをシングルクォートからダブルクォートに変更。バリデーション規則も明文化: `own`/`borrow`/`future`/`stream`/`error-context`を(再帰的に)含む`valtype`は`val`側に対応する構文がなく拒否される、`sN`/`uN`は自然な符号付き範囲を超える`core:i64`整数(ラップアラウンドあり)を拒否、など
+- CABI: 継続(continuation)内で発生したトラップが正しく`resume`の呼び出し元まで伝播するよう修正(2026-09-21、[commit](https://github.com/WebAssembly/component-model/commit/5b724da) "propagate traps properly through continuations"、著者は意味論変更なしと注記)。`Handler.switch_to`を`Handler.result`(`Thread`または`Trap`を保持)に一般化し、継続内で`Trap`が送出された場合はそれを保存して`resume`側で re-raise する
+- CABI: stack-switchingの制御タグ定義を整理(2026-09-24、[commit](https://github.com/WebAssembly/component-model/commit/d1daf82)、著者は意味論変更なしと注記)。従来の`$block`/`$switch-to`/`$current-thread`の3タグを`$block`(引数に再開先`Thread`を任意で取れるよう変更)/`$current-thread`の2タグに統合し、対応する`suspend`実装(`block`/`switch_to`/`current_thread`関数)も`block`/`current_thread`の2つに削減
 
 ## 関連
 

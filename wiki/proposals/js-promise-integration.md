@@ -4,7 +4,7 @@ type: proposal
 phase: 5
 repo: https://github.com/WebAssembly/js-promise-integration
 families: [concurrency, js-interop]
-updated: 2026-07-26
+updated: 2026-09-27
 ---
 
 # JS Promise Integration (JSPI)
@@ -70,6 +70,7 @@ Phase 4投票では、Stacks Subgroupでの事前poll(コアの [[stack-switchin
 - EmscriptenはJSPIバックエンド(`-sJSPI`)を提供済みで、Asyncifyの置き換えが進む。実装状況: [features](https://webassembly.org/features/)
 - コア仕様の汎用スタック切り替え([[stack-switching]]、Phase 3)とは「JSPI=JS APIに閉じた先行サブセット、stack-switching=コア命令での汎用機構」という役割分担。JSPIが先にPhase 4へ進んだ
 - 2026-07-21、Node.jsがJSPIのサポートバージョン表記を更新(Node 26.0以降はフラグ不要、[commit](https://github.com/WebAssembly/website/commit/e0f3b0f))。Phase 5昇格(2026-06-24投票)によりスペックマージ待ちの段階
+- 2026-09-23、Safari 27がJSPIを出荷(フラグ不要、[website features.json commit](https://github.com/WebAssembly/website/commit/a31b9452495232f634d95defee2eed3f7a4fcfb8))。2026-09-24、Firefox 153もサポートを追加([commit](https://github.com/WebAssembly/website/commit/854d3786cb45d63fe212fa233cde03568fd42802))。これでChrome/Firefox/Safariの主要3エンジンが出荷済みとなった
 
 ## 関連
 

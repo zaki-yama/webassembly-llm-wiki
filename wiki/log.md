@@ -1,5 +1,21 @@
 # Log
 
+## [2026-09-27] weekly | 2026-W39
+
+- proposals: フェーズ変化なし(READMEに差分なし)
+- ミーティング: **CG 2026-09-22は開催**(Acquire-Release AtomicsのPhase 3投票、Relaxed Dead Code Validationの議論、Custom Descriptorsのmeta-descriptors議論がアジェンダ)だが、[議事録](https://github.com/WebAssembly/meetings/blob/main/main/2026/CG-2026-09-22.md)のMeeting Notes節は未記入・proposals READMEにも反映なしのため、投票の実施・結果は次回号で確認する。**[[acquire-release-atomics]]**にこの経緯を記録
+  - 次回CG 2026-10-06のアジェンダに[[extended-name-section]]のPhase 3投票と、Component Model専用SG新設提案(Ryan Hunt・Luke Wagner)が追加
+  - Stack Subgroup 2026-09-21はキャンセル、「Reified Fibers」紹介は2026-10-19に延期
+  - WG・WASI Subgroupは今週開催なし(次回はそれぞれ10/14・10/1)
+- **[[component-model-overview]]**: async/キャンセレーション周りの仕上げが継続。`subtask.cancel`配送のさらなる決定化(`Thread.cancellable`フラグ導入、[#726](https://github.com/WebAssembly/component-model/commit/2f1e56f))、WIT値定義のテキスト形式曖昧さ修正(`f64canon`→`fNcanon`一般化・文字列リテラルのダブルクォート化、[#729](https://github.com/WebAssembly/component-model/commit/0de24ba))、継続内トラップの伝播修正([commit](https://github.com/WebAssembly/component-model/commit/5b724da)、意味論変更なしと明記)、stack-switching制御タグの整理(`$block`/`$switch-to`/`$current-thread`→`$block`/`$current-thread`、[commit](https://github.com/WebAssembly/component-model/commit/d1daf82)、意味論変更なしと明記)を反映
+- **[[js-promise-integration]]**: Safari 27・Firefox 153がJSPI対応を追加し、Chrome/Firefox/Safariの主要3エンジンが出揃った(features.json commits [a31b945](https://github.com/WebAssembly/website/commit/a31b9452495232f634d95defee2eed3f7a4fcfb8)・[854d378](https://github.com/WebAssembly/website/commit/854d3786cb45d63fe212fa233cde03568fd42802))
+- **[[esm-integration]]**: js-api仕様文の`ExecuteModule`アルゴリズムにバグ修正2件(文字列定数importの誤解決、export一覧生成時の誤参照)を反映
+- WASI本体・component-modelリポジトリの差分は上記component-model仕様変更のみ。WASI自体は動きなし(0.3.1が最新のまま)
+- [[custom-page-sizes]]はリポジトリ269コミット差だが全て上流spec同期ノイズ(固有の設計文書に変更なし)、ウォッチ用SHAのみ更新
+- 他の個別proposalリポジトリはいずれも差分なし
+- webassembly.org/newsに新着なし(最新は2026-01-21)
+- [[2026-W39]] を生成。手順5(Artifact公開)はCI環境のためスキップ
+
 ## [2026-09-20] weekly | 2026-W38
 
 - proposals: フェーズ変化なし(READMEに差分なし)

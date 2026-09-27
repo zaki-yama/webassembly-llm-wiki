@@ -1,7 +1,7 @@
 ---
 title: Index
 type: concept
-updated: 2026-09-20
+updated: 2026-09-27
 ---
 
 # Index
@@ -63,6 +63,7 @@ updated: 2026-09-20
 
 ## ニュースレター
 
+- [[2026-W39]] — CG本会合(9/22)開催もAcquire-Release AtomicsのPhase 3投票結果は議事メモ未記入で未確認。JSPIがSafari 27・Firefox 153に対応追加で主要3エンジン出揃う。Component Modelのasync/キャンセレーション周りの仕上げが継続、esm-integrationのExecuteModuleにバグ修正2件
 - [[2026-W38]] — CG(WG)・WASI Subgroupとも2週連続で議題不足キャンセル。Component Modelでstream.forward/future.forward組み込み追加(zero-copy転送)、getter/setter型検証の修正、subtask.cancelのキャンセル配送モデル再調整
 - [[2026-W37]] — CG本会合(9/8)は議題不足でキャンセル。WASI Subgroupでwasi-http championがPat Hickey・Lann Martin・John VanEnkに交代(議事録と実際の反映に食い違いあり)、Component ModelのWITにgetter/setter構文糖衣(📡)を追加
 - [[2026-W36]] — Component Modelのキャンセレーション配送モデル簡素化(`cancellable`免除引数廃止)、`map`/固定長list型の追加、Extended Name Sectionにparameter names、次回CG(9/22)でAcquire-Release AtomicsのPhase3投票予定

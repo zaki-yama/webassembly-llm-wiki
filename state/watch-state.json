@@ -1,20 +1,20 @@
 {
-  "last_checked": "2026-09-20",
+  "last_checked": "2026-09-27",
   "repos": {
     "WebAssembly/proposals": {
       "last_sha": "f0db14a5555abf7b931667fd289755124a3bf37e"
     },
     "WebAssembly/meetings": {
-      "last_sha": "db5b7880b02f30dc33cae4972868fdf8eba85d0c"
+      "last_sha": "263f95faea3bc94ab561e0bb2e59c8e6df096407"
     },
     "WebAssembly/WASI": {
       "last_sha": "39c11a76958d015ace3f1bf68500057a28c7837f"
     },
     "WebAssembly/component-model": {
-      "last_sha": "1a743de691c5966a217efcf58fef9cd68dacc754"
+      "last_sha": "d1daf829e2da2293091c105121383ffbc3b3515b"
     },
     "WebAssembly/website": {
-      "features_json_last_sha": "cfc0bdb20e0b559507486db995794d581672a3e4"
+      "features_json_last_sha": "854d3786cb45d63fe212fa233cde03568fd42802"
     }
   },
   "artifact_url": "https://claude.ai/code/artifact/95901403-1466-4653-b6a9-5a9d8b7fbaee",
@@ -32,7 +32,7 @@
       "last_sha": "284adaf2fecaf76ac05d35132c09e60bb4145041"
     },
     "WebAssembly/esm-integration": {
-      "last_sha": "d75f123b24116c44d85640cfad6129f6dc6fbd14"
+      "last_sha": "38aef62d44b5e5c63d13a178476afeb3c8eb6f44"
     },
     "WebAssembly/wide-arithmetic": {
       "last_sha": "024d4ce1b28cee7fd006d9c5175e3b7ece52b429"
@@ -41,7 +41,7 @@
       "last_sha": "0624de829e2663da799e708444dec80337a3fe54"
     },
     "WebAssembly/custom-page-sizes": {
-      "last_sha": "0f479eba15b2226adb0b11c63e90d778206e7eeb"
+      "last_sha": "d5a3275e1266bc49fb00d3e3ab99ad7e5c83313b"
     },
     "WebAssembly/custom-descriptors": {
       "last_sha": "e9f7a93d30a21c1e333d40761aac9756c0f72e62"
