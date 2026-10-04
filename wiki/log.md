@@ -1,5 +1,14 @@
 # Log
 
+## [2026-10-04] weekly | 2026-W40
+
+- proposals・meetings: 差分なし(フェーズ変化・新規議事録なし)。9/22 CGのAcquire-Release Atomics投票結果は引き続き未確認
+- **[[component-model-overview]]**: Canonical ABIにlockdown意味論を追加([#728](https://github.com/WebAssembly/component-model/commit/a25fc0b372dd21f07f0242c46e98bd0f1ea0c0e1))。従来の「instance単位・全ステップで暗黙チェック」から「store単位・全再入点でチェック」へ変更された経緯を記録
+- **[[custom-page-sizes]]**: Overviewの `p <= 64` → `p < 64` 修正、アドレス空間検証規則、リファレンスインタプリタ実装を反映
+- WASI: CI・CONTRIBUTING.mdのみの変更(wiki反映なし)。features.jsonはWasm3 v0.9.2更新のみ。[[custom-descriptors]]・[[shared-everything-threads]]は上流同期/テストのみでSHA更新のみ
+- webassembly.org/newsに新着なし
+- 手順5(Artifact公開)はCI環境のためスキップ。[[2026-W40]]を新規作成
+
 ## [2026-09-27] weekly | 2026-W39
 
 - proposals: フェーズ変化なし(READMEに差分なし)

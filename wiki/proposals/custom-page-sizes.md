@@ -3,7 +3,7 @@ title: Custom Page Sizes
 type: proposal
 phase: 3
 repo: https://github.com/WebAssembly/custom-page-sizes
-updated: 2026-07-19
+updated: 2026-10-04
 ---
 
 # Custom Page Sizes
@@ -30,6 +30,7 @@ updated: 2026-07-19
 - limitsは引き続き「ページ数」で表し、バイトサイズ = limits × ページサイズ
 - `memory.grow` / `memory.size` もページ数単位のまま(意味は変わらない)
 - メモリ型のマッチングは**ページサイズ完全一致**を要求(サブタイピングなし)
+- 2026-09〜10にOverviewのバイナリ形式が修正された: ページサイズ指数 `p` の制約は「`p <= 64`」とされていたが、「`p < 64`」に変わった(`2**64` は64bitアドレス空間に収まらないため)。あわせて「1ページがメモリのアドレス空間に収まる(i32なら`2**32`、i64なら`2**64`以下)」という検証規則が追加された(現状の有効値1・65536では自動的に満たされるが、将来2冪へ緩和する場合に必要な制約として明記。[Overview](https://github.com/WebAssembly/custom-page-sizes/blob/61c873a1860acad2772539164f284cc5110f1b1b/proposals/custom-page-sizes/Overview.md))
 
 設計上の要点:
 
@@ -57,6 +58,7 @@ updated: 2026-07-19
 ## 経緯と現状
 
 - Bytecode Alliance圏(Wasmtime)の組み込みユースケースが主導。Wasmtimeに実装がある(OverviewのImplementation Status参照)
+- 実装状況: 仕様の**リファレンスインタプリタ**への実装がImplementation Statusに追加された([PR #63](https://github.com/WebAssembly/custom-page-sizes/pull/63)、2026-10時点)
 - 「ページという概念を捨ててバイト単位のlimitsにする」代替案は、既存仕様との整合とエンジンのGuard Page戦略維持のため採らなかった
 
 ## 関連

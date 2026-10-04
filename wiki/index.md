@@ -63,6 +63,7 @@ updated: 2026-09-27
 
 ## ニュースレター
 
+- [[2026-W40]] — 大きな動きなし(フェーズ移行・新規議事録なし)。Component Modelでlockdown意味論を明文化、custom-page-sizesのOverview修正。次回CG(10/6)でExtended Name SectionのPhase 3投票予定
 - [[2026-W39]] — CG本会合(9/22)開催もAcquire-Release AtomicsのPhase 3投票結果は議事メモ未記入で未確認。JSPIがSafari 27・Firefox 153に対応追加で主要3エンジン出揃う。Component Modelのasync/キャンセレーション周りの仕上げが継続、esm-integrationのExecuteModuleにバグ修正2件
 - [[2026-W38]] — CG(WG)・WASI Subgroupとも2週連続で議題不足キャンセル。Component Modelでstream.forward/future.forward組み込み追加(zero-copy転送)、getter/setter型検証の修正、subtask.cancelのキャンセル配送モデル再調整
 - [[2026-W37]] — CG本会合(9/8)は議題不足でキャンセル。WASI Subgroupでwasi-http championがPat Hickey・Lann Martin・John VanEnkに交代(議事録と実際の反映に食い違いあり)、Component ModelのWITにgetter/setter構文糖衣(📡)を追加

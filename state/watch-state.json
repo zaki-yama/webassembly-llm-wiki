@@ -1,5 +1,5 @@
 {
-  "last_checked": "2026-09-27",
+  "last_checked": "2026-10-04",
   "repos": {
     "WebAssembly/proposals": {
       "last_sha": "f0db14a5555abf7b931667fd289755124a3bf37e"
@@ -8,13 +8,13 @@
       "last_sha": "263f95faea3bc94ab561e0bb2e59c8e6df096407"
     },
     "WebAssembly/WASI": {
-      "last_sha": "39c11a76958d015ace3f1bf68500057a28c7837f"
+      "last_sha": "90105ffc2a4eed594909f9df2f473596500b49d2"
     },
     "WebAssembly/component-model": {
-      "last_sha": "d1daf829e2da2293091c105121383ffbc3b3515b"
+      "last_sha": "a25fc0b372dd21f07f0242c46e98bd0f1ea0c0e1"
     },
     "WebAssembly/website": {
-      "features_json_last_sha": "854d3786cb45d63fe212fa233cde03568fd42802"
+      "features_json_last_sha": "08147a438d024f02bfdea56c20b1af2cf91c6f42"
     }
   },
   "artifact_url": "https://claude.ai/code/artifact/95901403-1466-4653-b6a9-5a9d8b7fbaee",
@@ -41,10 +41,10 @@
       "last_sha": "0624de829e2663da799e708444dec80337a3fe54"
     },
     "WebAssembly/custom-page-sizes": {
-      "last_sha": "d5a3275e1266bc49fb00d3e3ab99ad7e5c83313b"
+      "last_sha": "61c873a1860acad2772539164f284cc5110f1b1b"
     },
     "WebAssembly/custom-descriptors": {
-      "last_sha": "e9f7a93d30a21c1e333d40761aac9756c0f72e62"
+      "last_sha": "fa915be0a661e9440e5a364e17bcfd48c54919dd"
     },
     "WebAssembly/relaxed-dead-code-validation": {
       "last_sha": "829ad94dad4c98d94bc2bb6207739d11973ff373"
@@ -71,7 +71,7 @@
       "last_sha": "c29bdf39fc848b4f6f3eeb42e4be8c027f7f0d8a"
     },
     "WebAssembly/shared-everything-threads": {
-      "last_sha": "065aa53822e17eea69bfc049df67a16cbd03d9ce"
+      "last_sha": "de560922268ca89fd3303776c5c1b8f123da2aec"
     },
     "WebAssembly/stringref": {
       "last_sha": "a64917cd5346f8704e614c4825ebf05737ac5e64"
