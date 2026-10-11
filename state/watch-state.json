@@ -1,8 +1,8 @@
 {
-  "last_checked": "2026-10-04",
+  "last_checked": "2026-10-11",
   "repos": {
     "WebAssembly/proposals": {
-      "last_sha": "f0db14a5555abf7b931667fd289755124a3bf37e"
+      "last_sha": "df6a2aca1cd9d779eb4f2f3e19dae8277f336015"
     },
     "WebAssembly/meetings": {
       "last_sha": "263f95faea3bc94ab561e0bb2e59c8e6df096407"
@@ -11,7 +11,7 @@
       "last_sha": "90105ffc2a4eed594909f9df2f473596500b49d2"
     },
     "WebAssembly/component-model": {
-      "last_sha": "a25fc0b372dd21f07f0242c46e98bd0f1ea0c0e1"
+      "last_sha": "6c48079bbc808bb3bdeb9554f338ab3a5b187388"
     },
     "WebAssembly/website": {
       "features_json_last_sha": "08147a438d024f02bfdea56c20b1af2cf91c6f42"
@@ -32,7 +32,7 @@
       "last_sha": "284adaf2fecaf76ac05d35132c09e60bb4145041"
     },
     "WebAssembly/esm-integration": {
-      "last_sha": "38aef62d44b5e5c63d13a178476afeb3c8eb6f44"
+      "last_sha": "b141a950ab4b3d507f28a844d6ed2fcc0f950d4b"
     },
     "WebAssembly/wide-arithmetic": {
       "last_sha": "024d4ce1b28cee7fd006d9c5175e3b7ece52b429"
@@ -44,7 +44,7 @@
       "last_sha": "61c873a1860acad2772539164f284cc5110f1b1b"
     },
     "WebAssembly/custom-descriptors": {
-      "last_sha": "fa915be0a661e9440e5a364e17bcfd48c54919dd"
+      "last_sha": "4aa477a4c1ca064fe3592b3a0307509e9059d0f9"
     },
     "WebAssembly/relaxed-dead-code-validation": {
       "last_sha": "829ad94dad4c98d94bc2bb6207739d11973ff373"
@@ -65,7 +65,7 @@
       "last_sha": "5e5973510b4ef20d980102a1ecd358e9e8064372"
     },
     "WebAssembly/acquire-release-atomics": {
-      "last_sha": "70a9049ba3f50c691277eeb254d72b1797ea270a"
+      "last_sha": "c232051c97a5fd463698fcfe82fb63ba6eed0eb0"
     },
     "WebAssembly/half-precision": {
       "last_sha": "c29bdf39fc848b4f6f3eeb42e4be8c027f7f0d8a"
@@ -83,7 +83,7 @@
       "last_sha": "62fac131de7e6406c9c05b493457025c2e42a15c"
     },
     "WebAssembly/multibyte-array-access": {
-      "last_sha": "53ab692492ec5291c4abca15111836dd2841e27f"
+      "last_sha": "22b0619456da04c53a18620f6d0b4f6e202b0767"
     }
   }
 }

@@ -4,7 +4,7 @@ type: proposal
 phase: 2
 repo: https://github.com/WebAssembly/multibyte-array-access
 families: [gc-lang-support]
-updated: 2026-07-26
+updated: 2026-10-11
 ---
 
 # Multibyte Array Access
@@ -25,7 +25,7 @@ Dartのtyped array、JVMのbyte配列、独自struct表現など、多くの言�
 
 - **命令の再利用**: `i32.load`/`i64.store`等の通常の線形メモリ命令、および`v128.load8x8_s`等のSIMD load/store系命令をそのまま流用する。新しいニーモニックは追加しない
 - **型付きimmediate**: `memarg`(flags/offset)に加え、対象のGC配列型を指す`typeidx`をimmediateとして追加する。配列要素型は`i8`/`i16`/`i32`/`i64`/`f32`/`f64`/`v128`のいずれかの数値・パック型で、store系は`mut`必須
-- **エンコーディング**: `memarg`の`flags`のbit 5を立てることで「配列版」と判別する(bit 6=memidxの有無と共存不可)。既存の線形メモリ命令のオペコードをそのまま再利用するため命令セットは増えない
+- **エンコーディング**: `memarg`の`flags`のbit 5を立てることで「配列版」と判別する(bit 6=memidxの有無と共存不可)。既存の線形メモリ命令のオペコードをそのまま再利用するため命令セットは増えない。配列版の `memarg` は `flags:u32 typeidx:u32 offset:u32` の順(2026-10-06の[#11](https://github.com/WebAssembly/multibyte-array-access/blob/22b0619456da04c53a18620f6d0b4f6e202b0767/proposals/multibyte-array-access/Overview.md)で `typeidx` を `offset` の前に移動。それ以前のOverviewは `flags offset typeidx` の順だった)
 
 | 項目 | 内容 |
 |---|---|

@@ -1,5 +1,15 @@
 # Log
 
+## [2026-10-11] weekly | 2026-W41
+
+- proposals: フェーズ変化なし。READMEが`proposals.json`からの自動生成に変わった(#244/#245)ため表の差分が大きく見えるが、フェーズ・構成は突き合わせて同一と確認。meetings・WASI・features.json: 差分なし。10/6 CG(Extended Name SectionのPhase 3投票予定)の議事録は未公開で結果未確認、9/22のAcquire-Release Atomics投票結果も引き続き未確認
+- **[[acquire-release-atomics]]**: memarg符号化・テキスト構文・パースエラーの明確化を反映
+- **[[multibyte-array-access]]**: 配列版memargを`flags typeidx offset`順に変更した経緯を記録
+- **[[esm-integration]]** / **[[custom-descriptors]]**: 仕様文のリファクタ、README更新を経緯に追記
+- **[[component-model-overview]]**: `context.get/set`の添字検証厳格化(#736)を追記
+- webassembly.org/newsに新着なし
+- 手順5(Artifact公開)はCI環境のためスキップ。[[2026-W41]]を新規作成
+
 ## [2026-10-04] weekly | 2026-W40
 
 - proposals・meetings: 差分なし(フェーズ変化・新規議事録なし)。9/22 CGのAcquire-Release Atomics投票結果は引き続き未確認

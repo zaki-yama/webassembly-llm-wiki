@@ -4,7 +4,7 @@ type: proposal
 phase: 2
 repo: https://github.com/WebAssembly/acquire-release-atomics
 families: [concurrency]
-updated: 2026-09-27
+updated: 2026-10-11
 ---
 
 # Acquire-Release Atomics
@@ -31,6 +31,9 @@ seqcstは推論しやすい代わりに、weak orderingのハードウェア(ARM
 | `pause` | スピンロックのビジーウェイトループに入れるヒント命令(x86の `pause`、ARMの `yield` 相当)。セマンティクス上はno-opで、電力効率とハイパースレッド性能を改善 |
 | 将来への開放 | [[shared-everything-threads]] などの後続proposalが自分のアトミック操作(GC共有データ等)にacqrelをopt-inできるよう設計 |
 
+- **バイナリ形式**(2026-10-08、[#29](https://github.com/WebAssembly/acquire-release-atomics/blob/c232051c97a5fd463698fcfe82fb63ba6eed0eb0/proposals/acquire-release-atomics/Overview.md)で明確化): `memarg` の `flags:u32` のbit 4(`0x10`)でordering immediateの有無を示し、立っていれば `u8` のorderingが `flags` と `memidx`/`typeidx`(bit 5/6)の後・`offset` の前に置かれる。`memarg ::= flags:u32 [memidx:u32 | typeidx:u32] [ordering:u8] offset:u32`。非アトミック命令でbit 4が立っていた場合は、従来の「validation error」ではなく**decode/parseエラー(malformed module)**
+- **テキスト形式**: アトミック命令に任意の `seqcst` / `acqrel` キーワードを追加(省略時 `seqcst`)。`$mem` / `(type $t)` の後、`offset=` / `align=` の前に置く
+
 改名前は「relaxed」を名乗っていたが、C++の `memory_order_relaxed`(完全無順序)は本提案の範囲外で、中心はacqrelのみ。無順序アトミクスの形式化(out-of-thin-air問題)は学術的にも難しく、threads提案時代からの継続課題。
 
 ## フェーズ遷移
@@ -49,6 +52,8 @@ seqcstは推論しやすい代わりに、weak orderingのハードウェア(ARM
 - 2026-08-06、`webassembly.org/features` の対象にも追加。Chromeは`--js-flags=--experimental-wasm-acquire-release`フラグの背後で対応、Binaryenはフラグなしで対応([website features.json commit](https://github.com/WebAssembly/website/commit/e10d87461277041bedce8871ff86f4cadde14103))
 - 2026-08-19、WATコンパイラ実装の一つ`watr`がv5.9.0でサポート追加。atomic load命令のオーダリング即値(末尾の`seqcst`/`acqrel`キーワード)をテキスト・バイナリ両形式でコンパイル可能([website features.json commit](https://github.com/WebAssembly/website/commit/ca557f09266bb722f6cd091f4d7d68048106efa0))。store/RMW/fence/`pause`は参照インタプリタがテキスト構文を定義次第、追って対応予定
 - 2026-09-22、CG本会合のアジェンダにPhase 3投票(提案者: Rezvan Mahdavi Hezaveh)が上がった([議事録](https://github.com/WebAssembly/meetings/blob/main/main/2026/CG-2026-09-22.md))。ただし本ページ更新時点(2026-09-27)で議事録の「Meeting Notes」節は未記入、proposals READMEにもフェーズ変化の反映なし。投票が行われたか・結果がどうだったかは次回号で確認する
+
+- 2026-10-08、Overviewにmemarg符号化・テキスト構文・パースエラーの明確化が入った([c232051](https://github.com/WebAssembly/acquire-release-atomics/commit/c232051c97a5fd463698fcfe82fb63ba6eed0eb0))。2026-10-11時点でも、9/22のPhase 3投票の結果は議事録・proposals READMEのいずれにも反映されておらず(READMEは引き続きPhase 2)、確認できていない
 
 ## 関連
 

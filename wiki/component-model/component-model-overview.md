@@ -3,7 +3,7 @@ title: Component Model
 type: component-model
 phase: 1
 repo: https://github.com/WebAssembly/component-model
-updated: 2026-10-04
+updated: 2026-10-11
 ---
 
 # Component Model
@@ -58,6 +58,7 @@ W3C CGでの標準化(いわゆる1.0)に向けた作業が進む。経緯は [T
 - CABI: 継続(continuation)内で発生したトラップが正しく`resume`の呼び出し元まで伝播するよう修正(2026-09-21、[commit](https://github.com/WebAssembly/component-model/commit/5b724da) "propagate traps properly through continuations"、著者は意味論変更なしと注記)。`Handler.switch_to`を`Handler.result`(`Thread`または`Trap`を保持)に一般化し、継続内で`Trap`が送出された場合はそれを保存して`resume`側で re-raise する
 - CABI: stack-switchingの制御タグ定義を整理(2026-09-24、[commit](https://github.com/WebAssembly/component-model/commit/d1daf82)、著者は意味論変更なしと注記)。従来の`$block`/`$switch-to`/`$current-thread`の3タグを`$block`(引数に再開先`Thread`を任意で取れるよう変更)/`$current-thread`の2タグに統合し、対応する`suspend`実装(`block`/`switch_to`/`current_thread`関数)も`block`/`current_thread`の2つに削減
 - CABI: トラップ後の**lockdown**状態の意味論を明文化(2026-09-29、[#728](https://github.com/WebAssembly/component-model/commit/a25fc0b372dd21f07f0242c46e98bd0f1ea0c0e1) "Add lockdown semantics to CanonicalABI.md"、[#727](https://github.com/WebAssembly/component-model/issues/727)を解消)。ExplainerのInvariant #1は「各コンポーネント**インスタンス**がトラップ時に設定し、全実行ステップで暗黙にチェックされるlockdown状態」と書かれていたが、2026-09-29の#728により「各コンポーネント**store**が持つlockdown状態で、**すべての再入点(reentry points)でチェックされる**」へ変更された。トラップ後に内部状態を観測できなくなるという保証自体は変わらない。CanonicalABI.md・`definitions.py`・`run_tests.py`に反映
+- CABI: `context.get` / `context.set` の添字検証を厳格化(2026-10、[#736](https://github.com/WebAssembly/component-model/commit/6c48079bbc808bb3bdeb9554f338ab3a5b187388))。従来は「`$i` は2未満」だったが、「`$i` は `0`(🧵 cooperative threads有効時のみ `1` も可)」に変わった。thread-local storageの2要素目はgated featureになった形
 
 ## 関連
 

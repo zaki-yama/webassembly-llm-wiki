@@ -4,7 +4,7 @@ type: proposal
 phase: 3
 repo: https://github.com/WebAssembly/custom-descriptors
 families: [js-interop, gc-lang-support]
-updated: 2026-09-06
+updated: 2026-10-11
 ---
 
 # Custom Descriptors and JS Interop
@@ -60,6 +60,8 @@ Java/Kotlin/Dart等をWasm GCにコンパイルすると、各オブジェクト
 - 副次機能(宣言的初期化・フィールド重複排除)は「実際に問題になるか検証してから確定する」と明記されており、Phase 3中に取捨される可能性がある
 - 2026-08-27、`descriptor`/`describes`のサブタイピング規則が引き締められた: 従来は「`(descriptor $x)`節を持つ型の宣言的супertypeは、`descriptor`節を持たなくてもよい」だったが、**supertype側も`(descriptor $y)`節を持つこと(`$y`は`$x`のsupertype)を必須**に変更。あわせて、descriptor型どうし・非descriptor型どうしでしかsubtypeになれないという制約を図式化した「complete square」則(subtype/supertypeの縦軸とdescribes/describedの横軸が揃うこと)として整理し、`ref.cast_desc_eq`系命令の健全性根拠として明記した([commit](https://github.com/WebAssembly/custom-descriptors/commit/7b64bc8d0939728a72fd871384b0322af0bca417))
 - 2026-09、descriptor型と被descriptor型は**finality(final/open)が一致していなければならない**という制約が追加された([#112](https://github.com/WebAssembly/custom-descriptors/commit/e9f7a93d30a21c1e333d40761aac9756c0f72e62)、issue #61)。片方がfinalで他方がopenだと、open側にsubtypeを作ろうにも対応するdescriptor/被descriptor側にsubtypeが作れず、そもそも成立しない組み合わせになるための整合性要件
+
+- 2026-10-06、READMEに仕様文面(WIP)へのリンクとupstream specとのレンダリング差分へのリンクを追加([#114](https://github.com/WebAssembly/custom-descriptors/commit/4aa477a4c1ca064fe3592b3a0307509e9059d0f9)): https://webassembly.github.io/custom-descriptors
 
 ## 関連
 
