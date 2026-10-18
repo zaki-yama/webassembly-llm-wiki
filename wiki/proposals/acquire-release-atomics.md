@@ -4,12 +4,12 @@ type: proposal
 phase: 2
 repo: https://github.com/WebAssembly/acquire-release-atomics
 families: [concurrency]
-updated: 2026-10-11
+updated: 2026-10-18
 ---
 
 # Acquire-Release Atomics
 
-**Phase 2(仕様文面あり)** / Champion: Conrad Watt & Rezvan Mahdavi Hezaveh
+**Phase 2(仕様文面あり)→ 2026-09-22のCG投票でPhase 3承認(proposals README未反映)** / Champion: Conrad Watt & Rezvan Mahdavi Hezaveh
 
 > 2026-08-06に "Relaxed Atomics" から改名された([WebAssembly/proposals#238](https://github.com/WebAssembly/proposals/commit/c7d99fdb901f7695a88d27882fccc3a4031dc39c)、[WebAssembly/relaxed-atomics#8](https://github.com/WebAssembly/relaxed-atomics/commit/2b1d87e))。リポジトリも `WebAssembly/relaxed-atomics` から `WebAssembly/acquire-release-atomics` に改称。技術的内容(acqrelオーダリングと`pause`命令)は変わらず、名前が実態(relaxed orderingではなくacquire-release ordering)に合わせて訂正された形。フェーズはPhase 2のまま。
 
@@ -43,6 +43,7 @@ seqcstは推論しやすい代わりに、weak orderingのハードウェア(ARM
 | 2023-10 | 対面CG会合の「Post-MVP threads discussion」でPhase 1投票(shared-everything-threadsと同源の議論)([議事録](https://github.com/WebAssembly/meetings/blob/main/main/2023/CG-10.md)) | →1 |
 | 2026-06-04 | Phase 2としてproposals READMEに記載("Relaxed Atomics"名義、[#233](https://github.com/WebAssembly/proposals/pull/233)) | 1→2 |
 | 2026-08-06 | "Relaxed Atomics" から "Acquire-Release Atomics" に改名(proposals README・リポジトリとも)。2026-08-04〜05のCG対面会合アジェンダにあった「Phase 3投票の可能性」は見送られ、改名のみ実施([proposals #238](https://github.com/WebAssembly/proposals/commit/c7d99fdb901f7695a88d27882fccc3a4031dc39c)、[relaxed-atomics #8](https://github.com/WebAssembly/relaxed-atomics/commit/2b1d87e)) | 2のまま |
+| 2026-09-22 | CG本会合でPhase 3投票。SF:10 / F:14 / N:5 / A:0 / SA:0 でconsensus([議事録](https://github.com/WebAssembly/meetings/blob/68fc0aaf0574447b488d2e780ae78b987771e741/main/2026/CG-2026-09-22.md))。proposals READMEは2026-10-18時点でPhase 2のままで、反映待ち | 2→3(投票可決) |
 
 ## 経緯と現状
 
@@ -54,6 +55,11 @@ seqcstは推論しやすい代わりに、weak orderingのハードウェア(ARM
 - 2026-09-22、CG本会合のアジェンダにPhase 3投票(提案者: Rezvan Mahdavi Hezaveh)が上がった([議事録](https://github.com/WebAssembly/meetings/blob/main/main/2026/CG-2026-09-22.md))。ただし本ページ更新時点(2026-09-27)で議事録の「Meeting Notes」節は未記入、proposals READMEにもフェーズ変化の反映なし。投票が行われたか・結果がどうだったかは次回号で確認する
 
 - 2026-10-08、Overviewにmemarg符号化・テキスト構文・パースエラーの明確化が入った([c232051](https://github.com/WebAssembly/acquire-release-atomics/commit/c232051c97a5fd463698fcfe82fb63ba6eed0eb0))。2026-10-11時点でも、9/22のPhase 3投票の結果は議事録・proposals READMEのいずれにも反映されておらず(READMEは引き続きPhase 2)、確認できていない
+- 2026-10-18、meetings側の9/22議事録が埋まり、**Phase 3投票の可決**を確認([議事録](https://github.com/WebAssembly/meetings/blob/68fc0aaf0574447b488d2e780ae78b987771e741/main/2026/CG-2026-09-22.md))。以前の記述(「投票結果は確認できていない」)はこれにより解消。議事録の要点:
+  - Phase 3の入場条件(テストスイートの更新・参照インタプリタでの実行)は満たされていた。Keith Miller(WebKit)がOverviewだけでは仕様差分が分かりにくいと指摘、Conrad Watt/Thomas Livelyは「Phase 3では形式仕様文面は不要。SpecTecの登場で形式仕様のコストは下がったので、Phase 3要件に含めるかは別途議論に値する」と応答
+  - 符号化のbikeshed: RMWは2つのnibble(各4bit)にorderingを持ち、`acqrel`をloadに付ければacquire、storeならreleaseとして扱う現行案に対し、Keith Millerが「acquire/releaseを別々に符号化し、validationで許可するものを絞る方が将来の緩和時に混乱がない」と提案。Conrad Wattはfenceには単一の`acqrel`が自然なので現行も有益と反論。将来は3種類(acquire/release/acqrel)のfenceが必要になる見込みで、議論は[issue #1](https://github.com/WebAssembly/acquire-release-atomics/issues/1)に持ち越し、Phase 3をブロックしない扱い
+  - Andreas Rossbergが指摘した通り、本提案は[[threads]]拡張の上に載るが、threadsはまだ仕様本体に入っていない(Conrad Wattが別途メールで説明する旨)
+  - 次回のThreads Subgroup(2026-10-13)にも「Acquire-release atomics status update and bikeshed」が議題([アジェンダ](https://github.com/WebAssembly/meetings/blob/68fc0aaf0574447b488d2e780ae78b987771e741/threads/2026/THREADS-10-13.md))
 
 ## 関連
 

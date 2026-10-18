@@ -61,7 +61,7 @@ proposalは [phases.md](https://github.com/WebAssembly/meetings/blob/main/proces
 - [[rounding-variants]] — Kloud Koder
 - [[compilation-hints]] — Emanuel Ziegler
 - [[js-primitive-builtins]] — Sébastien Doeraene
-- [[acquire-release-atomics]] — Conrad Watt & Rezvan Mahdavi Hezaveh(2026-08-06に"Relaxed Atomics"から改名)
+- [[acquire-release-atomics]] — Conrad Watt & Rezvan Mahdavi Hezaveh(2026-08-06に"Relaxed Atomics"から改名。**2026-09-22のCG投票でPhase 3に可決**したがproposals READMEは2026-10-18時点で未反映のため、ここはREADME準拠でPhase 2に置く。[[2026-09-22-cg]])
 - [[multibyte-array-access]] — Brendan Dahl(2026-07-14 CG投票でPhase 2)
 - [[fp16]] — Brendan Dahl(2026-08-04〜05 CG対面会合で"Half Precision"から改名・championも交代の上Phase 1→2)
 

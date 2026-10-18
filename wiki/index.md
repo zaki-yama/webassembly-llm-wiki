@@ -63,6 +63,7 @@ updated: 2026-09-27
 
 ## ニュースレター
 
+- [[2026-W42]] — 9/22 CG議事録公開でacquire-release-atomicsのPhase 3可決を確認(README未反映)。relaxed-dead-code-validation・custom-descriptors meta-descriptorsは決定なし。WASI v0.3.2リリース
 - [[2026-W40]] — 大きな動きなし(フェーズ移行・新規議事録なし)。Component Modelでlockdown意味論を明文化、custom-page-sizesのOverview修正。次回CG(10/6)でExtended Name SectionのPhase 3投票予定
 - [[2026-W41]] — フェーズ移行なし。acquire-release-atomics・multibyte-array-accessでmemarg符号化を明確化/変更、Component Modelでcontext.get/setの添字検証を厳格化。10/6 CGの議事録は未公開
 - [[2026-W39]] — CG本会合(9/22)開催もAcquire-Release AtomicsのPhase 3投票結果は議事メモ未記入で未確認。JSPIがSafari 27・Firefox 153に対応追加で主要3エンジン出揃う。Component Modelのasync/キャンセレーション周りの仕上げが継続、esm-integrationのExecuteModuleにバグ修正2件
@@ -83,4 +84,5 @@ updated: 2026-09-27
 - [[2026-06-25-wasi]] — WASI 0.3.0振り返り、0.3.xリリース計画、OCI artifact基準の提案
 - [[2026-08-04-cg]] — CG対面会合(Siemens)。FP16のPhase 2投票、Compact Import Section・Wide ArithmeticのPhase 4投票
 - [[2026-08-06-wasi]] — WASI Subgroup。Component Model map型・implementsアノテーションの採否投票(いずれも可決)
+- [[2026-09-22-cg]] — CG本会合。acquire-release-atomics Phase 3可決、dead code validation・meta-descriptorsは持ち越し
 - [[2026-08-20-wasi]] — WASI Subgroup。リリースプロセスの運用細則(次回0.3.2は10/13)、250件超のissueトライアージ

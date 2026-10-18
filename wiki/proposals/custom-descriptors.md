@@ -4,7 +4,7 @@ type: proposal
 phase: 3
 repo: https://github.com/WebAssembly/custom-descriptors
 families: [js-interop, gc-lang-support]
-updated: 2026-10-11
+updated: 2026-10-18
 ---
 
 # Custom Descriptors and JS Interop
@@ -62,6 +62,9 @@ Java/Kotlin/Dart等をWasm GCにコンパイルすると、各オブジェクト
 - 2026-09、descriptor型と被descriptor型は**finality(final/open)が一致していなければならない**という制約が追加された([#112](https://github.com/WebAssembly/custom-descriptors/commit/e9f7a93d30a21c1e333d40761aac9756c0f72e62)、issue #61)。片方がfinalで他方がopenだと、open側にsubtypeを作ろうにも対応するdescriptor/被descriptor側にsubtypeが作れず、そもそも成立しない組み合わせになるための整合性要件
 
 - 2026-10-06、READMEに仕様文面(WIP)へのリンクとupstream specとのレンダリング差分へのリンクを追加([#114](https://github.com/WebAssembly/custom-descriptors/commit/4aa477a4c1ca064fe3592b3a0307509e9059d0f9)): https://webassembly.github.io/custom-descriptors
+
+- 2026-09-22のCG本会合で、**meta-descriptors(descriptorのdescriptor)を許すか**の議論が行われた([議事録](https://github.com/WebAssembly/meetings/blob/68fc0aaf0574447b488d2e780ae78b987771e741/main/2026/CG-2026-09-22.md), [issue #43](https://github.com/WebAssembly/custom-descriptors/issues/43))。WebKit(Keith Miller)は「セキュリティ担当と相談し、利用が大きくない限り追加すべきでない」と反対姿勢をさらに強めた。Mozillaも複雑さを懸念。JS interop上、descriptorの第1フィールド(externref)が被descriptorオブジェクトのprototypeになる仕様で、descriptorを内部で単なる構造体として実装するpolyfillではmap/shapeにprototype slotがなく、2段目以降の実装が難しい。V8は既にmeta-descriptorsを実装済み(Thomas Lively: 追加の複雑さなし)。Ben Titzer(Wizard、「WasmGCの上にWasmGCを実装する」tower用途)は許可を支持。折衷案として「コア仕様は任意段数、JS APIは第1段のみ対象」も出たが、Ben Titzerは「JS APIが非対称で未完になる」と懸念。**結論は出ず**、議論はissueへ
+- 2026-10-18時点で、リポジトリの直近18コミットはspec本体の取り込みとSpecTec整備が中心で、`struct.new_desc`/`struct.new_default_desc`の構文・validationを追加した[#101](https://github.com/WebAssembly/custom-descriptors/commit/ca1e91fe2a0aa1290e485c43e8973f9c115fa89d)が提案固有の変更(Explainer本体の変更はなし)
 
 ## 関連
 

@@ -1,5 +1,14 @@
 # Log
 
+## [2026-10-18] weekly | 2026-W42
+
+- meetings: 9/22 CG議事録が公開されたため [[2026-09-22-cg]] を作成。[[acquire-release-atomics]] のPhase 3投票は consensus で可決(SF10/F14/N5/A0/SA0)だが、proposals READMEは未反映(差分なし)のため frontmatter・[[overview]] はPhase 2のままにし、本文に経緯を記録。[[2026-08-04-cg]] に解消済みの旨を追記
+- [[relaxed-dead-code-validation]] / [[custom-descriptors]]: 同会合の議論(決定なし)を各ページに追記。custom-descriptors は #101(struct.new_desc)も反映、Explainer本体の変更はなし
+- WASI v0.3.2 リリース(10/13)を [[wasi-roadmap]] に反映。[[component-model-overview]] に6コミット(Guest Task Affinity等)を追記
+- WG 10/14・WASI 10/15 はキャンセル。threads/stack/component-model 各subgroupと11/3 CGはアジェンダのみ
+- proposals・features.json・他のproposalリポジトリに差分なし。webassembly.org/newsに新着なし
+- 手順5(Artifact公開)はCI環境のためスキップ。[[2026-W42]] を新規作成
+
 ## [2026-10-11] weekly | 2026-W41
 
 - proposals: フェーズ変化なし。READMEが`proposals.json`からの自動生成に変わった(#244/#245)ため表の差分が大きく見えるが、フェーズ・構成は突き合わせて同一と確認。meetings・WASI・features.json: 差分なし。10/6 CG(Extended Name SectionのPhase 3投票予定)の議事録は未公開で結果未確認、9/22のAcquire-Release Atomics投票結果も引き続き未確認

@@ -1,17 +1,17 @@
 {
-  "last_checked": "2026-10-11",
+  "last_checked": "2026-10-18",
   "repos": {
     "WebAssembly/proposals": {
       "last_sha": "df6a2aca1cd9d779eb4f2f3e19dae8277f336015"
     },
     "WebAssembly/meetings": {
-      "last_sha": "263f95faea3bc94ab561e0bb2e59c8e6df096407"
+      "last_sha": "68fc0aaf0574447b488d2e780ae78b987771e741"
     },
     "WebAssembly/WASI": {
-      "last_sha": "90105ffc2a4eed594909f9df2f473596500b49d2"
+      "last_sha": "463701e0f6c575a5d24ae31c2ec1e0ebf09d28e1"
     },
     "WebAssembly/component-model": {
-      "last_sha": "6c48079bbc808bb3bdeb9554f338ab3a5b187388"
+      "last_sha": "0220da84209397d9067c19cac83dae969aa85a7b"
     },
     "WebAssembly/website": {
       "features_json_last_sha": "08147a438d024f02bfdea56c20b1af2cf91c6f42"
@@ -44,7 +44,7 @@
       "last_sha": "61c873a1860acad2772539164f284cc5110f1b1b"
     },
     "WebAssembly/custom-descriptors": {
-      "last_sha": "4aa477a4c1ca064fe3592b3a0307509e9059d0f9"
+      "last_sha": "ca1e91fe2a0aa1290e485c43e8973f9c115fa89d"
     },
     "WebAssembly/relaxed-dead-code-validation": {
       "last_sha": "829ad94dad4c98d94bc2bb6207739d11973ff373"
