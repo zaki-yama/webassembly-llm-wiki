@@ -63,6 +63,7 @@ updated: 2026-09-27
 
 ## ニュースレター
 
+- [[2026-W43]] — 大きな動きなし(10/20 CGキャンセル)。custom-descriptorsのspec実装進展、Component Modelで`version-suffix`改名、wasm2cが主要機能をデフォルト有効化
 - [[2026-W42]] — 9/22 CG議事録公開でacquire-release-atomicsのPhase 3可決を確認(README未反映)。relaxed-dead-code-validation・custom-descriptors meta-descriptorsは決定なし。WASI v0.3.2リリース
 - [[2026-W40]] — 大きな動きなし(フェーズ移行・新規議事録なし)。Component Modelでlockdown意味論を明文化、custom-page-sizesのOverview修正。次回CG(10/6)でExtended Name SectionのPhase 3投票予定
 - [[2026-W41]] — フェーズ移行なし。acquire-release-atomics・multibyte-array-accessでmemarg符号化を明確化/変更、Component Modelでcontext.get/setの添字検証を厳格化。10/6 CGの議事録は未公開

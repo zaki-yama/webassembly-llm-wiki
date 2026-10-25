@@ -1,5 +1,13 @@
 # Log
 
+## [2026-10-25] weekly | 2026-W43
+
+- proposals: 差分なし(フェーズ変化なし)。meetings: 10/20 CGはキャンセル、Component Model 10/26・CG 11/17はアジェンダのみ
+- [[custom-descriptors]]: 6コミット(exact型、`ref.get_desc`、descriptor cast、改名)を反映。Explainer本体の変更はなし
+- [[component-model-overview]]: `versionsuffix`→`version-suffix`改名(#738)を追記。WASI: 差分なし
+- features.json: wasm2c(WABT 1.0.42)の主要機能デフォルト有効化を[[2026-W43]]に記載(wikiに専用ページなし)
+- webassembly.org/newsの確認はスキップ。手順5(Artifact公開)はCI環境のためスキップ。[[2026-W43]] を新規作成
+
 ## [2026-10-18] weekly | 2026-W42
 
 - meetings: 9/22 CG議事録が公開されたため [[2026-09-22-cg]] を作成。[[acquire-release-atomics]] のPhase 3投票は consensus で可決(SF10/F14/N5/A0/SA0)だが、proposals READMEは未反映(差分なし)のため frontmatter・[[overview]] はPhase 2のままにし、本文に経緯を記録。[[2026-08-04-cg]] に解消済みの旨を追記

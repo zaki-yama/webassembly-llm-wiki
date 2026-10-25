@@ -3,7 +3,7 @@ title: Component Model
 type: component-model
 phase: 1
 repo: https://github.com/WebAssembly/component-model
-updated: 2026-10-18
+updated: 2026-10-25
 ---
 
 # Component Model
@@ -63,6 +63,7 @@ W3C CGでの標準化(いわゆる1.0)に向けた作業が進む。経緯は [T
   - **Guest Task Affinity**節を`design/mvp/Concurrency.md`に追加([#739](https://github.com/WebAssembly/component-model/commit/0220da84209397d9067c19cac83dae969aa85a7b)): ゲスト言語のasyncタスク(例: Rustのfuture、JSのpromise)は、Component Modelのタスクとaffinity(紐づき)を保たねばならない、という規範の明文化
   - トラップ条件の追加: `error-context.debug-message`のポインタがmisalignedなら([#740](https://github.com/WebAssembly/component-model/commit/06c3fa8))、`waitable-set.{wait,poll}`のポインタがmisalignedなら([#741](https://github.com/WebAssembly/component-model/commit/2e7895c))トラップ
   - 文字列変換時のreallocateのalignment修正([#734](https://github.com/WebAssembly/component-model/commit/2126546))、wasm-toolsとの同期と`task.return`/borrowの明確化([#737](https://github.com/WebAssembly/component-model/commit/f78ac03))、`test/binary/binary.wast`を通る状態に更新([#747](https://github.com/WebAssembly/component-model/commit/6cd6393))
+- 2026-10-20、`versionsuffix`属性を**`version-suffix`に改名**し、規則を厳格化([#738](https://github.com/WebAssembly/component-model/commit/d095e2f60ddae1f9a1e9b1e2fb547ec1114da677)、issue #735): 版を持つ場合は常に有効なsemver文字列を要求。`design/mvp/Binary.md` / `Explainer.md`を更新し、`test/validation/version-suffix.wast`を追加。PR本文によれば、後発の`external-id`がハイフン区切りであることとの整合が改名の理由。canonicalでない版(例: `a:b/c@1.2`)に`versionsuffix`を付けられない点や属性の出現順は、仕様とwasm-toolsの差異として議論の余地が残ると記されている
 
 ## 関連
 
