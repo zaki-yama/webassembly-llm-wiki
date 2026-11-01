@@ -64,6 +64,7 @@ updated: 2026-09-27
 ## ニュースレター
 
 - [[2026-W43]] — 大きな動きなし(10/20 CGキャンセル)。custom-descriptorsのspec実装進展、Component Modelで`version-suffix`改名、wasm2cが主要機能をデフォルト有効化
+- [[2026-W44]] — フェーズ変化なし。Component Modelに新JS-API Explainer、CMサブグループ初回会議、Stack Subgroupで"Reified Fibers"
 - [[2026-W42]] — 9/22 CG議事録公開でacquire-release-atomicsのPhase 3可決を確認(README未反映)。relaxed-dead-code-validation・custom-descriptors meta-descriptorsは決定なし。WASI v0.3.2リリース
 - [[2026-W40]] — 大きな動きなし(フェーズ移行・新規議事録なし)。Component Modelでlockdown意味論を明文化、custom-page-sizesのOverview修正。次回CG(10/6)でExtended Name SectionのPhase 3投票予定
 - [[2026-W41]] — フェーズ移行なし。acquire-release-atomics・multibyte-array-accessでmemarg符号化を明確化/変更、Component Modelでcontext.get/setの添字検証を厳格化。10/6 CGの議事録は未公開
@@ -87,3 +88,4 @@ updated: 2026-09-27
 - [[2026-08-06-wasi]] — WASI Subgroup。Component Model map型・implementsアノテーションの採否投票(いずれも可決)
 - [[2026-09-22-cg]] — CG本会合。acquire-release-atomics Phase 3可決、dead code validation・meta-descriptorsは持ち越し
 - [[2026-08-20-wasi]] — WASI Subgroup。リリースプロセスの運用細則(次回0.3.2は10/13)、250件超のissueトライアージ
+- [[2026-10-01-wasi]] — WASI Subgroup。0.3.2は新機能なし、Rust 1.100でwasip3、Structured Annotations

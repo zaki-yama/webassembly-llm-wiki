@@ -47,6 +47,7 @@ CGの **WASI Subgroup** で開発される。議事録は [meetings/wasi](https:
 - 2026-08-18、`specifications/wasi-0.3.1/Overview.md` が追加され、2026-08-11リリース済みのWASI 0.3.1の正式な仕様文書がリポジトリに反映された([commit](https://github.com/WebAssembly/WASI/commit/3071db04c857b3a2c047d3d1ac694bc41f021796))。内容はリリース自体の後追い(新機能なし)
 - 2026-08-20のWASI Subgroup会議で、リリースプロセスの運用細則がさらに具体化: **次回0.3.2は2026-10-13**。Component Model機能の採否投票は「リリース直前の会議までに終える」だけでなく、**投票にかける提案自体をその投票回の1週間前までにissue提出する**運用が明文化された(詳細は [[2026-08-20-wasi]])
 - 2026-10-13、**WASI v0.3.2がリリースされた**([リリース](https://github.com/WebAssembly/WASI/releases/tag/v0.3.2)、[#963](https://github.com/WebAssembly/WASI/commit/bdadbbb)、仕様文書追加[#964](https://github.com/WebAssembly/WASI/commit/463701e0f6c575a5d24ae31c2ec1e0ebf09d28e1))。予定どおり第2火曜。リリースノートに載る変更は、WASI HTTPのchampion入れ替え(Piotr Sikora・David Justiceが退任、Luke Wagner追加)とtriage用close templateの追加のみで、機能面(error context、stream splice/forward)の詳細は`specifications/wasi-0.3.2`を見て確認する必要がある(本号時点では未確認)。2026-10-15のWASI Subgroup会議は議題なしで中止([アジェンダ](https://github.com/WebAssembly/meetings/blob/68fc0aaf0574447b488d2e780ae78b987771e741/wasi/2026/WASI-10-15.md))
+- 2026-10-01のWASI Subgroup会議(議事録は10/27以降に追記)で、0.3.2に新機能がないこと、Rust 1.100(2026-11-13予定)で`wasip3`がrustup経由で入手可能になる見込みが共有された。10/29会議は議題なしでキャンセル(詳細: [[2026-10-01-wasi]]、[キャンセル通知](https://github.com/WebAssembly/meetings/blob/be1009d3c07b1cc845f79d4a055ac6beff7d4c45/wasi/2026/WASI-10-29.md))。なお0.3.2リリースノートの機能面は上記のとおり未確認
 
 ## 実装
 

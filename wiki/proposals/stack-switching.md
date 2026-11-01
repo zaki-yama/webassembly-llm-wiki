@@ -86,6 +86,8 @@ Explainerの最初の例。ジェネレータが `suspend` で値を1つずつ�
 - Stack Subgroup(CG分科会)で複数の設計案(fibers案、typed continuations案など)が長く比較検討され、現在のExplainerは**typed continuationsベース+対称切り替えの統合**に収斂した。議事録: [meetings/stack](https://github.com/WebAssembly/meetings/tree/main/stack)
 - 現在 **Phase 3**。エンジン実装状況は [webassembly.org/features](https://webassembly.org/features/) を参照
 - JS APIに閉じた限定版である [[js-promise-integration]](JSPI)が先行してPhase 4にあり、「JSのPromiseを待つ」ユースケースはJSPI、それ以外の汎用的なスタック操作は本提案、という役割分担
+- 2026-10-19のStack Subgroupで、Francis McCabeが**"Reified Fibers"**を紹介した(スライド付き。議事メモ本文は空で議論内容は未記録)([アジェンダ](https://github.com/WebAssembly/meetings/blob/be1009d3c07b1cc845f79d4a055ac6beff7d4c45/stack/2026/stack-2026-10-19.md))。現行のtyped continuations案との関係は議事録からは不明で、今後の追跡対象
+- 2026-10-27、リポジトリがupstream specの2026-10-23時点をマージ([#158](https://github.com/WebAssembly/stack-switching/commit/d9fbe345495d15af623b981440d6aaacd5ad015c))。差分は3000コミット超だがupstream側の取り込みで、`proposals/stack-switching/`配下(Explainer)の変更はなく、提案固有の設計変更ではない
 
 ## 関連
 

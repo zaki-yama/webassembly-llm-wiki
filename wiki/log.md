@@ -1,5 +1,12 @@
 # Log
 
+## [2026-11-01] weekly | 2026-W44
+
+- proposals: 差分なし(フェーズ変化なし)。meetings: stack 10/19("Reified Fibers")、WASI 10/01議事メモ追記(→[[2026-10-01-wasi]]を新規作成)、WASI 10/29キャンセル、CM Subgroup 10/26初回(議事メモ空)
+- [[component-model-overview]]: JS-Explainer/JS-Reference新設(#686)、`map`値型の検証強化(#756)、CABI修正2件を反映。[[wasi-roadmap]]: 10/01会議の内容を追記。WASI本体は差分なし
+- [[stack-switching]](upstream spec merge、Explainer変更なし)・[[custom-descriptors]](SpecTecのbinary/text形式)に追記。他のproposalリポジトリは差分なし
+- features.json: 更新なし。webassembly.org/newsの確認はスキップ。手順5(Artifact公開)はCI環境のためスキップ。[[2026-W44]] を新規作成
+
 ## [2026-10-25] weekly | 2026-W43
 
 - proposals: 差分なし(フェーズ変化なし)。meetings: 10/20 CGはキャンセル、Component Model 10/26・CG 11/17はアジェンダのみ
