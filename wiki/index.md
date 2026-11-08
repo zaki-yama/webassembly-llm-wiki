@@ -64,6 +64,7 @@ updated: 2026-09-27
 ## ニュースレター
 
 - [[2026-W43]] — 大きな動きなし(10/20 CGキャンセル)。custom-descriptorsのspec実装進展、Component Modelで`version-suffix`改名、wasm2cが主要機能をデフォルト有効化
+- [[2026-W45]] — フェーズ変化なし。custom-descriptorsのspec記述が一巡、CG 11/17でupdate予定、CMで`thread.new-indirect`が-1を返しうる、features.jsonにw2c2追加
 - [[2026-W44]] — フェーズ変化なし。Component Modelに新JS-API Explainer、CMサブグループ初回会議、Stack Subgroupで"Reified Fibers"
 - [[2026-W42]] — 9/22 CG議事録公開でacquire-release-atomicsのPhase 3可決を確認(README未反映)。relaxed-dead-code-validation・custom-descriptors meta-descriptorsは決定なし。WASI v0.3.2リリース
 - [[2026-W40]] — 大きな動きなし(フェーズ移行・新規議事録なし)。Component Modelでlockdown意味論を明文化、custom-page-sizesのOverview修正。次回CG(10/6)でExtended Name SectionのPhase 3投票予定

@@ -4,7 +4,7 @@ type: proposal
 phase: 3
 repo: https://github.com/WebAssembly/custom-descriptors
 families: [js-interop, gc-lang-support]
-updated: 2026-10-25
+updated: 2026-11-08
 ---
 
 # Custom Descriptors and JS Interop
@@ -67,6 +67,7 @@ Java/Kotlin/Dart等をWasm GCにコンパイルすると、各オブジェクト
 - 2026-10-18時点で、リポジトリの直近18コミットはspec本体の取り込みとSpecTec整備が中心で、`struct.new_desc`/`struct.new_default_desc`の構文・validationを追加した[#101](https://github.com/WebAssembly/custom-descriptors/commit/ca1e91fe2a0aa1290e485c43e8973f9c115fa89d)が提案固有の変更(Explainer本体の変更はなし)
 - 2026-10-20〜24、spec本体(SpecTec / 参照インタプリタ)側の実装が進んだ([比較](https://github.com/WebAssembly/custom-descriptors/compare/ca1e91fe2a0aa1290e485c43e8973f9c115fa89d...21e9c647f5930991ebd04b42f971a30ad74fb2a5)、6コミット、Explainer/Overview本体の変更はなし): func externtype/func型に**exactness**を導入し`ref.func`をexact importに対してexactと型付け([#102](https://github.com/WebAssembly/custom-descriptors/pull/102))、allocation命令をexact化([#103](https://github.com/WebAssembly/custom-descriptors/pull/103))、`ref.get_desc`の構文・validation([#104](https://github.com/WebAssembly/custom-descriptors/pull/104))、descriptor castの構文・validation([#105](https://github.com/WebAssembly/custom-descriptors/pull/105))、`describestype`/`descriptortype`を`describes`/`descriptor`へ改名([#120](https://github.com/WebAssembly/custom-descriptors/commit/21e9c647f5930991ebd04b42f971a30ad74fb2a5))、rec group跨ぎのdescriptor supertypeテスト追加([#116](https://github.com/WebAssembly/custom-descriptors/pull/116))
 - 2026-10-26〜11-01、SpecTec側で**バイナリ形式**(型・命令、[#108](https://github.com/WebAssembly/custom-descriptors/commit/a791af285f3876fb0bc6df89c218ff912347cf46))と**テキスト形式**([#121](https://github.com/WebAssembly/custom-descriptors/pull/121))の記述が追加された(2コミット、Explainer変更なし)。これで型・命令の構文(binary/text)・validationのSpecTec記述が揃いつつある
+- 2026-11-02〜06、spec本体側の記述が続いた([比較](https://github.com/WebAssembly/custom-descriptors/compare/a791af285f3876fb0bc6df89c218ff912347cf46...6efbe68778e8dd684e1defb5250c0f776218af5a)、8コミット、Explainer/Overview本体の変更はなし): 実行(execution)のSpecTec/rst記述([#122](https://github.com/WebAssembly/custom-descriptors/commit/4b04325))、soundness propertiesの更新([#123](https://github.com/WebAssembly/custom-descriptors/commit/211ff1c))、descriptor型のvalidation規則([#124](https://github.com/WebAssembly/custom-descriptors/commit/a8fce47))、principal typesのexactness変数([#129](https://github.com/WebAssembly/custom-descriptors/commit/848647d))、validation algorithm(appendix)の更新([#130](https://github.com/WebAssembly/custom-descriptors/commit/6efbe68))、SpecTecメタインタプリタの対応([#128](https://github.com/WebAssembly/custom-descriptors/commit/029c005))。syntax・validation・executionの仕様記述がほぼ一巡した。2026-11-17のCG会議で「Custom descriptors update and open questions」(Thomas Lively、30分)が予定されている([アジェンダ](https://github.com/WebAssembly/meetings/blob/966c085ca47fd3255df0778cb687de337629b6c4/main/2026/CG-2026-11-17.md))
 
 ## 関連
 

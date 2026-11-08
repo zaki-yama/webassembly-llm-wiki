@@ -1,5 +1,11 @@
 # Log
 
+## [2026-11-08] weekly | 2026-W45
+
+- proposals: 差分なし(フェーズ変化なし)。meetings: CG 11/17アジェンダ(SIMDサブグループ報告、custom descriptors update)、Stack Subgroup 11/16("Compressing Stacks in Wizard")・12/14(Wasmtimeでのstack switching)のアジェンダのみ(議事メモなし)
+- [[custom-descriptors]]: spec側8コミット(execution/soundness/validation、Explainer変更なし)を追記。[[component-model-overview]]: `thread.new-indirect`の-1返却(#760)を追記。WASI本体は差分なし(最新v0.3.2)。他のproposalリポジトリは差分なし
+- features.json: w2c2ランタイム追加(2026-11-02、[#580])。webassembly.org/newsの確認はスキップ。手順5(Artifact公開)はCI環境のためスキップ。[[2026-W45]] を新規作成
+
 ## [2026-11-01] weekly | 2026-W44
 
 - proposals: 差分なし(フェーズ変化なし)。meetings: stack 10/19("Reified Fibers")、WASI 10/01議事メモ追記(→[[2026-10-01-wasi]]を新規作成)、WASI 10/29キャンセル、CM Subgroup 10/26初回(議事メモ空)

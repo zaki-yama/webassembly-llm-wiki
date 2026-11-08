@@ -3,7 +3,7 @@ title: Component Model
 type: component-model
 phase: 1
 repo: https://github.com/WebAssembly/component-model
-updated: 2026-10-25
+updated: 2026-11-08
 ---
 
 # Component Model
@@ -69,6 +69,7 @@ W3C CGでの標準化(いわゆる1.0)に向けた作業が進む。経緯は [T
   - `map`の検証規則: 値型`V`が`own`/`borrow`/`future`/`stream`/`error-context`を(再帰的に)含む`(map K V)`は拒否される。重複キーの値を捨てる際にbindings generatorがハンドルを正しく破棄する必要があるため。将来緩和されうる([#756](https://github.com/WebAssembly/component-model/commit/8505ba7))
   - CABI: 長さ0の読み書きでもポインタ境界を検査([#755](https://github.com/WebAssembly/component-model/commit/36b9b95))。memory64で`borrow`をlowerする際に`(rep i64)`を渡すよう修正([#754](https://github.com/WebAssembly/component-model/commit/fed10b0))
 - 2026-10-26に**Component Modelサブグループの初回会議**が開催された(議題: 運営方法と何を最初に扱うか、問題設定とスコープの議論。Ryan Hunt/Luke Wagner。議事メモは本号時点で空)([アジェンダ](https://github.com/WebAssembly/meetings/blob/be1009d3c07b1cc845f79d4a055ac6beff7d4c45/component-model/2026/COMPONENTS-10-26.md))
+- 2026-11-02〜06の変更(5コミット、[比較](https://github.com/WebAssembly/component-model/compare/fed10b0b823b82553dd8363f16a640816f5eac65...d230073ce81c6634f175b4d0c5ad900b5253f1f4)): `thread.new-indirect`がホストのリソース枯渇時に**非決定的に`-1`を返してよい**ことをCABIに明記(DETERMINISTIC_PROFILEでは返さない)([#760](https://github.com/WebAssembly/component-model/commit/38db7ee))。async系テストWASTの追加([#761](https://github.com/WebAssembly/component-model/commit/c818a19))、`canon_resource_drop`・own/borrowロジックのリファクタ(挙動変更なし)
 
 ## 関連
 
